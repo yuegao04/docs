@@ -19,10 +19,13 @@ openssl rand -hex 16
 # openssl rand -hex 32
 
 
-# step 2: Start Seal with the follwoing.
+# step 2: Start Seal with the follwoing command.
 
--e SERVER_DATA_SOURCE_DATA_ENCRYPTION=aesgcm:${the output from step 1}
+sudo docker run -d --privileged --restart=always \
+  -p 80:80 -p 443:443 \
+  -e SERVER_DATA_SOURCE_DATA_ENCRYPTION=aesgcm:${the output from step 1} \
+  <seal-container-image>
 
 ```
 
-目前仅支持使用 [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) [GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode) 模式。
+目前仅支持使用 [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) [GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode) 模式，更多对称加密的支持，欢迎沟通联系。

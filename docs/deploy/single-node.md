@@ -12,7 +12,7 @@ sidebar_position: 1
 > - 服务器开放80和443端口；
 > - 前往[官网](https://seal.io/trial.html)申请产品试用镜像。
 
-## 启动
+## HTTPs服务
 
 ### 方式一：使用系统（非公开受信）的自签证书
 
@@ -54,5 +54,27 @@ sudo docker run -d --privileged --restart=always \
   -v /<CERT_FILE>:/etc/seal/ssl/cert.pem \
   -e TLS_PRIVATE_KEY_FILE=/etc/seal/ssl/key.pem \
   -e TLS_CERT_FILE=/etc/seal/ssl/cert.pem \
+  <seal-container-image>
+```
+
+## 外置数据库
+
+Seal基于[PostgreSQL](https://www.postgresql.org/)关系型数据库实现数据存储。
+
+默认情况下，Seal会在运行容器内启动一个 PostgresSQL 的实例，这非常便捷且易于使用，但可能面临使用数据的丢失。为此，用户可以在启动Seal时，提供外部的PostgreSQL源，以避免使用数据的丢失。
+
+```shell
+# step 1: Start PostgreSQL with the following command.
+docker run -d --restart=always \
+  -p 5432:5432 \
+  -e "POSTGRES_PASSWORD=Root123" \
+  -e "POSTGRES_USER=root" \
+  -e "POSTGRES_DB=seal" \
+  postgres:14.6
+
+# step 2: Start Seal with the follwoing command.
+sudo docker run -d --privileged --restart=always \
+  -p 80:80 -p 443:443 \
+  -e SERVER_DATA_SOURCE_ADDRESS="postgres://root:Root123@postgres:5432/seal?sslmode=disable"\
   <seal-container-image>
 ```
