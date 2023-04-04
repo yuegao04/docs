@@ -5,76 +5,54 @@ sidebar_position: 1
 
 # 单实例部署
 
-
-> 前提条件：
-> - 资源不少于4CPU，8Gi内存的Linux服务器
-> - 至少50GB的空余磁盘空间
-> - 安装docker
-> - 服务器开放80和443端口
+> 前置条件：
+> - 资源不少于4CPU，8Gi内存的Linux服务器；
+> - 至少50GB的空余磁盘空间；
+> - 安装Docker；
+> - 服务器开放80和443端口；
 > - 前往[官网](https://seal.io/trial.html)申请产品试用镜像。
 
-## 选择SSL证书的类型并启动Seal
+## 启动
 
-### 方式一：使用Seal生成的自签证书
+### 方式一：使用系统（非公开受信）的自签证书
 
-通过执行以下指令完成Seal的部署：
-```shell
-sudo docker run -d --privileged --restart=always -p 80:80 -p 443:443 <seal-container-image>
-```
+> 注意：由于HTTPs服务证书（链）由非公开受信的CA（Seal启动创建）签发，用户访问UI前需要在浏览器确认使用风险。
 
-### 方式二：使用Let's Encrypt签发的证书
-
-> 前提条件：
-> - Let's Encrypt是一个公有服务，因此部署Seal的服务器需要公网可达。
-> - 需要提供一个解析到该服务器的域名来访问Seal，例如`seal.mydomain.com`。
-
-通过执行以下指令完成Seal的部署：
-```shell
-sudo docker run -d --privileged --restart=always \
- -p 80:80 -p 443:443 \
- -e ACME_DOMAIN=<YOUR_DOMAIN_NAME> \
- <seal-container-image>
-```
-
-### 方式三：使用自带的自签证书
-
-在部署Seal的服务器上准备好你的证书文件。如下占位符描述所示
-
-| 占位符               | 描述        |
-|-------------------|-----------|
-| <CERT_DIR>        | 放置证书文件的目录 |
-| <FULL_CHAIN.pem>  | 证书链文件     |
-| <PRIVATE_KEY.pem> | 私钥文件      |
-| <CA_CERTS.pem>    | CA证书文件    |
-
-
-通过执行以下指令完成Seal的部署：
 ```shell
 sudo docker run -d --privileged --restart=always \
   -p 80:80 -p 443:443 \
-  -v /<CERT_DIRECTORY>/<FULL_CHAIN.pem>:/etc/seal/ssl/cert.pem \
-  -v /<CERT_DIRECTORY>/<PRIVATE_KEY.pem>:/etc/seal/ssl/key.pem \
-  -v /<CERT_DIRECTORY>/<CA_CERTS.pem>:/etc/seal/ssl/cacerts.pem \
   <seal-container-image>
 ```
 
-### 方式四：使用受信CA签发的证书
+### 方式二：使用 [ACME HTTP-01](https://letsencrypt.org/docs/challenge-types/#http-01-challenge) 挑战生成（公开受信）的证书
 
+> 注意：通过 Let's Encrypt 服务来执行 HTTP-01 挑战，挑战成功后由 Let's Encrypt 颁发一个为期90天的 HTTPs 服务证书（链）。该证书（链）的续约工作，由 Seal 自动完成。
 
-在部署Seal的服务器上准备好你的证书文件。如下占位符描述所示
+> 前置条件：
+> - 配置一个域名，使该域名能映射到部署Seal的Linux服务器，例如，`seal.mydomain.com`;
+> - 开放部署Seal的Linux服务器的80和443端口，并确保该服务器能够被Let's Encrypt服务访问。
 
-| 占位符               | 描述        |
-|-------------------|-----------|
-| <CERT_DIR>        | 放置证书文件的目录 |
-| <FULL_CHAIN.pem>  | 证书链文件     |
-| <PRIVATE_KEY.pem> | 私钥文件      |
+```shell
+sudo docker run -d --privileged --restart=always \
+ -p 80:80 -p 443:443 \
+ -e TLS_AUTO_CERT_DOMAINS=<YOUR_DOMAIN_NAME> \
+ <seal-container-image>
+```
 
+### 方式三：使用自定义的证书
 
-通过执行以下指令完成Seal的部署：
+> 注意：自定义的证书是指，使用公开受信或非公开受信的CA证书，签发的HTTPs服务证书（链）。
+
+> 前置条件：
+> - 在部署Seal的Linux服务器上准备证书文件，例如，在<PRIVATE_KEY_FILE>路径下放置用于HTTPs服务私钥PEM文件，在<CERT_FILE>路径下放置用于HTTPs服务证书（链）PEM文件；
+> - 如果有（非公开受信的）CA证书，请并置在<CERT_FILE>路径下的文件中，通常串联在HTTPs服务证书（链）后。
+
 ```shell
 sudo docker run -d --privileged --restart=always \
   -p 80:80 -p 443:443 \
-  -v /<CERT_DIRECTORY>/<FULL_CHAIN.pem>:/etc/seal/ssl/cert.pem \
-  -v /<CERT_DIRECTORY>/<PRIVATE_KEY.pem>:/etc/seal/ssl/key.pem \
+  -v /<PRIVATE_KEY_FILE>:/etc/seal/ssl/key.pem \
+  -v /<CERT_FILE>:/etc/seal/ssl/cert.pem \
+  -e TLS_PRIVATE_KEY_FILE=/etc/seal/ssl/key.pem \
+  -e TLS_CERT_FILE=/etc/seal/ssl/cert.pem \
   <seal-container-image>
 ```
