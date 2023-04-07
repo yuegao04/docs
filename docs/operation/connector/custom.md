@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # 自定义
 
-自定义连接器的作用为 Terraform 部署第三方平台应用如：AWS, 阿里云
+自定义连接器可以定义部署第三方平台应用如：AWS, 阿里云
 
 ## 查看列表
 
@@ -13,8 +13,8 @@ sidebar_position: 2
 ## 创建自定义连接器
 
 1. 点击列表`新建连接器`
-2. 类型为第三方平台 Provider 的类型，如：aws, alicloud
-3. 添加属性，例如：Provider 为 alicloud,则需填写 access_key，access_key，access_key
+2. 类型为第三方平台 Terraform Provider 的类型，如：aws, alicloud
+3. 添加属性，例如：Provider 为 [alicloud](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs),则需填写 access_key，access_key，access_key
 
 ```
 provider "alicloud" {
