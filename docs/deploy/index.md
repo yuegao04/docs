@@ -3,16 +3,16 @@ sidebar_position: 1
 ---
 
 
-# 单实例部署
+# 部署
 
 > 前置条件：
-> - 资源不少于4CPU，8Gi内存的Linux服务器；
-> - 至少50GB的空余磁盘空间；
-> - 安装Docker；
-> - 服务器开放80和443端口；
+> - 资源不少于4CPU，8Gi内存的Linux服务器。
+> - 至少50GB的空余磁盘空间。
+> - 安装Docker，详细指引参考[Docker官方文档](https://docs.docker.com/)。
+> - 服务器开放80和443端口。
 > - 前往[官网](https://seal.io/trial.html)申请产品试用镜像。
 
-## HTTPs服务
+## 配置HTTPs
 
 ### 方式一：使用系统（非公开受信）的自签证书
 
@@ -29,7 +29,7 @@ sudo docker run -d --privileged --restart=always \
 > 注意：通过 Let's Encrypt 服务来执行 HTTP-01 挑战，挑战成功后由 Let's Encrypt 颁发一个为期90天的 HTTPs 服务证书（链）。该证书（链）的续约工作，由 Seal 自动完成。
 
 > 前置条件：
-> - 配置一个域名，使该域名能映射到部署Seal的Linux服务器，例如，`seal.mydomain.com`;
+> - 配置一个域名，使该域名能映射到部署Seal的Linux服务器，例如，`seal.mydomain.com`。
 > - 开放部署Seal的Linux服务器的80和443端口，并确保该服务器能够被Let's Encrypt服务访问。
 
 ```shell
@@ -44,7 +44,7 @@ sudo docker run -d --privileged --restart=always \
 > 注意：自定义的证书是指，使用公开受信或非公开受信的CA证书，签发的HTTPs服务证书（链）。
 
 > 前置条件：
-> - 在部署Seal的Linux服务器上准备证书文件，例如，在<PRIVATE_KEY_FILE>路径下放置用于HTTPs服务私钥PEM文件，在<CERT_FILE>路径下放置用于HTTPs服务证书（链）PEM文件；
+> - 在部署Seal的Linux服务器上准备证书文件，例如，在<PRIVATE_KEY_FILE>路径下放置用于HTTPs服务私钥PEM文件，在<CERT_FILE>路径下放置用于HTTPs服务证书（链）PEM文件。
 > - 如果有（非公开受信的）CA证书，请并置在<CERT_FILE>路径下的文件中，通常串联在HTTPs服务证书（链）后。
 
 ```shell
@@ -57,7 +57,7 @@ sudo docker run -d --privileged --restart=always \
   <seal-container-image>
 ```
 
-## 外置数据库
+## 配置数据库
 
 Seal基于[PostgreSQL](https://www.postgresql.org/)关系型数据库实现数据存储。
 
