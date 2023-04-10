@@ -55,3 +55,15 @@ variable "limit_cpu" {
   default     = "0.5"
 }
 ```
+
+## 元数据变量
+
+Seal会提供以下元数据变量，当您在模块中声明匹配的变量名称的时候，Seal会在部署中注入元数据变量的值。
+
+| 变量名                                     | 类型  | 描述       | 
+|-----------------------------------------|-----|----------|
+| seal_metadata_project_name              | 字符串 | 应用所属项目名称 | 
+| seal_metadata_application_name          | 字符串 | 应用名称     | 
+| seal_metadata_application_instance_name | 字符串 | 应用实例名称   | 
+| seal_metadata_module_name               | 字符串 | 应用模块名称   | 
+
