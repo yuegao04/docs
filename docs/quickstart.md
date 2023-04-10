@@ -24,7 +24,7 @@ sidebar_position: 2
 2. 前往[官网](https://seal.io/trial.html)申请产品试用镜像。
 3. 运行以下指令。
 ```shell
-sudo docker run -d --privileged --restart=always -p 80:80 -p 443:443 -p 10000:10000 <seal-container-image>
+sudo docker run -d --privileged --restart=always -p 80:80 -p 443:443 <seal-container-image>
 ```
 
 ## 访问Seal UI
