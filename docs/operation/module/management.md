@@ -8,7 +8,7 @@ sidebar_position: 2
 ## 添加模块
 
 1. 点击导航栏中的`运维中心`->`模块`菜单。
-2. 点击`添加模块`按钮。
+2. 点击`新建模块`按钮。
 3. 输入模块的名称、描述、来源和图标。其中，
     - 来源：与Terraform git类型模块来源兼容的地址，参考[说明](https://developer.hashicorp.com/terraform/language/modules/sources#module-sources)。
     - 图标：指向一个svg或png图标的地址。
