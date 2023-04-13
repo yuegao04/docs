@@ -23,9 +23,9 @@ sidebar_position: 1
 
 >在添加模块时，您可以选择是否将应用的变量添加到模块配置中，这样您就可以在应用中使用这些变量了。通过在模块配置输入框中输入`${var.变量名}`即可使用变量。
 同时，您也可以在模块配置中添加密钥，这样您就可以在应用中使用这些密钥了。通过在模块配置输入框中输入`${secret.密钥名}`即可使用密钥。关于密钥的使用，请参考[密钥管理](/docs/application/secret)。
-如果模块中定义了[output](https://developer.hashicorp.com/terraform/language/values/outputs)，可在输入框输入`${module.模块名称.属性名}`方式，在其他模块中的输入引用模块的output。
+如果模块中定义了[output](https://developer.hashicorp.com/terraform/language/values/outputs)，可通过在输入框输入`${module.模块名称.属性名}`的方式，在其他模块中的输入引用模块的output。
 
-4. 点击`确认`按钮即可保存应用配置。您就可以在应用管理中使用这个应用了。
+4. 点击`保存`按钮即可保存应用配置。您就可以在应用管理中使用这个应用了。
 
 ## 编辑应用
 
