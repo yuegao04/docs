@@ -15,7 +15,7 @@ sidebar_position: 1000
 
 1. 点击列表`新建连接器`。
 2. 类型为第三方平台 Terraform Provider 的类型，如：aws, alicloud。
-3. 添加属性，例如：Provider 为 [alicloud](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs),则需填写 access_key，access_key，access_key。
+3. 添加属性，例如：Provider 为 [alicloud](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs),则需填写 access_key，secret_key，region。
 
 ```
 provider "alicloud" {
