@@ -24,9 +24,9 @@ sudo docker run -d --privileged --restart=always \
   <seal-container-image>
 ```
 
-### 方式二：使用 [ACME HTTP-01](https://letsencrypt.org/docs/challenge-types/#http-01-challenge) 挑战生成（公开受信）的证书
+### 方式二：使用 [ACME](https://letsencrypt.org/docs/challenge-types) 挑战生成（公开受信）的证书。
 
-> 注意：通过 Let's Encrypt 服务来执行 HTTP-01 挑战，挑战成功后由 Let's Encrypt 颁发一个为期90天的 HTTPs 服务证书（链）。该证书（链）的续约工作，由 Seal 自动完成。
+> 注意：通过 Let's Encrypt 服务来执行挑战，挑战成功后由 Let's Encrypt 颁发一个为期90天的 HTTPs 服务证书（链）。该证书（链）的续约工作，由 Seal 自动完成。
 
 > 前置条件：
 > - 配置一个域名，使该域名能映射到部署Seal的Linux服务器，例如，`seal.mydomain.com`。
@@ -35,9 +35,19 @@ sudo docker run -d --privileged --restart=always \
 ```shell
 sudo docker run -d --privileged --restart=always \
  -p 80:80 -p 443:443 \
- -e TLS_AUTO_CERT_DOMAINS=<YOUR_DOMAIN_NAME> \
+ -e SERVER_TLS_AUTO_CERT_DOMAINS=<YOUR_DOMAIN_NAME> \
  <seal-container-image>
 ```
+
+上述采用的是 [HTTP-01](https://letsencrypt.org/docs/challenge-types/#http-01-challenge) 挑战模式，如果**无法开放80端口**，将自动转为使用 [TLS-ALPN-01](https://letsencrypt.org/docs/challenge-types/#tls-alpn-01) 挑战模式。
+
+```
+sudo docker run -d --privileged --restart=always \
+ -p 443:443 \
+ -e SERVER_TLS_AUTO_CERT_DOMAINS=<YOUR_DOMAIN_NAME> \
+ <seal-container-image>
+```
+
 
 ### 方式三：使用自定义的证书
 
@@ -52,10 +62,23 @@ sudo docker run -d --privileged --restart=always \
   -p 80:80 -p 443:443 \
   -v /<PRIVATE_KEY_FILE>:/etc/seal/ssl/key.pem \
   -v /<CERT_FILE>:/etc/seal/ssl/cert.pem \
-  -e TLS_PRIVATE_KEY_FILE=/etc/seal/ssl/key.pem \
-  -e TLS_CERT_FILE=/etc/seal/ssl/cert.pem \
+  -e SERVER_TLS_PRIVATE_KEY_FILE=/etc/seal/ssl/key.pem \
+  -e SERVER_TLS_CERT_FILE=/etc/seal/ssl/cert.pem \
   <seal-container-image>
 ```
+
+### 方式四：使用 TLS 终止。
+
+> 注意：[TLS 终止](https://en.wikipedia.org/wiki/TLS_termination_proxy)，通常由反向代理服务执行。
+> 因此，反向代理服务到Seal的链路中可使用HTTP请求，并且强化Seal的会话Cookie`seal_session`为`Secure: true`以避免中间人攻击。
+
+```shell
+sudo docker run -d --privileged --restart=always \
+  -p 80:80 \
+  -e SERVER_ENABLE_TLS=false \
+  <seal-container-image>
+```
+
 
 ## 配置数据库
 
