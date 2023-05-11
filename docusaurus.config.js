@@ -37,8 +37,6 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Use when the docs is open source.
-          // editUrl: 'https://github.com/seal-io/docs/tree/main/',
           lastVersion: 'current',
           versions: {
             current:{
@@ -46,6 +44,9 @@ const config = {
               banner: 'none',
             },
           },
+          docLayoutComponent: "@theme/DocPage",
+          /* Derived from docusaurus-theme-openapi */
+          docItemComponent: "@theme/ApiItem",
         },
         blog: false,
         theme: {
@@ -58,6 +59,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      docs: {
+        sidebar: {
+          hideable: true,
+        },
+      },
       navbar: {
         title: '',
         logo: {
@@ -70,6 +76,10 @@ const config = {
             docId: 'overview',
             position: 'left',
             label: '文档',
+          },
+          {
+            to: "/category/openapi",
+            label: "OpenAPI",
           },
           {
             type: 'docsVersionDropdown',
@@ -87,6 +97,29 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+
+  plugins: [
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: "openapi",
+        docsPluginId: "classic",
+        config: {
+          openapi: {
+            specPath: "openapi/v1.json",
+            outputDir: "docs/openapi",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+              categoryLinkSource: "info",
+            },
+          }
+        }
+      }
+    ],
+  ],
+
+  /* Allows use of @theme/ApiItem and other components */
+  themes: ["docusaurus-theme-openapi-docs"], 
 };
 
 module.exports = config;
