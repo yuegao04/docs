@@ -90,7 +90,7 @@ const config = {
       },
       footer: {
         style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} Seal Software (Shenzhen) Co., Ltd.`,
+        copyright: `Copyright © ${new Date().getFullYear()} 数澈软件`,
       },
       prism: {
         theme: lightCodeTheme,
