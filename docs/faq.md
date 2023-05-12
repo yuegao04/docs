@@ -25,3 +25,19 @@ sudo docker run -d --privileged --restart=always \
 ```
 
 目前仅支持使用 [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) [GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode) 模式，更多对称加密的支持，欢迎沟通联系。
+
+## Q2: 如何修改 Seal 日志配置？
+
+Seal包含以下几个级别的日志：`debug`, `info`, `warning`, `error` 和 `fatal`。
+
+配置参数 `log-debug` 和 `log-verbosity` 用于控制Seal日志打印。参数 `log-debug` 配置为`true`将打印出所有级别的日志；配置为`false`，则打印出`info`, `warning`, `error` 和 `fatal`级别的日志。配置参数 `log-verbosity` 用于控制 Seal 日志 verbosity 的最高级别，将打印出所有低于该级别的日志。
+
+在服务器启动时，通过添加配置参数可控制Seal日志打印。在服务器启动后，通过API可获取日志和动态修改日志配置。
+```shell
+# 获取日志配置
+curl -k 'https://localhost/debug/flags'
+
+# 修改日志配置
+curl --request PUT 'https://localhost/debug/flags?log-debug=true&log-verbosity=5'
+```
+> 注意：出于安全考虑，API 修改日志配置仅支持通过 `localhost` 访问
