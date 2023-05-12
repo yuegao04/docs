@@ -62,10 +62,10 @@ const sidebars = {
   openapi: [
     {
       type: "category",
-      label: "OpenAPI",
+      label: "API文档",
       link: {
         type: "generated-index",
-        title: "OpenAPI",
+        title: "API文档",
         slug: "/category/openapi",
       },
       items: require("./docs/openapi/sidebar.js"),

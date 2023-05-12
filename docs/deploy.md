@@ -7,7 +7,7 @@
 > - 服务器开放80和443端口。
 > - 前往[官网](https://seal.io/trial.html)申请产品试用镜像。
 
-## 配置HTTPs
+## 选择TLS配置
 
 ### 方式一：使用系统（非公开受信）的自签证书
 
@@ -90,7 +90,7 @@ docker run -d --restart=always \
   -e "POSTGRES_DB=seal" \
   postgres:14.6
 
-# step 2: Start Seal with the follwoing command.
+# step 2: Start Seal with the following command.
 sudo docker run -d --privileged --restart=always \
   -p 80:80 -p 443:443 \
   -e SERVER_DATA_SOURCE_ADDRESS="postgres://root:Root123@postgres:5432/seal?sslmode=disable"\

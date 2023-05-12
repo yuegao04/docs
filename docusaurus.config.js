@@ -75,11 +75,11 @@ const config = {
             type: 'doc',
             docId: 'overview',
             position: 'left',
-            label: '文档',
+            label: '用户手册',
           },
           {
             to: "/category/openapi",
-            label: "OpenAPI",
+            label: "API文档",
           },
           {
             type: 'docsVersionDropdown',
