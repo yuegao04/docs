@@ -110,7 +110,7 @@ const config = {
             outputDir: "docs/openapi",
             sidebarOptions: {
               groupPathsBy: "tag",
-              categoryLinkSource: "info",
+              categoryLinkSource: "tag",
             },
           }
         }
