@@ -96,3 +96,15 @@ sudo docker run -d --privileged --restart=always \
   -e SERVER_DATA_SOURCE_ADDRESS="postgres://root:Root123@postgres:5432/seal?sslmode=disable"\
   <seal-container-image>
 ```
+
+## 配置HTTP代理
+
+如果部署在网络隔离环境，并且可以通过代理访问外网，可以通过配置环境变量的方式设置代理。例如：
+```shell
+sudo docker run -d --privileged --restart=always \
+  -p 80:80 -p 443:443 \
+  -e HTTP_PROXY="http://192.168.0.100:3128" \
+  -e HTTPS_PROXY="http://192.168.0.100:3128" \
+  -e NO_PROXY="localhost,127.0.0.1,0.0.0.0,10.0.0.0/8,.svc,.cluster.local,example.com" \
+  <seal-container-image>
+```
