@@ -40,7 +40,7 @@ const config = {
           lastVersion: 'current',
           versions: {
             current:{
-              label: 'v0.1',
+              label: 'v0.2',
               banner: 'none',
             },
           },
