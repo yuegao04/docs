@@ -1,4 +1,6 @@
-# 部署
+# 标准部署
+
+适用于PoC或测试场景。
 
 > 前置条件：
 > - 资源不少于4CPU，8Gi内存的Linux服务器。
@@ -7,11 +9,7 @@
 > - 服务器开放80和443端口。
 > - 前往[官网](https://seal.io/trial.html)申请产品试用镜像。
 
-## 选择TLS配置
-
-### 方式一：使用系统（非公开受信）的自签证书
-
-> 注意：由于HTTPs服务证书（链）由非公开受信的CA（Seal启动创建）签发，用户访问UI前需要在浏览器确认使用风险。
+使用 Docker Run 指令即可完成标准部署。
 
 ```shell
 sudo docker run -d --privileged --restart=always \
@@ -19,9 +17,15 @@ sudo docker run -d --privileged --restart=always \
   <seal-container-image>
 ```
 
-### 方式二：使用 [ACME](https://letsencrypt.org/docs/challenge-types) 挑战生成（公开受信）的证书。
+## 配置TLS
 
-> 注意：通过 Let's Encrypt 服务来执行挑战，挑战成功后由 Let's Encrypt 颁发一个为期90天的 HTTPs 服务证书（链）。该证书（链）的续约工作，由 Seal 自动完成。
+### 默认方式，使用系统（非公开受信）的自签证书
+
+由于HTTPs服务证书（链）由非公开受信的CA（Seal启动创建）签发，用户访问UI前需要在浏览器确认使用风险。
+
+### 使用 [ACME](https://letsencrypt.org/docs/challenge-types) 挑战生成（公开受信）的证书。
+
+通过 Let's Encrypt 服务来执行挑战，挑战成功后由 Let's Encrypt 颁发一个为期90天的 HTTPs 服务证书（链）。该证书（链）的续约工作，由 Seal 自动完成。
 
 > 前置条件：
 > - 配置一个域名，使该域名能映射到部署Seal的Linux服务器，例如，`seal.mydomain.com`。
@@ -43,10 +47,9 @@ sudo docker run -d --privileged --restart=always \
  <seal-container-image>
 ```
 
+### 使用自定义的证书
 
-### 方式三：使用自定义的证书
-
-> 注意：自定义的证书是指，使用公开受信或非公开受信的CA证书，签发的HTTPs服务证书（链）。
+自定义的证书是指，使用公开受信或非公开受信的CA证书，签发的HTTPs服务证书（链）。
 
 > 前置条件：
 > - 在部署Seal的Linux服务器上准备证书文件，例如，在<PRIVATE_KEY_FILE>路径下放置用于HTTPs服务私钥PEM文件，在<CERT_FILE>路径下放置用于HTTPs服务证书（链）PEM文件。
@@ -62,10 +65,12 @@ sudo docker run -d --privileged --restart=always \
   <seal-container-image>
 ```
 
-### 方式四：使用 TLS 终止。
+### 使用TLS终止
 
-> 注意：[TLS 终止](https://en.wikipedia.org/wiki/TLS_termination_proxy)，通常由反向代理服务执行。
-> 因此，反向代理服务到Seal的链路中可使用HTTP请求，并且强化Seal的会话Cookie`seal_session`为`Secure: true`以避免中间人攻击。
+[TLS 终止](https://en.wikipedia.org/wiki/TLS_termination_proxy)，通常由反向代理服务执行。
+
+> 注意：
+> - 反向代理服务到Seal的链路中可使用HTTP请求，并且强化Seal的会话Cookie`seal_session`为`Secure: true`以避免中间人攻击。
 
 ```shell
 sudo docker run -d --privileged --restart=always \
@@ -73,7 +78,6 @@ sudo docker run -d --privileged --restart=always \
   -e SERVER_ENABLE_TLS=false \
   <seal-container-image>
 ```
-
 
 ## 配置数据库
 
