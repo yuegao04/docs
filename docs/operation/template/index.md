@@ -71,7 +71,7 @@ Seal会提供以下元数据变量，当您在模板中声明匹配的变量名�
 
 ## 输出
 
-Seal会抓取Terraform文件中定义的输出，部署完成后，输出将显示在应用实例的输出页中。Seal支持抓取用户自定义访问URL，配置输出名称以`endpoint`为前缀（如下配置），Seal将会抓取这些输出作为`访问URL`展示。
+Seal会抓取Terraform文件中定义的输出，部署完成后，输出将显示在服务的输出页中。Seal支持抓取用户自定义访问URL，配置输出名称以`endpoint`为前缀（如下配置），Seal将会抓取这些输出作为`访问URL`展示。
 
 ```hcl
 output "endpoint_web" {
