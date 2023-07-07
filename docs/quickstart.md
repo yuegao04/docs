@@ -54,7 +54,7 @@ sudo docker logs <your-container-id> 2>&1 | grep "Bootstrap Admin Password"
 
 1. 在环境列表页中，点击前置步骤创建的环境名称，进入环境视图。
 2. 点击`新建服务`按钮。
-3. 填写服务名称，如`myapp`，确认模版选中`webservice`。
+3. 填写服务名称，如`myapp`，确认模板选中`webservice`。
 4. 在模板配置的Image Name中输入`nginx`镜像，点击确定。
 5. 点击`保存`按钮完成服务的创建。
 6. 等待服务的部署完成后，您可以查看资源，日志，执行终端命令，访问该nginx服务的地址等。
