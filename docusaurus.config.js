@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Seal文档',
+  title: 'Seal 文档',
   tagline: 'Dinosaurs are cool',
   url: 'https://seal-io.github.io',
   baseUrl: '/docs/',
@@ -79,7 +79,13 @@ const config = {
           },
           {
             to: "/category/openapi",
-            label: "API文档",
+            label: "API 文档",
+          },
+          {
+            // type: 'doc',
+            // docId: 'cli',
+            to: "/category/cli",
+            label: "CLI 文档",
           },
           {
             type: 'docsVersionDropdown',
