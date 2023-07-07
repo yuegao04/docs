@@ -683,7 +683,7 @@ kubectl -n seal-system delete ingress seal
 kubectl -n seal-system rollout restart deployment/app-manager
 ```
 
-### 使用 [ACME](https://letsencrypt.org/docs/challenge-types) 挑战生成（公开受信）的证书。
+### 使用 [ACME](https://letsencrypt.org/docs/challenge-types) 挑战生成（公开受信）的证书
 
 > 注意：
 > - 如果集群可以通过 CertManager 在 Ingress Controller 的层面进行 ACME 挑战，请参考"使用TLS终止"。

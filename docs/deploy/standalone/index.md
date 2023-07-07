@@ -23,7 +23,7 @@ sudo docker run -d --privileged --restart=always \
 
 由于HTTPs服务证书（链）由非公开受信的CA（Seal启动创建）签发，用户访问UI前需要在浏览器确认使用风险。
 
-### 使用 [ACME](https://letsencrypt.org/docs/challenge-types) 挑战生成（公开受信）的证书。
+### 使用 [ACME](https://letsencrypt.org/docs/challenge-types) 挑战生成（公开受信）的证书
 
 通过 Let's Encrypt 服务来执行挑战，挑战成功后由 Let's Encrypt 颁发一个为期90天的 HTTPs 服务证书（链）。该证书（链）的续约工作，由 Seal 自动完成。
 
