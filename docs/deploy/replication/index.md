@@ -6,7 +6,6 @@
 > - 提供Kubernetes集群作为运行集群。
 > - 资源不少于4CPU，8Gi内存的Linux服务器。
 > - 至少50GB的空余磁盘空间。
-> - 安装Docker，详细指引参考[Docker官方文档](https://docs.docker.com/)。
 > - 服务器开放80和443端口。
 > - 前往[官网](https://seal.io/trial.html)申请产品试用镜像。
 
