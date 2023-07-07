@@ -17,7 +17,6 @@ const sidebars = {
     'overview',
     'quickstart',
     'deploy',
-    'project',
     {
       type: 'category',
       label: '应用管理',
