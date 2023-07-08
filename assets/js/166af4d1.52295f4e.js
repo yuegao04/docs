@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[8142],{89089:e=>{e.exports=JSON.parse('{"title":"API \u6587\u6863","slug":"/category/openapi","permalink":"/docs/category/openapi","navigation":{"next":{"title":"Introduction","permalink":"/docs/openapi/seal-apis"}}}')}}]);
