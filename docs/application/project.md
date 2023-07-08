@@ -46,7 +46,7 @@ sidebar_position: 1
 
 ## 连接器管理
 
-在项目视图中，点击`连接器`标签页，可进行[连接器管理](/operation/connector/overview)。
+在项目视图中，点击`连接器`标签页，可进行[连接器管理](/operation/connector)。
 
 ## 成员管理
 

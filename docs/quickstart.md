@@ -19,7 +19,7 @@
 sudo docker run -d --privileged --restart=always -p 80:80 -p 443:443 <seal-container-image>
 ```
 
-更多部署要求，请参考[部署](/deploy)。
+更多部署要求，请参考[部署](/deploy/standalone)。
 
 
 ## 访问
