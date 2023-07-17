@@ -37,7 +37,7 @@ sudo docker logs <your-container-id> 2>&1 | grep "Bootstrap Admin Password"
 
 > 前置条件：
 > - 一个Kubernetes集群。
-> - Seal server与Kubernetes apiserver相互可达。
+> - Seal server可以访问Kubernetes API server。
 
 1. 点击导航栏的`应用管理`菜单，默认进入到`default`项目视图。
 2. 点击`连接器`标签页。
