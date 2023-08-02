@@ -97,7 +97,7 @@ docker run -d --restart=always \
 # step 2: Start Seal with the following command.
 sudo docker run -d --privileged --restart=always \
   -p 80:80 -p 443:443 \
-  -e SERVER_DATA_SOURCE_ADDRESS="postgres://root:Root123@postgres:5432/seal?sslmode=disable"\
+  -e SERVER_DATA_SOURCE_ADDRESS="postgres://root:Root123@<postgres-ip-address>:5432/seal?sslmode=disable"\
   <seal-container-image>
 ```
 

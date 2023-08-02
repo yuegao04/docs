@@ -14,7 +14,7 @@ sidebar_position: 3
 3. 在项目视图中的环境标签页，找到您需要操作的环境，点击环境名称进入环境视图。
 4. 在服务标签页可以查看该环境下的服务列表。可以通过顶层面包屑切换查看不同项目或环境下的服务。
 
-![service-list](/img/service/service-list.png)
+![app-svc-list](/img/v0.3.0/application/service/app-svc-list.png)
 
 ## 查看服务详情
 
@@ -28,7 +28,7 @@ sidebar_position: 3
 3. 在模板配置中，不同的模板有不同的配置项, 可以根据模板的要求填写相应的配置。
 4. 点击`保存`按钮。
 
-![service-edit](/img/service/service-edit.png)
+![qs-create-svc2](/img/v0.3.0/quickstart/qs-create-svc2.png)
 
 ## 编辑服务
 
@@ -42,7 +42,7 @@ sidebar_position: 3
 
 如 web 服务依赖于 mysql 服务，那么 web 服务就可以引用 mysql 服务。在内置的 webservcie 模版中，可以在定义环境变量中引用服务，通过`${service.服务名称.服务输出名称}`的方式引用服务。web 服务中通过环境变量即可获取到 mysql 服务的地址和端口等信息，从而实现服务之间的通信。
 
-![service-reference](/img/service/servcie-reference.jpg)
+![app-svc-ref](/img/v0.3.0/application/service/app-svc-ref.png)
 
 ## 服务编排
 
@@ -51,22 +51,28 @@ sidebar_position: 3
 ## 回滚服务
 
 1. 进入到环境视图的服务标签页。
-2. 找到您需要删除的服务。
+2. 找到您需要回滚的服务。
 3. 点击操作下拉按钮，选择`回滚`。
+
+![app-svc-rollback](/img/v0.3.0/application/service/app-svc-rollback.png)
+
 4. 选择您需要回滚的历史版本。
 5. 确认回滚操作的配置变更，点击`回滚`按钮即可完成回滚操作。
 
-![service-rollback](/img/service/service-rollback.png)
+![app-svc-rollback2](/img/v0.3.0/application/service/app-svc-rollback2.png)
 
 ## 克隆服务
 
 1. 进入到环境视图的服务标签页。
 2. 选中您需要克隆的服务，点击`克隆服务`按钮。
-3. 选择克隆的目标环境。
-4. 如果需要调整克隆的服务配置，在服务下点击要修改的服务方块，修改其中的配置并点击`确定`按钮。
-5. 点击`保存`按钮。
 
-![service-clone](/img/service/service-clone.png)
+![app-svc-clone](/img/v0.3.0/application/service/app-svc-clone.png)
+
+3. 选择克隆的目标环境。
+4. 如果需要调整克隆的服务配置，在服务下点击要修改的服务方块，在弹窗中修改其中的配置并点击`确定`按钮。
+5. 点击`保存`按钮即可完成服务克隆。
+
+![app-svc-clone-edit](/img/v0.3.0/application/service/app-svc-clone-edit.png)
 
 ## 删除服务
 
@@ -76,7 +82,7 @@ sidebar_position: 3
 4. 在删除弹窗中，您可以选择是否清理服务的资源。如果取消`清理所有资源`的勾选，服务部署的资源会保留，但不再被 Seal 管理。
 5. 点击`确定`按钮完成删除。
 
-![service-delete](/img/service/service-delete.png)
+![app-svc-del](/img/v0.3.0/application/service/app-svc-del.png)
 
 ## 资源
 
@@ -89,7 +95,7 @@ sidebar_position: 3
 1. 进入服务详情页查看资源列表。
 2. 找到您需要查看日志的资源，点击`查看日志`操作。
 
-![resource-log](/img/service/resource-log.png)
+![qs-res-logs](/img/v0.3.0/quickstart/qs-res-logs.png)
 
 ### 通过终端连接资源
 
@@ -98,9 +104,14 @@ sidebar_position: 3
 1. 进入服务详情页查看资源列表。
 2. 找到您需要用终端连接的资源，点击`终端`操作。 
 
-![resource-exec](/img/service/resource-exec.png)
+![qs-res-exec](/img/v0.3.0/quickstart/qs-res-exec.png)
 
-### 查看资源分布
+### 查看服务资源依赖图
 
 进入服务详情页，选择切换资源图即可查看当前服务下的资源分布图。
-![service-graph](/img/service/resource-graph.jpg)
+
+更多依赖图详情，请参见[依赖图](/application/graph)。
+
+![app-svc-res-graph-view](/img/v0.3.0/application/service/app-svc-res-graph-view.png)
+
+![app-svc-res-graph](/img/v0.3.0/application/service/app-svc-res-graph.png)
