@@ -3,7 +3,7 @@
     "message": "v0.1",
     "description": "The label for version v0.1"
   },
-  "sidebar.docs.category.应用管理": {
+  "sidebar.docs.category.Application Management": {
     "message": "应用管理",
     "description": "The label for category 应用管理 in sidebar docs"
   },

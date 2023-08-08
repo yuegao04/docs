@@ -80,17 +80,17 @@ const config = {
             type: 'doc',
             docId: 'overview',
             position: 'left',
-            label: '用户手册',
+            label: 'User Docs',
           },
           {
             to: "/category/openapi",
-            label: "API 文档",
+            label: "API Docs",
           },
           {
             // type: 'doc',
             // docId: 'cli',
             to: "/category/cli",
-            label: "CLI 文档",
+            label: "CLI Docs",
           },
           {
             type: 'docsVersionDropdown',

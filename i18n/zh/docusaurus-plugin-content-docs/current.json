@@ -3,37 +3,33 @@
     "message": "v0.2",
     "description": "The label for version current"
   },
-  "sidebar.docs.category.部署": {
-    "message": "部署",
-    "description": "The label for category 部署 in sidebar docs"
+  "sidebar.docs.category.Installation": {
+    "message": "Installation",
+    "description": "The label for category Installation in sidebar docs"
   },
-  "sidebar.docs.category.应用管理": {
-    "message": "应用管理",
-    "description": "The label for category 应用管理 in sidebar docs"
+  "sidebar.docs.category.Application Management": {
+    "message": "Application Management",
+    "description": "The label for category Application Management in sidebar docs"
   },
-  "sidebar.docs.category.成本中心": {
-    "message": "成本中心",
-    "description": "The label for category 成本中心 in sidebar docs"
+  "sidebar.docs.category.Cost Management": {
+    "message": "Cost Management",
+    "description": "The label for category Cost Management in sidebar docs"
   },
-  "sidebar.docs.category.运维中心": {
-    "message": "运维中心",
-    "description": "The label for category 运维中心 in sidebar docs"
+  "sidebar.docs.category.Operation Hub": {
+    "message": "Operation Hub",
+    "description": "The label for category Operation Hub in sidebar docs"
   },
-  "sidebar.docs.category.模板": {
-    "message": "模板",
-    "description": "The label for category 模板 in sidebar docs"
+  "sidebar.docs.category.Templates": {
+    "message": "Templates",
+    "description": "The label for category Templates in sidebar docs"
   },
-  "sidebar.docs.category.系统设置": {
-    "message": "系统设置",
-    "description": "The label for category 系统设置 in sidebar docs"
+  "sidebar.openapi.category.API Docs": {
+    "message": "API Docs",
+    "description": "The label for category API Docs in sidebar openapi"
   },
-  "sidebar.openapi.category.API 文档": {
-    "message": "API 文档",
-    "description": "The label for category API 文档 in sidebar openapi"
-  },
-  "sidebar.openapi.category.API 文档.link.generated-index.title": {
-    "message": "API 文档",
-    "description": "The generated-index page title for category API 文档 in sidebar openapi"
+  "sidebar.openapi.category.API Docs.link.generated-index.title": {
+    "message": "API Docs",
+    "description": "The generated-index page title for category API Docs in sidebar openapi"
   },
   "sidebar.openapi.category.Connectors": {
     "message": "Connectors",
@@ -495,14 +491,6 @@
     "message": "Update a variable",
     "description": "The label for the doc item Update a variable in sidebar openapi, linking to the doc openapi/variable-update"
   },
-  "sidebar.cli.category.CLI 文档": {
-    "message": "CLI 文档",
-    "description": "The label for category CLI 文档 in sidebar cli"
-  },
-  "sidebar.cli.category.CLI 文档.link.generated-index.title": {
-    "message": "CLI 文档",
-    "description": "The generated-index page title for category CLI 文档 in sidebar cli"
-  },
   "sidebar.cli.category.config": {
     "message": "config",
     "description": "The label for category config in sidebar cli"
@@ -554,5 +542,17 @@
   "sidebar.cli.category.variable": {
     "message": "variable",
     "description": "The label for category variable in sidebar cli"
+  },
+  "sidebar.cli.category.CLI Docs": {
+    "message": "CLI Docs",
+    "description": "The label for category CLI Docs in sidebar cli"
+  },
+  "sidebar.cli.category.CLI Docs.link.generated-index.title": {
+    "message": "CLI Docs",
+    "description": "The generated-index page title for category CLI Docs in sidebar cli"
+  },
+  "sidebar.docs.category.Settings": {
+    "message": "Settings",
+    "description": "The label for category Settings in sidebar docs"
   }
 }

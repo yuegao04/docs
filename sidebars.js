@@ -18,7 +18,7 @@ const sidebars = {
     'quickstart',
     {
       type: 'category',
-      label: '部署',
+      label: 'Installation',
       link: {
         type: 'generated-index',
       },
@@ -31,7 +31,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '应用管理',
+      label: 'Application Management',
       link: {
         type: 'generated-index',
       },
@@ -44,7 +44,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '成本中心',
+      label: 'Cost Management',
       link: {
         type: 'generated-index',
       },
@@ -57,7 +57,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '运维中心',
+      label: 'Operation Hub',
       link: {
         type: 'generated-index',
       },
@@ -70,7 +70,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '系统设置',
+      label: 'Settings',
       link: {
         type: 'generated-index',
       },
@@ -86,10 +86,10 @@ const sidebars = {
   openapi: [
     {
       type: "category",
-      label: "API 文档",
+      label: "API Docs",
       link: {
         type: "generated-index",
-        title: "API 文档",
+        title: "API Docs",
         slug: "/category/openapi",
       },
       items: require("./docs/openapi/sidebar.js"),
@@ -98,10 +98,10 @@ const sidebars = {
   cli: [
     {
       type: "category",
-      label: "CLI 文档",
+      label: "CLI Docs",
       link: {
         type: "generated-index",
-        title: "CLI 文档",
+        title: "CLI Docs",
         slug: "/category/cli",
       },
       items: [
