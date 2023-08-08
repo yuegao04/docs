@@ -2,115 +2,114 @@
 sidebar_position: 3
 ---
 
+# Services
 
-# 服务
+## View Service List
 
-## 查看服务列表
+Services belong to an environment and you can view the list of services in the environment view.
 
-服务属于一个环境，进入环境视图可以查看服务列表。
-
-1. 点击左侧导航栏中的`应用管理`。
-2. 通过顶层面包屑的项目下拉按钮选择项目。
-3. 在项目视图中的环境标签页，找到您需要操作的环境，点击环境名称进入环境视图。
-4. 在服务标签页可以查看该环境下的服务列表。可以通过顶层面包屑切换查看不同项目或环境下的服务。
+1. Click on `Application Management` in the left navigation bar.
+2. Select a project through the drop-down button of the top-level breadcrumb.
+3. In the environment tab of the project view, find the environment you need to operate on, and click on the environment name to enter the environment view.
+4. In the services tab, you can view the list of services under this environment. You can switch to view services under different projects or environments through the top-level breadcrumb.
 
 ![app-svc-list](/img/v0.3.0/application/service/app-svc-list.png)
 
-## 查看服务详情
+## View Service Details
 
-1. 进入到环境视图的服务标签页。
-2. 找到您需要查看的服务并点击其名称，即进入服务的详情页。
+1. Enter the services tab of the environment view.
+2. Find the service you need to view and click its name to enter the service details page.
 
-## 创建服务
+## Create Service
 
-1. 进入到环境视图的服务标签页。
-2. 点击`新建服务`，选择模板和版本，输入`名称`， `描述`，`标签`， 同一个环境下，服务名称应该是唯一的。
-3. 在模板配置中，不同的模板有不同的配置项, 可以根据模板的要求填写相应的配置。
-4. 点击`保存`按钮。
+1. Enter the services tab of the environment view.
+2. Click `New Service`, select the template and version, enter the `Name`, `Description`, and `Tags`. The service name should be unique under the same environment.
+3. In the template configuration, different templates have different configuration items. You can enter corresponding configurations according to the requirements of the template.
+4. Click the `Save` button.
 
 ![qs-create-svc2](/img/v0.3.0/quickstart/qs-create-svc2.png)
 
-## 编辑服务
+## Edit Service
 
-1. 进入到环境视图的服务标签页。
-2. 找到您需要编辑的服务，点击`编辑`操作。
-3. 按需要修改配置后，点击`保存`按钮。服务在编辑后会执行一次部署。
+1. Enter the services tab of the environment view.
+2. Find the service you need to edit, click `Edit`.
+3. Modify the configuration as needed, then click the `Save` button. The service will be deployed once after editing.
 
-## 服务依赖
+## Service Dependency
 
-服务之间可以通过定义引用服务输出来实现依赖关系，引用的服务会在被引用的服务之前部署或者批量删除时先于被依赖的服务删除。
+Services can depend on each other by defining service output references. The referenced service will be deployed or deleted in bulk before the dependent service.
 
-如 web 服务依赖于 mysql 服务，那么 web 服务就可以引用 mysql 服务。在内置的 webservcie 模版中，可以在定义环境变量中引用服务，通过`${service.服务名称.服务输出名称}`的方式引用服务。web 服务中通过环境变量即可获取到 mysql 服务的地址和端口等信息，从而实现服务之间的通信。
+For example, if the web service depends on the MySQL service, the web service can reference the MySQL service. In the built-in web service template, you can reference the service in environment variables configuration by `${service.Service Name.Service Output Name}`. The web service can get the address and port information of the MySQL service from environment variables, thereby enabling communication between services.
 
 ![app-svc-ref](/img/v0.3.0/application/service/app-svc-ref.png)
 
-## 服务编排
+## Service Orchestration
 
-服务编排是一种将多个服务组合在一起部署的方式，通过编排可以实现服务之间的依赖关系。在编排中，可以定义服务之间的依赖关系，以及服务的部署顺序。根据服务依赖定义不同服务之间的依赖关系，Seal 会自动按照依赖的关系依次部署服务。如批量克隆多个服务或者批量删除多个服务时，Seal 会自动按照编排的顺序依次创建或者删除服务。
+Service orchestration is a way to deploy multiple services together. Through orchestration, service dependencies can be implemented. In the orchestration, service dependencies and service deployment order can be defined. Depending on service dependency definitions, Seal will automatically deploy services in the order of dependencies. For example, when cloning or deleting multiple services in bulk, Seal will automatically create or delete services according to the order of orchestration.
 
-## 回滚服务
+## Rollback Service
 
-1. 进入到环境视图的服务标签页。
-2. 找到您需要回滚的服务。
-3. 点击操作下拉按钮，选择`回滚`。
+1. Enter the services tab of the environment view.
+2. Find the service you need to rollback.
+3. Click on the operation drop-down button, select `Rollback`.
 
 ![app-svc-rollback](/img/v0.3.0/application/service/app-svc-rollback.png)
 
-4. 选择您需要回滚的历史版本。
-5. 确认回滚操作的配置变更，点击`回滚`按钮即可完成回滚操作。
+4. Choose the historic version you need to rollback to.
+5. Confirm the configuration changes of the rollback operation, click the `Rollback` button to complete the rollback operation.
 
 ![app-svc-rollback2](/img/v0.3.0/application/service/app-svc-rollback2.png)
 
-## 克隆服务
+## Clone Service
 
-1. 进入到环境视图的服务标签页。
-2. 选中您需要克隆的服务，点击`克隆服务`按钮。
+1. Enter the services tab of the environment view.
+2. Select the service you need to clone, click the `Clone Service` button.
 
 ![app-svc-clone](/img/v0.3.0/application/service/app-svc-clone.png)
 
-3. 选择克隆的目标环境。
-4. 如果需要调整克隆的服务配置，在服务下点击要修改的服务方块，在弹窗中修改其中的配置并点击`确定`按钮。
-5. 点击`保存`按钮即可完成服务克隆。
+3. Select the target environment of the clone.
+4. If you need to adjust the cloned service configuration, click the service block under the service you want to modify, modify the configuration in the pop-up window, and click the `OK` button.
+5. Click the `Save` button to complete the service clone.
 
 ![app-svc-clone-edit](/img/v0.3.0/application/service/app-svc-clone-edit.png)
 
-## 删除服务
+## Delete Service
 
-1. 进入到环境视图的服务标签页。
-2. 找到您需要删除的服务。
-3. 确保没有其它服务依赖于该服务后，勾选您需要删除的服务，点击`删除`按钮。
-4. 在删除弹窗中，您可以选择是否清理服务的资源。如果取消`清理所有资源`的勾选，服务部署的资源会保留，但不再被 Seal 管理。
-5. 点击`确定`按钮完成删除。
+1. Enter the services tab of the environment view.
+2. Find the service you need to delete.
+3. Make sure no other service depends on this service, select the service you need to delete, click the `Delete` button.
+4. In the delete pop-up window, you can choose whether to clean up the resources of the service. If you uncheck `Clean up all resources`, the resources deployed by the service will be retained, but will no longer be managed by Seal.
+5. Click the `OK` button to complete the deletion.
 
 ![app-svc-del](/img/v0.3.0/application/service/app-svc-del.png)
 
-## 资源
+## Resources
 
-资源是服务部署生成的实体。在服务的详情页可以查看它的资源，包括资源名称、资源类型、资源状态、创建时间等。您可以根据需要对资源进行操作，如查看资源日志, 通过终端连接资源等。
+Resources are the entities generated by the service deployment. In the service details page, you can view its resources, including resource name, resource type, resource status, creation time, etc. You can operate resources as needed, such as viewing resource logs, connecting to the resource through terminal, etc.
 
-### 查看资源日志
+### View Resource Logs
 
-> 注：查看日志操作针对特定的资源类型可用。
+> Note: The operation to view logs is available for specific resource types.
 
-1. 进入服务详情页查看资源列表。
-2. 找到您需要查看日志的资源，点击`查看日志`操作。
+1. Enter the service details page to view the resource list.
+2. Find the resource whose logs you need to view and click the `View Logs` operation.
 
 ![qs-res-logs](/img/v0.3.0/quickstart/qs-res-logs.png)
 
-### 通过终端连接资源
+### Connect to Resource via Terminal
 
-> 注：终端操作针对特定的资源类型可用。
+> Note: The terminal operation is available for specific resource types.
 
-1. 进入服务详情页查看资源列表。
-2. 找到您需要用终端连接的资源，点击`终端`操作。 
+1. Enter the service details page to view the resource list.
+2. Find the resource you need to connect to with terminal and click on the `Terminal` operation.
 
 ![qs-res-exec](/img/v0.3.0/quickstart/qs-res-exec.png)
 
-### 查看服务资源依赖图
+### View Service Resource Dependency Graph
 
-进入服务详情页，选择切换资源图即可查看当前服务下的资源分布图。
+Enter the service details page and select to switch to the resource graph to view the resource distribution graph under the current service.
 
-更多依赖图详情，请参见[依赖图](/application/graph)。
+For more details on dependency graphs, please refer to [Dependency Graph](/application/graph).
 
 ![app-svc-res-graph-view](/img/v0.3.0/application/service/app-svc-res-graph-view.png)
 

@@ -2,69 +2,68 @@
 sidebar_position: 2
 ---
 
+# Template Management
 
-# 模板管理
+## Adding a Template
 
-## 添加模板
+1. Click on "Operations Center" in the navigation bar and enter the "Template" tab.
+2. Click the "New Template" button.
+3. Enter the name, description, source, and icon of the template. Where,
+    - Source: An address compatible with the Terraform git type module source, refer to the [instructions](https://developer.hashicorp.com/terraform/language/modules/sources#module-sources).
+    - Icon: Pointing to an SVG or PNG icon's address.
+4. Click the "OK" button.
 
-1. 点击导航栏中的`运维中心`菜单，进入`模板`标签页。
-2. 点击`新建模板`按钮。
-3. 输入模板的名称、描述、来源和图标。其中，
-    - 来源：与Terraform git类型模块来源兼容的地址，参考[说明](https://developer.hashicorp.com/terraform/language/modules/sources#module-sources)。
-    - 图标：指向一个svg或png图标的地址。
-4. 点击`确定`按钮。
+## Editing a Template
 
-## 编辑模板
+1. Click on "Operations Center" in the navigation bar and enter the "Template" tab.
+2. Find the template you need to edit.
+3. Click the more operations button indicated by the thumbnail and select 'edit'.
+4. Modify the corresponding attribute values as per your need.
+5. Click the "OK" button.
 
-1. 点击导航栏中的`运维中心`菜单，进入`模板`标签页。
-2. 找到您需要编辑的模板。
-3. 点击缩略号表示的更多操作按钮，选择`编辑`操作。
-4. 按您的需要修改对应的属性值。
-5. 点击`确定`按钮。
+## Deleting a Template
 
-## 删除模板
+1. Click on "Operations Center" in the navigation bar and enter the "Template" tab.
+2. Select the template you need to delete.
+3. Click the "Delete" button.
+4. In the delete confirmation prompt, click the "OK" button.
 
-1. 点击导航栏中的`运维中心`菜单，进入`模板`标签页。
-2. 选中您需要删除的模板。
-3. 点击`删除`按钮。
-4. 在确认删除提示窗中点击`确定`按钮。
+## AI-assisted Template Creation
 
-## AI辅助的模板编写
+Seal can use OpenAI's GPT large language model capabilities to assist you in writing and submitting templates.
 
-Seal可以利用OpenAI的GPT大语言模型能力，辅助您编写和提交模板。
+> Note: Before using this feature, you first need to:
+> 1. Obtain OpenAI's API token and configure it in Seal's system settings.
+> 2. Create a version control connector.
 
-> 注意：在使用这一功能前，您首先需要：
-> 1. 取得OpenAI的API令牌并在Seal的系统设置中配置。
-> 2. 创建一个版本控制连接器。
+### Generating Templates Based on Natural Language Descriptions
 
-### 根据自然语言描述生成模板
+1. Click on "Operations Center" in the navigation bar and enter the "Template" tab.
+2. Click the "AI Write Template" button.
+3. In the text box, use natural language to describe the functionality of the template you need. You can select an example from the instance list in the top right corner.
+4. Click the "Generate" button.
 
-1. 点击导航栏中的`运维中心`菜单，进入`模板`标签页。
-2. 点击`AI编写模板`按钮。
-3. 在文本框中使用自然语言描述您需要的模板功能。您可以点击右上角的实例列表选择一个示例。
-4. 点击`生成`按钮。
+### Explaining the Functionality of Template Code
 
-### 解释模板代码的功能
+1. Click on "Operations Center" in the navigation bar and enter the "Template" tab.
+2. Click the "AI Write Template" button.
+3. After generating/writing the template code in the text box via AI, click the "Explain" button.
+4. Click the "OK" button to close the template explanation popup.
 
-1. 点击导航栏中的`运维中心`菜单，进入`模板`标签页。
-2. 点击`AI编写模板`按钮。
-3. 通过AI生成/在文本框中编写模板代码后，点击`解释`按钮。
-4. 点击`确定`按钮关闭模板解释弹窗。
+### Correcting Template Code
 
-### 对模板代码进行纠错
+1. Click on "Operations Center" in the navigation bar and enter the "Template" tab.
+2. Click the "AI Write Template" button.
+3. After generating/writing the template code in the text box via AI, click the "Correct" button.
+4. Review the repair instructions and consider the suggested repairs.
+5. Click "Accept Repair" in the top left corner to apply the repair suggestion, or "Abort Repair" to discard the repair suggestion.
 
-1. 点击导航栏中的`运维中心`菜单，进入`模板`标签页。
-2. 点击`AI编写模板`按钮。
-3. 通过AI生成/在文本框中编写模板代码后，点击`纠错`按钮。
-4. 查看修复说明，检阅提供的修复建议。
-5. 点击左上角的`接受修复`应用修复建议，或者`放弃修复`丢弃修复建议。
+### Submitting Written Template Code to Git Repository
 
-### 提交编写完成的模板代码到git代码仓库
-
-1. 点击导航栏中的`运维中心`菜单，进入`模板`标签页。
-2. 通过AI生成/在文本框中编写模板代码后，点击`创建PR`按钮。
-3. 选择可用的版本控制连接器。
-4. 选择代码仓库。
-5. 选择目标分支。
-6. 填写提交路径，即在代码仓库中存储该模板的文件夹路径。
-7. 点击`保存`按钮。
+1. Click on "Operations Center" in the navigation bar and enter the "Template" tab.
+2. After generating/writing the template code in the text box via AI, click the "Create PR" button.
+3. Select an available version control connector.
+4. Select a code repository.
+5. Select the target branch.
+6. Enter the submission path, that is, the folder path in the code repository where this template is stored.
+7. Click the "Save" button.

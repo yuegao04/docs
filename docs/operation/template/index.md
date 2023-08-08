@@ -2,17 +2,17 @@
 sidebar_position: 1
 ---
 
-# 模板
+# Template
 
-模板是预定义的服务框架或架构，它包含了一组相关的资源定义，输入以及输出。
+A template is a pre-defined service framework or architecture which includes a set of related resource definitions, inputs and outputs.
 
-## 类型
+## Type
 
-Seal当前支持的模板类型为Terraform module，存储于git代码仓库。
+Seal currently supports Terraform module as the template type which is stored in git code repositories.
 
-## 模板版本
+## Template version
 
-Seal支持在同一git代码树中管理多个版本的模板。模板版本需要使用语义化的版本号，通过以下目录结构放置：
+Seal supports managing multiple versions of templates within the same git code tree. Semantic versioning should be used for template versioning and placed in the following directory structure:
 ```shell
 <path-to-template>
 ├── 0.0.1
@@ -27,20 +27,19 @@ Seal支持在同一git代码树中管理多个版本的模板。模板版本需�
     └── variables.tf
 ```
 
-## 变量样式扩展
+## Variable style extension
 
-Seal在Terraform 变量的基础上扩展了样式定义，支持额外的属性描述变量的样式，有助于在用户界面上生成更加用户友好的表单。扩展样式通过HCL注释来定义。
+Seal has extended the Terraform variable definition to support additional attributes describing the variable style, which is useful in generating user-friendly forms on the user interface. The extended styles are defined by HCL annotations.
 
-| 属性名     | 类型   | 描述                 | 示例                                                 |
-|---------|------|--------------------|----------------------------------------------------|
-| label   | 字符串  | UI标签               | @label "Name"                                      |
-| group   | 字符串  | 分组                 | @group "基本信息"                                      |
-| options | 数组   | 选项列表               | @options ["NodePort","ClusterIP","LoadBalancer"]   |
-| show_if | 字符串  | 显示条件，当条件为真时才显示该变量  | @show_if "cluster_type=NodePort"                   |
-| hidden  | 布尔   | 是否在UI显示            | @hidden                                            |
+| Attribute Name | Type | Description | Example |
+|----------------|------|-------------|---------|
+| label | String | UI labels | @label "Name" |
+| group | String | Grouping | @group "Basic Information" |
+| options | Array | Option list| @options ["NodePort","ClusterIP","LoadBalancer"] |
+| show_if | String | Show condition, displays the variable only if the condition is true | @show_if "cluster_type=NodePort" |
+| hidden | Boolean | Whether to show on UI | @hidden |
 
-
-以下为变量扩展的示例
+The following is a sample for the variable extension:
 ```hcl
 # variables.tf
 
@@ -55,23 +54,23 @@ variable "limit_cpu" {
 }
 ```
 
-## 元数据变量
+## Metadata Variables
 
-Seal会提供以下元数据变量，当您在模板中声明匹配的变量名称的时候，Seal会在部署中注入元数据变量的值。
+Seal provides the following metadata variables. When you declare matching variable names in your template, Seal injects the values of the metadata variables during deployment.
 
-| 变量名                            | 类型  | 描述                                    | 
-|--------------------------------|-----|---------------------------------------|
-| seal_metadata_project_name     | 字符串 | 服务所属项目名称                              | 
-| seal_metadata_project_id       | 字符串 | 服务所属项目ID                              | 
-| seal_metadata_environment_name | 字符串 | 服务所属环境名称                              | 
-| seal_metadata_environment_id   | 字符串 | 服务所属环境ID                              | 
-| seal_metadata_service_name     | 字符串 | 服务名称                                  | 
-| seal_metadata_service_id       | 字符串 | 服务ID                                  | 
-| seal_metadata_namespace_name   | 字符串 | Seal管理的环境namesapce名称，在Kubernetes环境中可用 | 
+| Variable Name | Type | Description |
+|----------------|-----|-------------|
+| seal_metadata_project_name | String | Service project name |
+| seal_metadata_project_id | String | Service project ID |
+| seal_metadata_environment_name | String | Service environment name |
+| seal_metadata_environment_id | String | Service environment ID |
+| seal_metadata_service_name | String | Service name |
+| seal_metadata_service_id | String | Service ID |
+| seal_metadata_namespace_name | String | Name of the Seal-managed environment namespace, available in Kubernetes environments |
 
-## 输出
+## Outputs
 
-Seal会抓取Terraform文件中定义的输出，部署完成后，输出将显示在服务的输出页中。Seal支持抓取用户自定义访问URL，配置输出名称以`endpoint`为前缀（如下配置），Seal将会抓取这些输出作为`访问URL`展示。
+Seal will capture the outputs defined in the Terraform files. After deployment, outputs will be displayed on the service output page. Seal supports capturing custom Access URLs. Configure the output name to start with`endpoint` (as shown below), and these outputs will be captured by Seal and displayed as `Access URLs`.
 
 ```hcl
 output "endpoint_web" {

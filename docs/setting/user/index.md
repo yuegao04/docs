@@ -2,44 +2,44 @@
 sidebar_position: 1
 ---
 
-# 用户管理
+# User Management
 
-目前，系统提供3种系统用户角色，分别是**普通用户**，**平台工程师**及**管理员**。
+Currently, the system provides three types of system user roles, namely **ordinary users**, **platform engineers**, and **administrators**.
 
-- **普通用户**：可对项目级别的资源进行配置管理，例如，创建个人项目，授权个人项目给他人等。
-- **平台工程师**：可对全局级别的资源进行配置管理，例如，创建模板、配置全局变量、更改全局连接器等。
-- **管理员**：拥有系统的最高权限，除对系统资源进行配置管理外，还可以管理系统用户。
+- **Ordinary User**: Can configure project-level resources, such as creating personal projects, authorizing personal projects to others, etc.
+- **Platform Engineer**: Can configure global resources, such as creating templates, configuring global variables, changing global connectors, etc.
+- **Administrator**: Has the highest authority in the system and can manage system resources as well as system users.
 
-## 查看用户列表
+## View User List
 
-1. 点击左侧导航栏中的`系统设置`。
-2. 选择`用户管理`标签页，进入用户列表。
+1. Click `System Settings` in the left navigation bar.
+2. Select the `User Management` tab to enter the user list.
 
 ![user-list](/img/v0.3.0/settings/ss-user-list.png)
 
-> 注意：
-> - 仅支持管理员角色的用户操作。
+> Note:
+> - Only users with the administrator role are supported for this operation.
 
-## 创建用户
+## Create Users
 
-1. 进入用户管理页面，点击`新建用户`。
-2. 输入"名称"和"密码"，并选择"角色"，点击`确定`。
+1. Access the User Management page and click `New User`.
+2. Enter "Name" and "Password", select "Role", and click `Confirm`.
 
-> 提示：
-> - 也可通过点击密码输入框右侧图标快速生成随机密码。
+> Hint:
+> - You can also quickly generate a random password by clicking the icon on the right side of the password input box.
 
 ![user-create](/img/v0.3.0/settings/ss-user-create.png)
 
-## 查询用户
+## Query Users
 
-在搜索框内输入用户名，点击`查询`或输入回车，进行基于用户名的模糊查询。
+Enter the username in the search box, click `Search` or press Enter to perform a fuzzy search based on the username.
 
-## 修改用户
+## Modify Users
 
-1. 点击待修改用户行`修改`，选择更改"密码"或"角色"。
+1. Click on the row of the user to be modified and select `Modify`, choose to change the "Password" or "Role".
+  
+2. Click `Confirm` to complete the modification.
 
-2. 点击`确定`，完成修改。
+## Delete Users
 
-## 删除用户
-
-点击待删除用户行`删除`，并选择`确定`，完成删除。
+Click on the row of the user to be deleted and select `Delete`, then choose `Confirm` to complete the deletion.

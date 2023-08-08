@@ -2,45 +2,45 @@
 sidebar_position: 2
 ---
 
-# 配置管理
+# Configuration Management
 
-系统支持如下设置：
+The system supports the following settings:
 
-- `服务管理`：指Seal服务端的管理配置，通常是一些地址、参数、令牌的配置。为了保证系统的稳定性，用户应该保证这里的配置尽可能少的被修改。
-- `部署管理`：指Seal进行服务部署的管理配置。
-- `任务设置`：指Seal后台任务的执行配置。
+- `Service Management`: Refers to the management configuration of the Seal server, usually configurations of addresses, parameters, and tokens. To ensure system stability, users should aim to minimize modifications to these settings.
+- `Deployment Management`: Refers to the management configuration for Seal's service deployment.
+- `Task Settings`: Refers to the execution configuration of Seal's background tasks.
 
-## 查看系统配置列表
+## Viewing the System Configuration List
 
-1. 点击导航栏中的`系统设置`。
-2. 选择`配置管理`标签页，进入到配置列表。
+1. Click on `System Settings` in the navigation bar.
+2. Select the `Configuration Management` tab to enter the configuration list.
 
 ![system-configuration](/img/v0.3.0/settings/ss-config-svc.png)
 
-## 服务管理
+## Service Management
 
-- **基础设置**
-    - `服务器地址`：访问Seal服务的地址，通常在第一次登录Seal的UI时填入。
-    - `参与改进计划`开关：发送匿名数据，帮助seal提高产品质量和改善产品服务。您可以根据自身意愿，开启或关闭改进计划。
-- **增强管理**
-    - `OpenAI API令牌`：调用OpenAI API所需的令牌。
+- **Basic Settings**
+    - `Server Address`: The address for accessing Seal services, usually filled in when logging into Seal's UI for the first time.
+    - `Participate in Improvement Plan` Switch: Sends anonymous data to help Seal improve product quality and service. You can enable or disable the improvement plan according to your wishes.
+- **Enhanced Management**
+    - `OpenAI API Token`: The token required for calling the OpenAI API.
 
-## 部署管理
+## Deployment Management
 
-- **基础设置**
-    - `运行镜像`：Seal进行服务的部署时使用的镜像。
-- **代理设置**
-    - `HTTP_PROXY`：提供代理地址，代理非 TLS 的 HTTP 出站流量。作用于服务部署执行环境，默认同Seal server配置。
-    - `HTTPS_PROXY`：提供代理地址，代理 TLS 的 HTTP 出站流量。作用于服务部署执行环境，默认同Seal server配置。
-    - `ALL_PROXY`：提供代理地址，代理所有的出站流量。作用于服务部署执行环境，默认同Seal server配置。
-    - `NO_PROXY`：不代理匹配的域名和IP的出站流量，使用逗号分隔，支持CIDR和通配符域名，如`10.0.0.0/8,*.example.com`。作用于服务部署执行环境，默认同Seal server配置。
+- **Basic Settings**
+    - `Runtime Image`: The image used by Seal for service deployment.
+- **Proxy Settings**
+    - `HTTP_PROXY`: Provides a proxy address, proxying non-TLS HTTP outbound traffic. It applies to the service deployment execution environment, defaults to the same configuration as the Seal server.
+    - `HTTPS_PROXY`: Provides a proxy address, proxying TLS HTTP outbound traffic. It applies to the service deployment execution environment, defaults to the same configuration as the Seal server.
+    - `ALL_PROXY`: Provides a proxy address, proxying all outbound traffic. It applies to the service deployment execution environment, defaults to the same configuration as the Seal server.
+    - `NO_PROXY`: Does not proxy outbound traffic for matching domains and IPs. Separated by commas, supports CIDR and wildcard domain names, such as `10.0.0.0/8,*.example.com`. It applies to the service deployment execution environment, defaults to the same configuration as the Seal server.
 
-## 任务设置
+## Task Settings
 
-- **基础任务**
-    - `检查连接器状态`：定时检查连接器连通性，出厂设置是5分钟执行一次。
-    - `检查服务资源状态`：定时检查服务资源，出厂设置是1分钟执行一次。
-    - `检查服务依赖状态`：定时检查服务资源，出厂设置是30秒执行一次。
-- **FinOps任务**
-    - `标记服务资源`：定时标记服务资源，辅助完成使用成本的收集，出厂设置是2分钟执行一次。
-    - `收集使用成本`：定时收集已启用【成本分析】的 Kubernetes 集群的使用情况，出厂设置是1小时执行一次。
+- **Basic Task**
+    - `Check Connector Status`: Regularly checks the connectivity of the connectors, factory settings are set to execute once every 5 minutes.
+    - `Check Service Resource Status`: Regularly checks the service resources, factory settings are set to execute once every minute.
+    - `Check Service Dependency Status`: Regularly checks the service resources, factory settings are set to execute once every 30 seconds.
+- **FinOps Tasks**
+    - `Tag Service Resources`: Regularly tags service resources to assist in collecting usage costs, factory settings are to execute once every 2 minutes.
+    - `Collect Usage Costs`: Regularly gathers the usage data of the Kubernetes cluster where "Cost Analysis" is enabled, the factory settings are set to one execution per hour.

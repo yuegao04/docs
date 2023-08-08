@@ -2,60 +2,60 @@
 sidebar_position: 1
 ---
 
-# 变量
+# Variables
 
-Seal中的变量有以下层级：
+There are several levels of variables in Seal:
 
-- 环境变量：应用于某个环境
-- 项目变量：应用于某个项目
-- 全局变量：可应用于所有项目
+- Environment Variables: Applied to a specific environment
+- Project Variables: Applied to a specific project
+- Global Variables: Can be applied to all projects
 
-当不同层级下拥有同名称的变量时，依据以下**优先级**使用变量的值：**环境 > 项目 > 全局**。
+When variables with the same name exist at different levels, the value of the variable is used according to the following **priority**: **Environment > Project > Global**.
 
-## 查看变量列表
+## View Variable List
 
-### 全局变量
-1. 点击左侧导航栏中的`运维中心`菜单。
-2. 点击`全局变量`标签页，即可进行全局变量管理。
+### Global Variables
+1. Click on the `Operation Center` menu in the left navigation bar.
+2. Click on the `Global Variables` tab to manage global variables.
 
 ![var-global-list](/img/v0.3.0/opration/variable/op-var-global-list.png)
 
-### 项目变量
+### Project Variables
 
-1. 点击左侧导航栏中的`应用管理`。
-2. 通过顶层面包屑的项目下拉按钮选择项目。
-3. 点击`变量`标签页，即可进行该项目下的变量管理。
+1. Click on `Application Management` in the left navigation bar.
+2. Select the project using the project dropdown button at the top breadcrumb.
+3. Click on the `Variables` tab to manage the variables under this project.
 
 ![var-project-list](/img/v0.3.0/opration/variable/op-var-proj-list.png)
 
-### 环境变量
+### Environment Variables
 
-1. 点击左侧导航栏中的`应用管理`。
-2. 通过顶层面包屑的项目下拉按钮选择项目。
-3. 在`环境`标签页下，点击某个环境的名称，进入环境视图。
-4. 点击`变量`标签页，即可进行该环境下的变量管理。
+1. Click on `Application Management` in the left navigation bar.
+2. Select the project using the project dropdown button at the top breadcrumb.
+3. Under the `Environment` tab, click on the name of an environment to enter the environment view.
+4. Click on the `Variables` tab to manage the variables under this environment.
 
 ![var-environment-list](/img/v0.3.0/opration/variable/op-var-env-list.png)
 
-## 创建、更新变量
+## Create, Update Variables
 
-1. 进入变量列表页。
-2. 点击【新建变量】按钮，即可创建变量。
-3. 选择`是否敏感`。启用该选项时，变量的值保存后不可见。
+1. Enter the variable list page.
+2. Click on the 【New Variable】button to create a variable.
+3. Select `Sensitive`. If this option is enabled, the value of the variable cannot be seen after it is saved.
 
 ![var-create](/img/v0.3.0/opration/variable/op-var-create.png)
 
-4. 点击变量列表中的`编辑`操作按钮，可更新变量。
+4. Click on the `Edit` operation button in the variable list to update the variable.
 
 ![var-edit](/img/v0.3.0/opration/variable/op-var-edit.png)
 
-## 使用变量
+## Use Variables
 
-新建或编辑服务时，在模板配置中的输入框中输入`${var.变量名}`，即可使用相应的变量。
+When creating or editing a service, input `${var.variable name}` in the input box in the template configuration to use the corresponding variable.
 
 ![var-reference](/img/v0.3.0/opration/variable/op-var-ref.png)
 
-## 删除变量
+## Delete Variables
 
-1. 进入变量列表页。
-2. 选中要删除的变量，点击`删除`按钮，确认后可删除。
+1. Enter the variable list page.
+2. Select the variable to be deleted and click on the `Delete` button. Confirm to delete.

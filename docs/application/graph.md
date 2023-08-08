@@ -2,68 +2,67 @@
 sidebar_position: 4
 ---
 
-# 依赖图
+# Dependency Diagram
 
-您可以通过依赖图查看部署的服务和资源的拓扑结构。Seal提供了环境和服务两个级别的依赖图。
+You can view the topology of deployed services and resources through the dependency diagram. Seal provides dependency diagrams at two levels: environment and service.
 
-## 查看环境依赖图
+## View Environment Dependency Diagram
 
-### 环境依赖图
+### Environment Dependency Diagram
 
-环境依赖图包含了该环境下的所有服务和资源，以及它们之间的关系和部署状态。
+The Environment Dependency Diagram includes all services and resources in the environment, as well as their relationships and deployment status.
 
-1. 点击左侧导航栏中的`应用管理`，进入项目及环境。
-2. 点击`依赖图`标签页，查看环境依赖图。
+1. Click `Application Management` in the left navigation bar to enter the project and environment.
+2. Click the `Dependency Diagram` tab to view the environment dependency diagram.
 
-> 说明：依赖图中节点之间为"实现"和"继承"关系的子节点默认隐藏，可通过点击工具栏中的"显示子资源"图标进行展开。
+> Note: In the dependency diagram, sub-nodes that are "implemented" and "inherited" are hidden by default. They can be expanded by clicking on the "Show Sub-resources" icon in the toolbar.
 
 ![environment-graph](/img/v0.3.0/application/graph/app-graph-env.png)
-### 服务依赖图
+### Service Dependency Diagram
 
-服务依赖图展示了该服务下所有资源，以及它们之间的关系和部署状态。
+The Service Dependency Diagram displays all resources under the service, as well as their relationships and deployment status.
 
-1. 点击左侧导航栏中的`应用管理`，进入项目及环境，进入服务详情页。
-2. 在资源信息的`资源`标签页下，点击右侧方图标切换到图视角。
+1. Click `Application Management` in the left navigation bar, enter the project and environment, and go to the service details page.
+2. Under the `Resources` tab of resource information, click the icon on the right to switch to the diagram view.
 
 ![service-graph](/img/v0.3.0/application/graph/app-graph-svc.png)
 
-## 依赖图节点关系
+## Dependency Diagram Node Relations
 
-依赖图节点之间的关系分为三种：
+The relationships between nodes in the dependency diagram can be divided into three categories:
 
-- Composition：成分关系，用实线、箭头为菱形表示
-- Dependency：依赖关系，用虚线、V 形箭头表示
-- Realization：实现、继承关系，用点划线、三角箭头表示
+- Composition: A component relationship, represented by a solid line and a diamond arrow
+- Dependency: Denotes dependency, represented by a dashed line and a V-shaped arrow
+- Realization: Realization or inheritance, represented by a dotted line and a triangular arrow
 
 ![graph-legend](/img/v0.3.0/application/graph/app-graph-legend.png)
-## 关系图工具栏
+## Diagram Toolbar
 
-- 视图适中
-- 刷新视图
-- 全屏查看
-- 子节点显示、隐藏切换
+- View to scale
+- Refresh view
+- Full screen view
+- Toggle display or hide sub-nodes
 
 ![graph-toolbar](/img/v0.3.0/application/graph/app-graph-toolbar.png)
 
-## 高亮显示节点关系
+## Highlight Node Relationships
 
-鼠标悬浮在相应的图例上，依赖图对应的连接关系会高亮显示。
+Hovering the mouse over the corresponding legend, the corresponding connection relationship in the dependency diagram will be highlighted.
 
-下图为展示鼠标悬停在"依赖关系"图例上时，关系图高亮显示全部有依赖关系的节点。
+The figure below shows that when the mouse hovers on the "dependency relationship" legend, the relationship diagram highlights all nodes with a dependency relationship.
 
 ![graph-highlight](/img/v0.3.0/application/graph/app-graph-highlight.png)
 
-## 查看资源日志
+## View Resource Logs
 
-1. 在依赖图中，选择可进行日志操作的节点，点击节点方块左上角的图标，点击`日志`。
-2. 可以根据需求上下拉伸调节日志窗口的大小。
+1. In the dependency diagram, select a node that can perform log operations, click the icon in the upper left corner of the node square, and then click `Log`.
+2. You can adjust the size of the log window as needed by stretching it up and down.
 
 ![graph-log](/img/v0.3.0/application/graph/app-graph-log.png)
 
-## 访问资源终端
+## Access Resource Terminal
 
-1. 在依赖图中，选择可进行终端操作的节点，点击节点方块左上角的图标，点击`终端`。
-2. 可以根据需求上下拉伸调节终端窗口的大小。
+1. In the dependency diagram, select a node that can perform terminal operations, click the icon in the upper left corner of the node square, and then click `Terminal`.
+2. You can adjust the size of the terminal window as needed by stretching it up and down.
 
 ![graph-exec](/img/v0.3.0/application/graph/app-graph-exec.png)
-

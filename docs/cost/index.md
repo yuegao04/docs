@@ -2,37 +2,33 @@
 sidebar_position: 1
 ---
 
+# Cost Management
 
-# 成本管理
+Views are divided into two major types: **Built-in Views** and **User-defined Views**.
 
-视图分为**内置视图**和**用户自定义视图**两大类型。
+Among them, the built-in views includes `All Resources`, `Clusters`, and `Projects` 3 views.
 
-其中内置视图中包含了`所有资源`，`集群`，`项目` 3个视图。
+- `All Resources`: View the consumption trends of all resources, project consumption distribution, cluster consumption distribution, etc.
+- `Clusters`: View the consumption trend of the corresponding cluster, distribution of consumption by namespace, application consumption distribution, etc.
+- `Projects`: View the consumption trend of the corresponding project, application consumption distribution, etc.
 
-- `所有资源`：查看所有资源的消费趋势，项目消费分布，集群消费分布等。
-- `集群`：查看对应集群的消费趋势，命名空间消费分布，应用消费分布等。
-- `项目`：查看对应项目的消费趋势，应用消费分布等。
+## View Cost Analysis View
 
-## 查看成本分析视图
-
-1. 点击左侧导航栏中的`成本管理`。
-2. 点击`成本分析`标签页进入到成本分析视图。
+1. Click on `Cost Management` in the left navigation bar.
+2. Click on the `Cost Analysis` tab to enter the cost analysis view.
 
 ![cost-analysis](/img/v0.3.0/cost/cost-analysis.png)
 
-3. 您可以根据需求通过选择时间范围来查看特定时间段内的消费情况。
+3. You can view the consumption within a specific period by selecting a time range according to your needs.
 
 ![cost-perspective-timerange](/img/v0.3.0/cost/cost-perspective-timerange.png)
 
-> 注意：
+> Note: 
 >
-> 成本分析数据每小时同步一次，新增集群后请耐心等待成本数据的收集。
+> Cost analysis data is synchronized every hour. Please be patient and wait for the cost data to be collected after adding a cluster.
 
-## 切换成本分析视图
+## Switch Cost Analysis View
 
-可以通过点击下拉框，选择内置视图或用户自定义视图进行视图切换。
+You can switch views by clicking on the dropdown box and selecting either a built-in view or a user-defined view.
 
 ![cost-perspective-switch](/img/v0.3.0/cost/cost-perspective-switch.png)
-
-
-

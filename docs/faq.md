@@ -1,40 +1,40 @@
-# 常见问题
+# Frequently Asked Questions
 
-## Q1: 如何进行租户管理？
+## Q1: How to manage tenants?
 
-目前，系统的资源隔离基本单元是项目，即项目与项目之间不共享内部资源，例如项目下的服务。
+Currently, the basic unit of resource isolation in the system is the project, i.e., resources within projects do not share with each other, such as the services under the project.
 
-为此，系统提供以下2个级别共6种用户角色，帮助用户进行资源管理。
+To this end, the system provides the following 6 user roles at 2 levels to help users manage resources.
 
-- **系统级别**：通常是提供权限，管理全局级别的资源（例如，模板、全局变量、全局连接器等）、系统用户、个人项目等。
-  - **普通用户**：可对项目级别的资源进行配置管理，例如，创建个人项目，授权个人项目给他人等。
-  - **平台工程师**：可对全局级别的资源进行配置管理，例如，创建模板、配置全局变量、更改全局连接器等。
-  - **管理员**：拥有系统的最高权限，除对系统资源进行配置管理外，还可以管理系统用户。
+- **System level**: Typically provides permissions, manages global level resources (e.g., templates, global variables, global connectors, etc.), system users, personal projects, etc.
+  - **Ordinary user**: Can configure and manage project-level resources, such as creating personal projects, authorizing personal projects to others, etc.
+  - **Platform engineer**: Can configure and manage global level resources, such as creating templates, configuring global variables, changing global connectors, etc.
+  - **Administrator**: Has the highest authority in the system, and can manage system users in addition to configuring and managing system resources.
 
-- **项目级别**：通常是提供权限，管理项目级别的资源（例如，环境、服务、变量、连接器等）。
-  - **只读**：可对项目级别的资源进行只读操作。
-  - **成员**：可对项目级别的资源进行配置管理，例如，创建服务、配置变量、更改连接器等。
-  - **所用者**：拥有项目的最高权限，除了对项目资源进行配置管理外，还可以管理项目成员。管理员，通常是所有项目的所用者。
+- **Project level**: Typically provides permissions, manages project-level resources (e.g., environments, services, variables, connectors, etc.).
+  - **Read-only**: Can perform read-only operations on project-level resources.
+  - **Member**: Can configure and manage project-level resources, such as creating services, configuring variables, changing connectors, etc.
+  - **Owner**: Has the highest authority in the project, can manage project members in addition to configuring and managing project resources. Administrators are usually the owners of all projects.
 
-以上6种用户角色，可以支撑以下几种协作场景。
+These 6 user roles can support the following collaborative scenarios.
 
-1. "管理员"角色的用户，创建新的用户。
-2. "平台工程师"角色的用户，管理模板、全局变量及全局连接器。
-3. "普通用户"角色的用户，创建属于自己的项目。在项目下，创建环境并选择使用全局连接器。在环境下，创建服务并选择使用全局变量。
-4. 项目"所有者"可以把项目授权给另外一个用户，授权时可以指定为"只读"、"成员"或"所有者"。
+1. User with the "Administrator" role creates new users.
+2. User with the "Platform Engineer" role manages templates, global variables, and global connectors.
+3. User with the "Ordinary User" role creates their own projects. Under the project, create an environment and choose to use the global connector. Under the environment, create services and choose to use global variables.
+4. The "Owner" of the project can authorize the project to another user, and can specify "Read-only", "Member" or "Owner" when authorizing.
 
-## Q2: 如何加密数据信息？
+## Q2: How to encrypt data information?
 
-目前，系统对以下数据信息进行加密处理。
+Currently, the system encrypts the following data information.
 
-- "全局变量"或"项目变量"的值内容。
-- "全局连接器"或"项目连接器"的配置内容。
-- "配置设置"的值内容。
+- The value content of "Global Variables" or "Project Variables".
+- The configuration content of "Global Connectors" or "Project Connectors".
+- The value content of "Configuration Settings".
 
-用户可以在启动Seal实例时，通过环境变量来加密这些数据信息，以实现库内加密。
+Users can encrypt this data information through environment variables when starting a Seal instance to achieve encryption within the library.
 
-> 注意：
-> - 该配置只在初次启动Seal实例时生效，二次配置会导致系统启动失败。
+> Note:
+> - This configuration only takes effect when the Seal instance is started for the first time, and reconfiguration will cause the system to fail to start.
 
 ```shell
 # step 1: Get 128/256 bits key with OpenSSL.
@@ -43,7 +43,7 @@ openssl rand -hex 16
 # openssl rand -hex 32
 
 
-# step 2: Start Seal with the follwoing command.
+# step 2: Start Seal with the following command.
 
 sudo docker run -d --privileged --restart=always \
   -p 80:80 -p 443:443 \
@@ -52,21 +52,21 @@ sudo docker run -d --privileged --restart=always \
 
 ```
 
-目前仅支持使用 [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) [GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode) 模式，更多对称加密的支持，欢迎沟通联系。
+Currently only supports [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) [GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode) mode, for more symmetric encryption support, welcome to communicate and contact.
 
-## Q3: 如何修改日志级别？
+## Q3: How to modify the log level?
 
-目前，系统包含以下几个级别的日志：`debug`, `info`, `warning`, `error` 和 `fatal`。
+Currently, the system includes the following log levels: `debug`, `info`, `warning`, `error` and `fatal`.
 
-配置参数 `log-debug` 和 `log-verbosity` 用于控制Seal日志打印。参数 `log-debug` 配置为`true`将打印出所有级别的日志；配置为`false`，则打印出`info`, `warning`, `error` 和 `fatal`级别的日志。配置参数 `log-verbosity` 用于控制Seal日志 verbosity 的最高级别，将打印出所有低于该级别的日志。
+The configuration parameters `log-debug` and `log-verbosity` are used to control the printing of Seal logs. When `log-debug` is set to `true`, all levels of logs will be printed; when set to `false`, `info`, `warning`, `error` and `fatal` level logs will be printed. The configuration parameter `log-verbosity` is used to control the maximum verbosity level of the Seal log, and all logs below this level will be printed.
 
-在服务器启动时，通过添加配置参数可控制Seal日志打印。在服务器启动后，通过API可获取日志和动态修改日志配置。
+During server startup, the printing of Seal logs can be controlled by adding configuration parameters. After the server starts, logs can be obtained and the log configuration can be dynamically modified through the API.
 ```shell
-# 获取日志配置
+# Get log configuration
 curl -k 'https://localhost/debug/flags'
 
-# 修改日志配置
+# Modify log configuration
 curl --request PUT 'https://localhost/debug/flags?log-debug=true&log-verbosity=5'
 ```
-> 注意：
-> - 出于安全考虑，API 修改日志配置仅支持通过 `localhost` 访问。
+> Note:
+> - For security reasons, modifying the log configuration via the API is only supported through `localhost` access.

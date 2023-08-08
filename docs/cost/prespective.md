@@ -2,44 +2,43 @@
 sidebar_position: 2
 ---
 
+# Views
 
-# 视图
+## View List
 
-## 查看视图列表
-
-1. 点击导航栏中的`成本管理`->`视图`菜单进入到视图列表。
-2. 输入关键词可快速搜索相关视图。
+1. Click on `Cost Management` -> `Views` in the navigation bar to get to the view list.
+2. Enter keywords for a quick search of related views.
 
 ![cost-list](/img/v0.3.0/cost/cost-list.png)
 
-## 创建视图
+## Create a View
 
-1. 点击导航栏中的`成本管理`->`视图`菜单进入到视图列表。
-2. 点击`新建视图`，输入`名称`来标识您的自定义视图。这个名称应该是唯一的，以便您可以轻松地找到您的视图。
-3. 定义费用单元，费用单元是您希望在视图中跟踪的费用项目。通过`时间范围`，`费用来源`选定消费数据范围，通过`分组依据`，`粒度`选定跟踪项目。
-4. 公摊费用拆分规则，这些规则定义了如何将公共费用拆分到费用单元的不同项目中。通过`公摊费用来源`选定公摊数据范围，`分摊集群空闲费用`配置是否把空闲费用加入公摊，`分摊集群管理费用`配置是否把管理费用加入公摊，最后选择对应的`分摊方式`。
-5. 点击`保存`按钮即可保存您的自定义视图和配置。您就可以使用这个自定义视图来跟踪和管理您的费用。
+1. Click on `Cost Management` -> `Views` in the navigation bar to get to the view list.
+2. Click on `Create View`, enter a `Name` to identify your custom view. This name should be unique so that you can easily find your view.
+3. Define the cost units you want to track in the view. You can select the range of consumption data by `Time Range` and `Cost Source`, and choose the tracking items by `Group By` and `Granularity`.
+4. Define the cost-sharing rules. These rules determine how common costs are allocated to different items in the cost unit. You can select the range of shared data by `Shared Cost Source`, configure whether idle costs should be added to the shared costs by `Allocate Cluster Idle Costs`, manage whether costs should be added to the shared costs by `Allocate Cluster Management Costs`, and finally, select the corresponding `Allocation Method`.
+5. Click `Save` to save your custom view and configuration. You can now use this custom view to track and manage your costs.
 
 ![cost-create-perspective](/img/v0.3.0/cost/cost-perspective-create.png)
 
-## 编辑视图
+## Edit a View
 
-1. 点击导航栏中的`成本管理`->`视图`菜单进入到视图列表。
-2. 找到您需要编辑的视图，点击`编辑`操作。
-3. 按需要修改对应的费用单元定义，公摊费用拆分规则。
-4. 点击`保存`按钮即可完成修改。
+1. Click on `Cost Management` -> `Views` in the navigation bar to get to the view list.
+2. Find the view you want to edit and click on `Edit`.
+3. Modify the corresponding cost unit definition and cost-sharing rules as needed.
+4. Click `Save` to complete the modifications.
 
 ![cost-edit-perspective](/img/v0.3.0/cost/cost-perspective-edit.png)
 
-> 注：
-> 内置视图不可编辑。
+> Note:
+> Built-in views cannot be edited.
 
-## 删除视图
+## Delete a View
 
-1. 点击导航栏中的`成本管理`->`视图`菜单进入到视图列表。
-2. 勾选您需要删除的视图，点击`删除`操作即可完成删除。
+1. Click on `Cost Management` -> `Views` in the navigation bar to get to the view list.
+2. Select the view you want to delete and click on `Delete`.
 
 ![cost-del-perspective](/img/v0.3.0/cost/cost-perspective-del.png)
 
-> 注：
-> 内置视图不可删除。
+> Note:
+> Built-in views cannot be deleted.

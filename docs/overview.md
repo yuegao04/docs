@@ -2,25 +2,24 @@
 slug: /
 ---
 
+# Overview
 
-# 概览
+Seal is an application management software that helps users achieve application configuration management, infrastructure orchestration, environment management and cost management (FinOps), providing momentum for platform engineering.
 
-Seal是一款应用管理软件，可帮助用户实现应用配置管理、基础设施编排、环境管理及成本管理（FinOps），为平台工程提供动力。
+Seal's application management has the following features:
 
-Seal的应用管理具备如下特性：
+### Separation of Concerns
 
-### 关注点分离
+Application developers and operations engineers manage applications by assembling and through application modules, while platform and infrastructure operations engineers provide infrastructure capabilities and application module support, shielding and reducing the complexity of the infrastructure, achieving separation of concerns.
 
-应用研发和运维工程师通过应用模块组装并管理应用，平台及基础架构运维工程师提供基础设施能力和应用模块支持，屏蔽并降低基础设施复杂度，实现关注点分离。
+### Platform and Runtime Independence
 
-### 平台及运行时无关
+It provides diversified application runtime support, including cloud-native and traditional application deployment and management. The underlying platform is independent, supporting any Kubernetes cluster, public cloud or private cloud infrastructure, realizing multi-cloud, hybrid cloud unified deployment and management.
 
-多样化的应用运行时支持，包括云原生及传统应用部署与管理。底层平台无关，支持任意Kubernetes集群、公有云或者私有云基础设施，实现多云、混合云统一部署与管理。
+### Flexible Application and Configuration Management
 
-### 灵活的应用及配置管理
+Based on the service template, it provides flexible application definition capabilities at the upper layer, while supporting dynamic configuration overwriting and management capabilities in different environment instances of application deployment, reducing the burden of application deployment and management.
 
-基于服务模板提供上层灵活的应用定义能力，同时结合应用部署的不同环境实例支持动态的配置覆盖及管理能力，降低应用部署与管理负担。
+### Rich Open Source Ecosystem and Extensibility
 
-### 丰富的开源生态及扩展性
-
-底层模板以Terraform module为基础，进行扩展与增强，能够复用Terraform开源生态中的丰富能力实现各种资源的支持，同时具备强大的扩展能力，灵活满足企业的不同需求。
+The underlying template is based on the Terraform module, and is expanded and enhanced, able to reuse the rich capabilities in the Terraform open source ecosystem to support various resources, while having powerful extensibility, flexibly meeting the different needs of enterprises.

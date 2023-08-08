@@ -1,15 +1,15 @@
-# 标准部署
+# Standard Deployment 
 
-适用于PoC或测试场景。
+Suitable for PoC or test scenarios.
 
-> 前置条件：
-> - 资源不少于4CPU，8Gi内存的Linux服务器。
-> - 至少50GB的空余磁盘空间。
-> - 安装Docker，详细指引参考[Docker官方文档](https://docs.docker.com/)。
-> - 服务器开放80和443端口。
-> - 前往[官网](https://seal.io/trial.html)申请产品试用镜像。
+> Prerequisites: 
+> - A Linux server with no less than 4 CPUs and 8Gi memory.
+> - At least 50GB of free disk space.
+> - Docker installed, refer to [Docker's official documentation](https://docs.docker.com/) for detailed guidelines.
+> - The server has ports 80 and 443 open.
+> - Visit the [official website](https://seal.io/trial.html) to apply for a trial product image.
 
-使用 Docker Run 指令即可完成标准部署。
+Use the Docker Run command to complete the standard deployment.
 
 ```shell
 sudo docker run -d --privileged --restart=always \
@@ -17,19 +17,19 @@ sudo docker run -d --privileged --restart=always \
   <seal-container-image>
 ```
 
-## 配置TLS
+## Setting up TLS
 
-### 默认方式，使用系统（非公开受信）的自签证书
+### Default mode, using system (non-public trust) self-signed certificate
 
-由于HTTPs服务证书（链）由非公开受信的CA（Seal启动创建）签发，用户访问UI前需要在浏览器确认使用风险。
+Since the HTTPs service certificate (chain) is issued by a non-public trust CA (Seal startup created), users need to confirm the risks before accessing the UI in the browser.
 
-### 使用 [ACME](https://letsencrypt.org/docs/challenge-types) 挑战生成（公开受信）的证书
+### Using [ACME](https://letsencrypt.org/docs/challenge-types) challenge to generate (public trust) certificate
 
-通过 Let's Encrypt 服务来执行挑战，挑战成功后由 Let's Encrypt 颁发一个为期90天的 HTTPs 服务证书（链）。该证书（链）的续约工作，由 Seal 自动完成。
+Perform the challenge through the Let's Encrypt service, and let Let's Encrypt issue a 90-day HTTPs service certificate (chain) after the challenge is successful. The renewal of this certificate (chain) will be automatically completed by Seal.
 
-> 前置条件：
-> - 配置一个域名，使该域名能映射到部署Seal的Linux服务器，例如，`seal.mydomain.com`。
-> - 开放部署Seal的Linux服务器的80和443端口，并确保该服务器能够被Let's Encrypt服务访问。
+> Prerequisites: 
+> - Configure a domain name so that it can be mapped to the Linux server where Seal is deployed, such as `seal.mydomain.com`.
+> - Open ports 80 and 443 on the Linux server where Seal is deployed, and ensure the server can be accessed by Let's Encrypt service.
 
 ```shell
 sudo docker run -d --privileged --restart=always \
@@ -38,7 +38,7 @@ sudo docker run -d --privileged --restart=always \
  <seal-container-image>
 ```
 
-上述采用的是 [HTTP-01](https://letsencrypt.org/docs/challenge-types/#http-01-challenge) 挑战模式，如果**无法开放80端口**，将自动转为使用 [TLS-ALPN-01](https://letsencrypt.org/docs/challenge-types/#tls-alpn-01) 挑战模式。
+The above adopts the [HTTP-01](https://letsencrypt.org/docs/challenge-types/#http-01-challenge) challenge mode. If **port 80 cannot be opened**, it will automatically switch to using [TLS-ALPN-01](https://letsencrypt.org/docs/challenge-types/#tls-alpn-01) challenge mode.
 
 ```
 sudo docker run -d --privileged --restart=always \
@@ -47,13 +47,13 @@ sudo docker run -d --privileged --restart=always \
  <seal-container-image>
 ```
 
-### 使用自定义的证书
+### Using a Custom Certificate
 
-自定义的证书是指，使用公开受信或非公开受信的CA证书，签发的HTTPs服务证书（链）。
+A custom certificate refers to the HTTPs service certificate (chain) issued using a public trust or non-public trust CA certificate.
 
-> 前置条件：
-> - 在部署Seal的Linux服务器上准备证书文件，例如，在<PRIVATE_KEY_FILE>路径下放置用于HTTPs服务私钥PEM文件，在<CERT_FILE>路径下放置用于HTTPs服务证书（链）PEM文件。
-> - 如果有（非公开受信的）CA证书，请并置在<CERT_FILE>路径下的文件中，通常串联在HTTPs服务证书（链）后。
+> Prerequisites: 
+> - Prepare certificate files on the Linux server where Seal is deployed, for example, place the private key PEM file for the HTTPs service under the <PRIVATE_KEY_FILE> path, and place the HTTPs service certificate (chain) PEM file under the <CERT_FILE> path.
+> - If there is a (non-public trust) CA certificate, please also place it in the file under the <CERT_FILE> path, usually chained after the HTTPs service certificate (chain).
 
 ```shell
 sudo docker run -d --privileged --restart=always \
@@ -65,12 +65,12 @@ sudo docker run -d --privileged --restart=always \
   <seal-container-image>
 ```
 
-### 使用TLS终止
+### Using TLS termination
 
-[TLS 终止](https://en.wikipedia.org/wiki/TLS_termination_proxy)，通常由反向代理服务执行。
+[TLS Termination](https://en.wikipedia.org/wiki/TLS_termination_proxy) is generally executed by a reverse proxy service.
 
-> 注意：
-> - 反向代理服务到Seal的链路中可使用HTTP请求，并且强化Seal的会话Cookie`seal_session`为`Secure: true`以避免中间人攻击。
+> Note: 
+> - The link from the reverse proxy service to Seal can use HTTP requests and set Seal's session Cookie `seal_session` to `Secure: true` to avoid man-in-the-middle attacks.
 
 ```shell
 sudo docker run -d --privileged --restart=always \
@@ -79,11 +79,11 @@ sudo docker run -d --privileged --restart=always \
   <seal-container-image>
 ```
 
-## 配置数据库
+## Configuring the database
 
-Seal基于[PostgreSQL](https://www.postgresql.org/)关系型数据库实现数据存储。
+Seal uses the [PostgreSQL](https://www.postgresql.org/) relational database for data storage.
 
-默认情况下，Seal会在运行容器内启动一个 PostgresSQL 的实例，这非常便捷且易于使用，但可能面临使用数据的丢失。为此，用户可以在启动Seal时，提供外部的PostgreSQL源，以避免使用数据的丢失。
+By default, Seal will start a PostgresSQL instance inside the running container, which is very convenient and easy to use, but you may face the loss of use data. Therefore, users can provide an external PostgreSQL source when starting Seal to avoid the loss of use data.
 
 ```shell
 # step 1: Start PostgreSQL with the following command.
@@ -101,9 +101,9 @@ sudo docker run -d --privileged --restart=always \
   <seal-container-image>
 ```
 
-## 配置HTTP代理
+## Configuring HTTP Proxy
 
-如果部署在网络隔离环境，并且可以通过代理访问外网，可以通过配置环境变量的方式设置代理。例如：
+If deployed in a network isolation environment and can access the Internet through a proxy, you can set the proxy by configuring environment variables. For example:
 ```shell
 sudo docker run -d --privileged --restart=always \
   -p 80:80 -p 443:443 \

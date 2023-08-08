@@ -2,87 +2,87 @@
 sidebar_position: 2
 ---
 
-# 环境
+# Environment
 
-环境是服务部署的目标。环境在项目下管理。
+The environment is the target of service deployment and is managed under the project.
 
-## 查看环境列表
+## View the Environment List
 
-1. 点击左侧导航栏中的`应用管理`，默认会进入第一个项目的视图。通过顶层面包屑可以切换项目。
-2. 在环境标签页即可查看该项目下的环境列表。
-3. 您可以在环境列表页的搜索框中输入关键词,快速搜索相关环境
+1. Click `Application Management` on the left navigation bar. By default, the first project view will be displayed. The project can be switched via the top-level breadcrumb.
+2. The environment list under this project can be viewed in the Environment tab.
+3. You can enter keywords in the search bar of the environment list page to quickly search for related environments.
 
-## 创建环境
+## Create an Environment
 
-1. 通过查看环境列表的操作进入列表页面。
-2. 点击`新建环境`，输入`名称`来标识您的环境。环境名称应该是唯一的,这样您可以轻易地在环境列表中找到该环境。
+1. Access the list page through the action of viewing the environment list.
+2. Click `New Environment`, enter the `name` to identify your environment. The environment name should be unique, so you can easily find it in the environment list.
 
 ![qs-create-env](/img/v0.3.0/quickstart/qs-create-env.png)
 
-3. 根据环境的实际情况，添加`环境标签`，`环境描述`。
-4. 添加连接器，点击`添加连接器`，选择环境使用的连接器，点击`确定`按钮。
-5. 点击`保存`按钮即可保存环境配置，您就可以在应用管理中使用这个环境了。
+3. Add `Environment tags` and `Environment description` based on the actual environment.
+4. Add a connector, click `Add Connector`, select the connector used in the environment, and finally click the `Confirm` button.
+5. Click the `Save` button to save the environment configuration, and then you can use this environment in Application Management.
 
 ![qs-create-env2](/img/v0.3.0/quickstart/qs-create-env2.png)
 
-## 编辑环境
+## Edit Environment
 
-1. 通过查看环境列表的操作进入列表页面。
-2. 选择需要编辑的环境点击编辑按钮。
-3. 根据需求修改环境的配置，添加或者删除连接器。
-4. 点击`保存`按钮即可保存环境配置。
+1. Access the list page through the action of viewing the environment list.
+2. Select the environment that you need to edit and click the Edit button.
+3. Modify the environment configuration as needed, and add or delete connectors.
+4. Click the `Save` button to save the environment configuration.
 
 ![app-env-edit](/img/v0.3.0/application/environment/app-env-edit.png)
 
-## 管理服务
+## Manage Services
 
-在环境中，您可以管理环境中的服务，包括添加服务，删除服务，修改服务配置等。
-1. 点击导航栏中的`应用管理`，切换到对应的项目，选择进入需要管理的环境。
-2. 在"服务"标签页，查看环境中的服务列表。
-3. 点击`新建服务`，选择需要添加的服务，填写相应信息，点击`保存`按钮即可完成添加服务。
-5. 点击服务列表中的`删除`操作，即可删除环境中的服务。
+Within the environment, you can manage the services, including adding services, deleting services, and modifying service configurations.
+1. Click `Application Management` in the navigation bar, switch to the corresponding project, and select the environment that needs to be managed.
+2. View the list of services in the environment under the "Services" tab.
+3. Click `New Service`, select the service that needs to be added, fill in the corresponding information, and click the `Save` button to complete the addition of services.
+4. Click the `Delete` operation in the service list to delete services in the environment.
 
-更多服务管理详情，请参见[服务](/application/service)。
+For more details on service management, please refer to [Services](/application/service).
 
-## 依赖图
+## Dependency Graph
 
-在环境中,不同的服务之间可以有依赖关系。您可以通过依赖图查看服务之间的依赖关系,同时也可以查看环境中所有的服务及其资源。在依赖图中，某些资源可以操作，通过资源卡片右上角进行更多操作。例如，您可以在依赖图中对资源查看日志或者执行终端任务。
+Within an environment, different services can have dependencies. The dependencies between services can be viewed through the dependency graph, and all services and their resources in the environment can also be viewed. In the dependency graph, some resources can be operated through the top-right corner of the resource card. For example, viewing logs or executing terminal tasks on resources in the dependency graph can be done.
 
-更多依赖图详情，请参见[依赖图](/application/graph)。
+For more detailed information on dependency graphs, please refer to [Dependency Graph](/application/graph).
 
 ![app-env-graph](/img/v0.3.0/application/environment/app-env-graph.png)
 
 ![app-env-graph-res](/img/v0.3.0/application/environment/app-env-graph-res.png)
 
-## 环境变量
+## Environment Variables
 
-环境变量是一种存储在环境中的键值对，可以在环境的服务中引用。 环境变量在创建或者编辑部署服务时，在配置模块中的相关参数时使用。当前环境的变量只能在当前环境中使用，不同环境的变量是相互独立的。
-> 如果项目或全局存在同名的变量,则环境中定义的变量值会覆盖项目或全局变量的值。
+Environment variables are key-value pairs stored in the environment and can be referenced in the services in the environment. Environment variables are used when creating or editing deployment services and when using related parameters in the configuration module. The variables in the current environment can only be used in the current environment, and the variables in different environments are independent of each other.
+> If a variable with the same name exists in the project or globally, the variable value defined in the environment will override the project or global variable value.
 
 ![app/env-var](/img/v0.3.0/application/environment/app-env-var.png)
 
-使用方法：在创建服务时，在需要使用变量的输入框中输入`${var.环境变量名称}`
+Usage: When creating a service, enter `${var.Environment Variable Name}` in the input box where the variable is needed.
 
-更多变量详情，请参见[变量](/operation/variable)。
+For more detailed information on variables, please refer to [Variables](/operation/variable).
 
-## 克隆环境
+## Clone Environment
 
-在某些场景下，您可能需要创建一个与现有环境相同的环境，这时您可以使用克隆环境功能。克隆环境可以根据现有环境的配置及服务，快速创建一个新的环境。
-1. 点击导航栏中的`应用管理`->`环境`菜单进入到环境列表。
-2. 在环境列表中选择需要克隆的环境，点击`克隆`操作。
+In some cases, you may need to create an environment that is identical to an existing one, in which case you can use the Clone Environment feature. Cloning an environment allows you to quickly create a new environment based on the configuration and services of the existing one.
+1. Click `Application Management` -> `Environment` on the navigation bar to enter the environment list.
+2. In the environment list, select the environment that needs to be cloned and click `Clone`.
 
 ![app-env-clone](/img/v0.3.0/application/environment/app-env-clone.png)
 
-3. 配置克隆环境的名称、描述、标签等信息,选择连接器。
-4. 根据需要修改克隆环境中服务的配置，点击选中服务，在弹窗中可修改服务配置，点击`确定`保存修改，然后点击`保存`按钮即可完成克隆环境。
+3. Configure the name, description, tags, etc., of the cloned environment, and select connectors.
+4. If needed, modify the configuration of services in the cloned environment. Click to select the service, modify the service configuration in the pop-up window, click `Confirm` to save the alteration, and then click `Save` to complete the cloning of the environment.
 
 ![app-env-clone-details](/img/v0.3.0/application/environment/app-env-clone-details.png)
 
-5. 克隆环境创建完成后，您可以在应用管理中使用这个环境了，被克隆的服务也会自动根据依赖关系自动编排部署，您可以在服务列表中查看服务的状态。
+5. Once the cloned environment is created, you can use this environment in Application Management. The cloned services will also be automatically deployed in sequence according to the dependencies, and you can view the service status in the service list.
 
 ![app-env-clone-deploy](/img/v0.3.0/application/environment/app-env-clone-deploy.png)
 
-## 删除环境
+## Delete Environment
 
-1. 点击导航栏中的`应用管理`->`环境`菜单进入到环境列表。
-2. 确保没有服务依赖于该环境后，勾选您需要删除的环境，点击`删除`操作即可完成删除。
+1. Click `Application Management` -> `Environment` in the navigation bar to enter the environment list.
+2. Ensure no services depend on this environment, select the environment you need to delete and click `Delete` to complete the deletion.
