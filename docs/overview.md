@@ -10,7 +10,7 @@ Seal's application management has the following features:
 
 ### Separation of Concerns
 
-Application developers and operations engineers manage applications by assembling and through application modules, while platform and infrastructure operations engineers provide infrastructure capabilities and application module support, shielding and reducing the complexity of the infrastructure, achieving separation of concerns.
+Platform and operations engineers bundle infrastructure capabilities into service templates, manage environments and integrations with external systems, while application developers manage applications by following the golden paths, shielding and reducing the complexity of the infrastructure, achieving separation of concerns.
 
 ### Platform and Runtime Independence
 
@@ -18,8 +18,8 @@ It provides diversified application runtime support, including cloud-native and 
 
 ### Flexible Application and Configuration Management
 
-Based on the service template, it provides flexible application definition capabilities at the upper layer, while supporting dynamic configuration overwriting and management capabilities in different environment instances of application deployment, reducing the burden of application deployment and management.
+Based on the service template, it provides flexible application definition capabilities at the upper layer, while supporting dynamic configuration overwriting and management capabilities in different environments, reducing the burden of application deployment and management.
 
 ### Rich Open Source Ecosystem and Extensibility
 
-The underlying template is based on the Terraform module, and is expanded and enhanced, able to reuse the rich capabilities in the Terraform open source ecosystem to support various resources, while having powerful extensibility, flexibly meeting the different needs of enterprises.
+Built on Terraform, and is able to reuse the rich capabilities in the Terraform open source ecosystem to support various resources, while having powerful extensibility, flexibly meeting the different needs of enterprises.

@@ -4,9 +4,9 @@ sidebar_position: 1
 
 # User Management
 
-Currently, the system provides three types of system user roles, namely **ordinary users**, **platform engineers**, and **administrators**.
+Currently, the system provides three types of system user roles, namely **general users**, **platform engineers**, and **administrators**.
 
-- **Ordinary User**: Can configure project-level resources, such as creating personal projects, authorizing personal projects to others, etc.
+- **General User**: Can configure project-level resources, such as creating personal projects, authorizing personal projects to others, etc.
 - **Platform Engineer**: Can configure global resources, such as creating templates, configuring global variables, changing global connectors, etc.
 - **Administrator**: Has the highest authority in the system and can manage system resources as well as system users.
 
@@ -30,7 +30,7 @@ Currently, the system provides three types of system user roles, namely **ordina
 
 ![user-create](/img/v0.3.0/settings/ss-user-create-en.png)
 
-## Query Users
+## Search Users
 
 Enter the username in the search box, click `Search` or press Enter to perform a fuzzy search based on the username.
 

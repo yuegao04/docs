@@ -19,11 +19,11 @@ Execute the following command to start Seal service:
 sudo docker run -d --privileged --restart=always -p 80:80 -p 443:443 --name seal <seal-container-image>
 ```
 
-For more deployment requirements, please refer to [deployment](/deploy/standalone).
+For more installation requirements, please refer to [installation](/deploy/standalone).
 
-## Access
+## Access UI
 
-1. Access Seal's UI through `https://<server-address>`.
+1. Access Seal UI through `https://<server-address>`.
 
 2. Login to Seal with the username `admin` and the initial administrator password, and set a new password and Seal's access address as prompted by the UI.
 
@@ -35,7 +35,7 @@ sudo docker logs seal 2>&1 | grep "Bootstrap Admin Password"
 
 ![qs-first-login](/img/v0.3.0/quickstart/qs-first-login-en.png)
 
-## Adding a Kubernetes cluster as the deployment target for applications
+## Adding a Kubernetes cluster as the deployment target
 
 > Prerequisites:
 > - A Kubernetes cluster.
@@ -88,4 +88,4 @@ sudo docker logs seal 2>&1 | grep "Bootstrap Admin Password"
 
 ![qs-res-exec](/img/v0.3.0/quickstart/qs-res-exec-en.png)
 
-Congratulations, you have completed the quick start for this section.
+Congratulations, you have completed the quick start guide.

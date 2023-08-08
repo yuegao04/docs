@@ -13,7 +13,7 @@ Suitable for PoC or test scenarios.
 > - The server has ports 80 and 443 open.
 > - Visit the [official website](https://seal.io/trial.html) to apply for a trial product image.
 
-Run the following Docker command for standalone installation.
+Run the following Docker command for standalone installation. For additional configuration, see following sessions.
 
 ```shell
 sudo docker run -d --privileged --restart=always \

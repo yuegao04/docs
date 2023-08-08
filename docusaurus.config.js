@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Seal 文档',
-  tagline: 'Dinosaurs are cool',
+  title: 'Seal Documentation',
+  tagline: 'Seal Documentation',
   url: 'https://seal-io.github.io',
   baseUrl: '/docs/',
   onBrokenLinks: 'throw',

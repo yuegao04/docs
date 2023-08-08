@@ -6,7 +6,7 @@ sidebar_position: 1
 
 > Note:
 >
-> - The system defaults to creating a "default" project, and assigns "ownership" to the admin user.
+> - Seal creates a "default" project on bootstrap, and assigns "ownership" to the admin user.
 > - The project names within the system are unique.
 
 ## View Project List
