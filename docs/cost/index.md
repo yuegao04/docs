@@ -17,11 +17,11 @@ Among them, the built-in views includes `All Resources`, `Clusters`, and `Projec
 1. Click on `Cost Management` in the left navigation bar.
 2. Click on the `Cost Analysis` tab to enter the cost analysis view.
 
-![cost-analysis](/img/v0.3.0/cost/cost-analysis.png)
+![cost-analysis](/img/v0.3.0/cost/cost-analysis-en.png)
 
 3. You can view the consumption within a specific period by selecting a time range according to your needs.
 
-![cost-perspective-timerange](/img/v0.3.0/cost/cost-perspective-timerange.png)
+![cost-perspective-timerange](/img/v0.3.0/cost/cost-perspective-timerange-en.png)
 
 > Note: 
 >
@@ -31,4 +31,4 @@ Among them, the built-in views includes `All Resources`, `Clusters`, and `Projec
 
 You can switch views by clicking on the dropdown box and selecting either a built-in view or a user-defined view.
 
-![cost-perspective-switch](/img/v0.3.0/cost/cost-perspective-switch.png)
+![cost-perspective-switch](/img/v0.3.0/cost/cost-perspective-switch-en.png)

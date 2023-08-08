@@ -33,7 +33,7 @@ For more deployment requirements, please refer to [deployment](/deploy/standalon
 sudo docker logs seal 2>&1 | grep "Bootstrap Admin Password"
 ```
 
-![qs-first-login](/img/v0.3.0/quickstart/qs-first-login.png)
+![qs-first-login](/img/v0.3.0/quickstart/qs-first-login-en.png)
 
 ## Adding a Kubernetes cluster as the deployment target for applications
 
@@ -46,46 +46,46 @@ sudo docker logs seal 2>&1 | grep "Bootstrap Admin Password"
 3. Click the `New Connector` button, and select `Kubernetes` type.
 4. Fill in the cluster name and KubeConfig file, and click save.
 
-![qs-add-connector](/img/v0.3.0/quickstart/qs-add-connector.png)
+![qs-add-connector](/img/v0.3.0/quickstart/qs-add-connector-en.png)
 
 ## Create Environment
 1. Click the `Environment` tab, and click the `New Environment` button.
 
-![qs-create-env](/img/v0.3.0/quickstart/qs-create-env.png)
+![qs-create-env](/img/v0.3.0/quickstart/qs-create-env-en.png)
 
 2. Enter the environment name, such as `dev`.
 3. Click `Add Connector` button, and select the Kubernetes connector added in the previous step.
 4. Click save.
 
-![qs-create-env2](/img/v0.3.0/quickstart/qs-create-env2.png)
+![qs-create-env2](/img/v0.3.0/quickstart/qs-create-env2-en.png)
 
 ## Deploy Service
 
 1. In the environment list page, click the environment name created in the previous step to enter the environment view.
 
-![qs-go2env](/img/v0.3.0/quickstart/qs-go2env.png)
+![qs-go2env](/img/v0.3.0/quickstart/qs-go2env-en.png)
 
 2. Click the `New Service` button.
 
-![qs-create-svc](/img/v0.3.0/quickstart/qs-create-svc.png)
+![qs-create-svc](/img/v0.3.0/quickstart/qs-create-svc-en.png)
 
 3. Fill in the service name, such as `myapp`, and make sure the template is selected as `webservice`.
 4. Enter `nginx` image in the Image Name of the template configuration, and click confirm.
 
-![qs-create-svc2](/img/v0.3.0/quickstart/qs-create-svc2.png)
+![qs-create-svc2](/img/v0.3.0/quickstart/qs-create-svc2-en.png)
 
 5. Click the `Save` button to complete the creation of the service.
 6. After the service deployment is complete, you can view resources, logs, execute terminal commands, access the address of this nginx service, etc.
 - View deployment logs.
 
-![qs-logs](/img/v0.3.0/quickstart/qs-logs.png)
+![qs-logs](/img/v0.3.0/quickstart/qs-logs-en.png)
 
 - View resource logs.
 
-![qs-res-logs](/img/v0.3.0/quickstart/qs-res-logs.png)
+![qs-res-logs](/img/v0.3.0/quickstart/qs-res-logs-en.png)
 
 - Open terminal.
 
-![qs-res-exec](/img/v0.3.0/quickstart/qs-res-exec.png)
+![qs-res-exec](/img/v0.3.0/quickstart/qs-res-exec-en.png)
 
 Congratulations, you have completed the quick start for this section.

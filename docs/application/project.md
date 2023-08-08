@@ -12,14 +12,14 @@ sidebar_position: 1
 ## View Project List
 Click `Application Management` on the navigation bar, then click the `Project` dropdown menu at the top, and click `Manage` to enter the project list.
 
-![app-proj-mgt](/img/v0.3.0/application/project/app-proj-mgt.png)
+![app-proj-mgt](/img/v0.3.0/application/project/app-proj-mgt-en.png)
 
 ## Create Projects
 
 1. Enter the project list.
 2. Click `Create New Project`, input the "Name" and "Description", and add "Tags".
 
-![app-proj-add](/img/v0.3.0/application/project/app-proj-add.png)
+![app-proj-add](/img/v0.3.0/application/project/app-proj-add-en.png)
 
 ## Enter Projects
 
@@ -27,11 +27,11 @@ You can enter projects in the following two ways:
 
 1. If you are in the "Project List", click the project name to enter the corresponding project page.
 
-![app-proj-view](/img/v0.3.0/application/project/app-proj-view.png)
+![app-proj-view](/img/v0.3.0/application/project/app-proj-view-en.png)
 
 2. If you are already in a specific project, click the `Project` dropdown menu at the top, select the project name to enter the corresponding project page.
 
-![app-proj-switch](/img/v0.3.0/application/project/app-proj-switch.png)
+![app-proj-switch](/img/v0.3.0/application/project/app-proj-switch-en.png)
 
 ## Search Projects
 
@@ -43,14 +43,14 @@ In the "Project List" page or the search box of the `Project` dropdown menu, ent
 2. Click `Edit` on the line of the project to be modified, select to change the "Name", "Description" or "Tags".
 3. Click `Save` to complete the modification.
 
-![app-proj-edit](/img/v0.3.0/application/project/app-proj-edit.png)
+![app-proj-edit](/img/v0.3.0/application/project/app-proj-edit-en.png)
 
 ## Delete Projects
 
 1. Enter the "Project List".
 2. Check the projects to be deleted, click `Delete`, and confirm deleting in the pop-up window, to complete the deletion.
 
-![app-proj-del](/img/v0.3.0/application/project/app-proj-del.png)
+![app-proj-del](/img/v0.3.0/application/project/app-proj-del-en.png)
 
 > Note:
 > - If there are still environments under the project, the deletion of the project will fail.
@@ -71,7 +71,7 @@ In the project view, click the `Connector` tab to perform [connector management]
 
 In the project view, click the `Members` tab to manage the members.
 
-![app-proj-member](/img/v0.3.0/application/project/app-proj-member.png)
+![app-proj-member](/img/v0.3.0/application/project/app-proj-member-en.png)
 
 ### Search Members
 
@@ -82,7 +82,7 @@ Enter the member (user) name, click `Search` to conduct a fuzzy search based on 
 1. In the `Members` tab, click `Add Member`.
 2. After `selecting the user` and `assigning the role`, click `Add` to complete the adding.
 
-![app-proj-member-add](/img/v0.3.0/application/project/app-proj-member-add.png)
+![app-proj-member-add](/img/v0.3.0/application/project/app-proj-member-add-en.png)
 
 Currently, the system provides 3 kinds of project user roles, which are **Read-Only**, **Member**, and **Owner**.
 
@@ -94,4 +94,4 @@ Currently, the system provides 3 kinds of project user roles, which are **Read-O
 
 Click `Delete` on the line of the member to be deleted, confirm deleting in the pop-up window, to complete the deletion.
 
-![app-proj-member-del](/img/v0.3.0/application/project/app-proj-member-del.png)
+![app-proj-member-del](/img/v0.3.0/application/project/app-proj-member-del-en.png)

@@ -15,7 +15,7 @@ The system supports the following settings:
 1. Click on `System Settings` in the navigation bar.
 2. Select the `Configuration Management` tab to enter the configuration list.
 
-![system-configuration](/img/v0.3.0/settings/ss-config-svc.png)
+![system-configuration](/img/v0.3.0/settings/ss-config-svc-en.png)
 
 ## Service Management
 

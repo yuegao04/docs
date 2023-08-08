@@ -17,7 +17,7 @@ The Environment Dependency Diagram includes all services and resources in the en
 
 > Note: In the dependency diagram, sub-nodes that are "implemented" and "inherited" are hidden by default. They can be expanded by clicking on the "Show Sub-resources" icon in the toolbar.
 
-![environment-graph](/img/v0.3.0/application/graph/app-graph-env.png)
+![environment-graph](/img/v0.3.0/application/graph/app-graph-env-en.png)
 ### Service Dependency Diagram
 
 The Service Dependency Diagram displays all resources under the service, as well as their relationships and deployment status.
@@ -25,7 +25,7 @@ The Service Dependency Diagram displays all resources under the service, as well
 1. Click `Application Management` in the left navigation bar, enter the project and environment, and go to the service details page.
 2. Under the `Resources` tab of resource information, click the icon on the right to switch to the diagram view.
 
-![service-graph](/img/v0.3.0/application/graph/app-graph-svc.png)
+![service-graph](/img/v0.3.0/application/graph/app-graph-svc-en.png)
 
 ## Dependency Diagram Node Relations
 
@@ -35,7 +35,7 @@ The relationships between nodes in the dependency diagram can be divided into th
 - Dependency: Denotes dependency, represented by a dashed line and a V-shaped arrow
 - Realization: Realization or inheritance, represented by a dotted line and a triangular arrow
 
-![graph-legend](/img/v0.3.0/application/graph/app-graph-legend.png)
+![graph-legend](/img/v0.3.0/application/graph/app-graph-legend-en.png)
 ## Diagram Toolbar
 
 - View to scale
@@ -43,7 +43,7 @@ The relationships between nodes in the dependency diagram can be divided into th
 - Full screen view
 - Toggle display or hide sub-nodes
 
-![graph-toolbar](/img/v0.3.0/application/graph/app-graph-toolbar.png)
+![graph-toolbar](/img/v0.3.0/application/graph/app-graph-toolbar-en.png)
 
 ## Highlight Node Relationships
 
@@ -51,18 +51,18 @@ Hovering the mouse over the corresponding legend, the corresponding connection r
 
 The figure below shows that when the mouse hovers on the "dependency relationship" legend, the relationship diagram highlights all nodes with a dependency relationship.
 
-![graph-highlight](/img/v0.3.0/application/graph/app-graph-highlight.png)
+![graph-highlight](/img/v0.3.0/application/graph/app-graph-highlight-en.png)
 
 ## View Resource Logs
 
 1. In the dependency diagram, select a node that can perform log operations, click the icon in the upper left corner of the node square, and then click `Log`.
 2. You can adjust the size of the log window as needed by stretching it up and down.
 
-![graph-log](/img/v0.3.0/application/graph/app-graph-log.png)
+![graph-log](/img/v0.3.0/application/graph/app-graph-log-en.png)
 
 ## Access Resource Terminal
 
 1. In the dependency diagram, select a node that can perform terminal operations, click the icon in the upper left corner of the node square, and then click `Terminal`.
 2. You can adjust the size of the terminal window as needed by stretching it up and down.
 
-![graph-exec](/img/v0.3.0/application/graph/app-graph-exec.png)
+![graph-exec](/img/v0.3.0/application/graph/app-graph-exec-en.png)

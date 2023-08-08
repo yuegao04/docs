@@ -15,14 +15,14 @@ Seal offers connectors on the following two levels:
 1. Click on `Operation Center` in the left-hand sidebar.
 2. Click on the `Connectors` tab to view the connectors list.
 
-![connector-list](/img/v0.3.0/opration/connector/op-conn-list.png)
+![connector-list](/img/v0.3.0/opration/connector/op-conn-list-en.png)
 
 ### Project Connectors List
 
 1. Click on `Application Management` in the left-hand sidebar and select the appropriate project.
 2. Click on the `Connectors` tab to view the connectors list.
 
-![project-connector-list](/img/v0.3.0/application/project/app-proj-conn-list.png)
+![project-connector-list](/img/v0.3.0/application/project/app-proj-conn-list-en.png)
 
 ## Viewing Connector Details
 
@@ -35,12 +35,12 @@ Seal offers connectors on the following two levels:
 
 1. Click on `New Connector` in the connectors list and select `Kubernetes`.
 
-![connector-create](/img/v0.3.0/quickstart/qs-add-connector.png)
+![connector-create](/img/v0.3.0/quickstart/qs-add-connector-en.png)
 
 2. `Enable Cost Analysis` is turned on by default. Once enabled, you can create related views in the `Cost Management` menu on the left-hand side to view the related expense statistics.
 3. Fill out the form. After `Save` is successful, the Kubernetes connector is created.
    
-![connector-create-k8s](/img/v0.3.0/opration/connector/op-conn-create-k8s.png)
+![connector-create-k8s](/img/v0.3.0/opration/connector/op-conn-create-k8s-en.png)
 
 ### Creating a Cloud Vendor Connector
 
@@ -48,7 +48,7 @@ Seal offers connectors on the following two levels:
 2. Configure `Name`, `Type`, `AccessKey`, `SecretKey`, `Region` connections.
 3. Fill out the form. After `Save` is successful, the cloud vendor is created.
 
-![connector-create-cloud](/img/v0.3.0/opration/connector/op-conn-create-cloud.png)
+![connector-create-cloud](/img/v0.3.0/opration/connector/op-conn-create-cloud-en.png)
 
 ### Creating a Version Control Connector
 
@@ -56,7 +56,7 @@ Seal offers connectors on the following two levels:
 2. Choose the type. Currently supports GitHub, fill out the corresponding `Access token`. The permission to operate the repo needs to be turned on.
 3. Fill in the form. After `Save` is successful, the version control connector is created.
 
-![connector-create-vcs](/img/v0.3.0/opration/connector/op-conn-create-vcs.png)
+![connector-create-vcs](/img/v0.3.0/opration/connector/op-conn-create-vcs-en.png)
 
 ### Creating a Custom Connector
 
@@ -72,7 +72,7 @@ provider "alicloud" {
 }
 ```
 
-![connector-create-custom](/img/v0.3.0/opration/connector/op-conn-create-custom.png)
+![connector-create-custom](/img/v0.3.0/opration/connector/op-conn-create-custom-en.png)
 ## Deleting a Connector
 
 1. Click on `Operation Center` -> `Connectors` in the left-hand sidebar to go to the connectors list.
@@ -80,7 +80,7 @@ provider "alicloud" {
 3. Ensure that no environment depends on this connector before selecting the connector you want to delete, then click the `Delete` button.
 5. Click the `Confirm` button to complete the deletion.
 
-![connector-delete](/img/v0.3.0/opration/connector/op-conn-del.png)
+![connector-delete](/img/v0.3.0/opration/connector/op-conn-del-en.png)
 
 ## Usage
 

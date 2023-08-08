@@ -15,7 +15,7 @@ Currently, the system provides three types of system user roles, namely **ordina
 1. Click `System Settings` in the left navigation bar.
 2. Select the `User Management` tab to enter the user list.
 
-![user-list](/img/v0.3.0/settings/ss-user-list.png)
+![user-list](/img/v0.3.0/settings/ss-user-list-en.png)
 
 > Note:
 > - Only users with the administrator role are supported for this operation.
@@ -28,7 +28,7 @@ Currently, the system provides three types of system user roles, namely **ordina
 > Hint:
 > - You can also quickly generate a random password by clicking the icon on the right side of the password input box.
 
-![user-create](/img/v0.3.0/settings/ss-user-create.png)
+![user-create](/img/v0.3.0/settings/ss-user-create-en.png)
 
 ## Query Users
 
