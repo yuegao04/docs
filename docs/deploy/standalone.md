@@ -1,4 +1,8 @@
-# Standard Deployment 
+---
+sidebar_position: 1
+---
+
+# Standalone Installation
 
 Suitable for PoC or test scenarios.
 
@@ -9,7 +13,7 @@ Suitable for PoC or test scenarios.
 > - The server has ports 80 and 443 open.
 > - Visit the [official website](https://seal.io/trial.html) to apply for a trial product image.
 
-Use the Docker Run command to complete the standard deployment.
+Run the following Docker command for standalone installation.
 
 ```shell
 sudo docker run -d --privileged --restart=always \

@@ -1,14 +1,14 @@
 {
   "item.label.User Docs": {
-    "message": "User Docs",
+    "message": "用户文档",
     "description": "Navbar item with label User Docs"
   },
   "item.label.API Docs": {
-    "message": "API Docs",
+    "message": "API文档",
     "description": "Navbar item with label API Docs"
   },
   "item.label.CLI Docs": {
-    "message": "CLI Docs",
+    "message": "CLI文档",
     "description": "Navbar item with label CLI Docs"
   }
 }

@@ -1,15 +1,19 @@
-# High Availability Deployment
+---
+sidebar_position: 2
+---
 
-Applicable for production scenarios.
+# 高可用部署
 
-> Prerequisites:
-> - A Kubernetes cluster is required as the runtime cluster.
-> - A Linux server with at least 4 CPU cores, 8Gi memory.
-> - At least 50GB of free disk space.
-> - Ports 80 and 443 are opened on the server.
-> - Visit the [official website](https://seal.io/trial.html) to apply for a trial product image.
+适用于生产场景。
 
-You can fill in the following YAML with relevant information and use the Kubectl Apply command to complete the High Availability Deployment.
+> 前置条件：
+> - 提供Kubernetes集群作为运行集群。
+> - 资源不少于4CPU，8Gi内存的Linux服务器。
+> - 至少50GB的空余磁盘空间。
+> - 服务器开放80和443端口。
+> - 前往[官网](https://seal.io/trial.html)申请产品试用镜像。
+
+填充以下 YAML 的待填内容，使用 Kubectl Apply 指令即可完成高可用部署。
 
 ```shell
 export TRYSEAL_PASSWORD=""; cat <<EOF | kubectl apply -f -
@@ -619,21 +623,21 @@ spec:
 EOF
 ```
 
-## Configuring TLS
+## 配置TLS
 
-### Default method, using TLS termination
+### 默认方式，使用 TLS 终止
 
-[TLS termination](https://en.wikipedia.org/wiki/TLS_termination_proxy) is usually performed by a reverse proxy service, that is, the Ingress Service of the cluster provides the TLS service.
+[TLS 终止](https://en.wikipedia.org/wiki/TLS_termination_proxy)，通常由反向代理服务执行，即集群的 Ingress Service 提供TLS服务。
 
-> Note:
-> - The reverse proxy service can use HTTP requests to Seal, and you should set Seal's session cookie `seal_session` to `Secure: true` to prevent man-in-the-middle attacks.
+> 注意：
+> - 反向代理服务到Seal的链路中可使用HTTP请求，并且强化Seal的会话Cookie`seal_session`为`Secure: true`以避免中间人攻击。
 
 
-### Using a self-signed system certificate (non-publicly trusted)
+### 使用系统（非公开受信）的自签证书
 
-As the HTTPs service certificate (chain) is issued by a non-publicly trusted CA (created by Seal), users need to confirm the usage risk before accessing the UI.
+由于HTTPs服务证书（链）由非公开受信的CA（Seal启动创建）签发，用户访问UI前需要在浏览器确认使用风险。
 
-1. Use Kubectl Apply to add a NodePort type Service.
+1. 使用 Kubectl Apply 添加NodePort类型的Service。
 
 ```shell
 cat <<EOF | kubectl apply -f -
@@ -664,36 +668,36 @@ spec:
 EOF
 ```
 
-2. Use Kubectl Patch to modify the TLS option in Secret.
+2. 使用 Kubectl Patch 修改Secret里的TLS开关。
 
 ```shell
 kubectl -n seal-system patch secret seal --type='json' -p='[{"op":"replace","path":"/data/enable_tls","value":"dHJ1ZQ=="}]'
 ```
 
-3. Use Kubectl Delete to delete Ingress.
+3. 使用 Kubectl Delete 删除Ingress。
 
 ```shell
 kubectl -n seal-system delete ingress seal
 ```
 
-4. Use Kubectl Rollout to restart AppManager.
+4. 使用 Kubectl Rollout 重启 AppManager。
 
 ```shell
 kubectl -n seal-system rollout restart deployment/app-manager
 ```
 
-### Use [ACME](https://letsencrypt.org/docs/challenge-types) to generate a publicly trusted certificate
+### 使用 [ACME](https://letsencrypt.org/docs/challenge-types) 挑战生成（公开受信）的证书
 
-> Note:
-> - If the cluster can perform ACME challenges at the Ingress Controller level via CertManager, please refer to "Using TLS Termination".
+> 注意：
+> - 如果集群可以通过 CertManager 在 Ingress Controller 的层面进行 ACME 挑战，请参考"使用TLS终止"。
 
-You can use Let's Encrypt service to perform the challenges. After successful challenges, Let's Encrypt issues a 90-day HTTPs service certificate (chain). The renewal of this certificate (chain) is performed by Seal automatically.
+通过 Let's Encrypt 服务来执行挑战，挑战成功后由 Let's Encrypt 颁发一个为期90天的 HTTPs 服务证书（链）。该证书（链）的续约工作，由 Seal 自动完成。
 
-> Prerequisites:
-> - The cluster should support the LoadBalancer type of Service.
-> - Provide a domain name, for example, `seal.mydomain.com`.
+> 前置条件：
+> - 集群支持 LoadBalancer 类型的 Service。
+> - 提供一个域名，例如，`seal.mydomain.com`。
 
-1. Use Kubectl Apply to add a LoadBalancer type of Service.
+1. 使用 Kubectl Apply 添加LoadBalancer类型的Service。
 
 ```shell
 cat <<EOF | kubectl apply -f -
@@ -724,7 +728,7 @@ spec:
 EOF
 ```
 
-2. Use the Kubectl Get command to wait for the LoadBalancer type of service to get an Ingress IP.
+2. 使用 Kubectl Get 指令等待LoadBalancer类型的Service获得一个Ingress IP。
 
 ```shell
 until [[ -n $(kubectl -n seal-system get service seal --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}") ]]; do :; done && \
@@ -732,36 +736,36 @@ until [[ -n $(kubectl -n seal-system get service seal --template="{{range .statu
 
 ```
 
-3. On the DNS configuration panel, add the above A Record pointing to the output IP address.
+3. 在DNS配置面板上，添加上述 A Record 指向上面输出的 IP 地址。
 
-4. Use Kubectl Patch to modify the TLS option in Secret.
+4. 使用 Kubectl Patch 修改Secret里的TLS开关。
 
 ```shell
 kubectl -n seal-system patch secret seal --type='json' -p='[{"op":"replace","path":"/data/enable_tls","value":"dHJ1ZQ=="}]'
 ```
 
-5. Use Kubectl Delete to delete Ingress.
+5. 使用 Kubectl Delete 删除Ingress。
 
 ```shell
 kubectl -n seal-system delete ingress seal
 ```
 
-6. Use Kubectl Patch to modify the environment variables of AppManager to respond to the ACME challenge.
+6. 使用 Kubectl Patch 修改AppManager的环境变量，以应答ACME挑战。
 
 ```shell
 export DNS_NAME=""; kubectl -n seal-system patch deployment app-manager --type json -p "[{\"op\":\"add\",\"path\":\"/spec/template/spec/containers/0/env/-\",\"value\":{\"name\":\"SERVER_TLS_AUTO_CERT_DOMAINS\",\"value\":\"${DNS_NAME}\"}}]"
 ```
 
-### Using a custom certificate
+### 使用自定义的证书
 
-A custom certificate is an HTTPs service certificate (chain) issued by a publicly trusted or non-publicly trusted CA certificate.
+自定义的证书是指，使用公开受信或非公开受信的CA证书，签发的HTTPs服务证书（链）。
 
-> Prerequisites:
-> - Get the content of the HTTPS service private key PEM file, note it as PRIVATE_KEY_FILE_CONTENT.
-> - Get the content of the HTTPS service certificate (chain) PEM file, note it as CERT_FILE_CONTENT.
-> - If there is a (non-publicly trusted) CA certificate, get the corresponding PEM file content and concatenate it to CERT_FILE_CONTENT.
+> 前置条件：
+> - 获取HTTPs服务私钥PEM文件的内容，记作PRIVATE_KEY_FILE_CONTENT。
+> - 获取HTTPs服务证书（链）PEM文件的内容，记作CERT_FILE_CONTENT。
+> - 如果有（非公开受信的）CA证书，获取对应PEM文件的内容，串联到CERT_FILE_CONTENT后。
 
-1. Use the Kubectl Apply command to add a Secret with custom certificate content.
+1. 使用 Kubectl Apply 指令添加含有自定义证书内容的Secret。
 
 ```shell
 export PRIVATE_KEY_FILE_CONTENT=""; export CERT_FILE_CONTENT=""; cat <<EOF | kubectl apply -f -
@@ -783,42 +787,42 @@ stringData:
 EOF
 ```
 
-2. Use Kubectl Patch to modify the TLS option in Secret.
+2. 使用 Kubectl Patch 修改Secret里的TLS开关。
 
 ```shell
 kubectl -n seal-system patch secret seal --type='json' -p='[{"op":"replace","path":"/data/enable_tls","value":"dHJ1ZQ=="}]'
 ```
 
-3. Use Kubectl Delete to delete Ingress.
+3. 使用 Kubectl Delete 删除Ingress。
 
 ```shell
 kubectl -n seal-system delete ingress seal
 ```
 
-4. Use Kubectl Patch to modify the environment variables of AppManager to enable the custom certificate.
+4. 使用 Kubectl Patch 修改AppManager的环境变量，以启用自定义的证书。
 
 ```shell
 kubectl -n seal-system patch deployment app-manager --type json \
 -p '[{"op":"add","path":"/spec/template/spec/containers/0/env/-","value":{"name":"SERVER_TLS_CERT_FILE","value":"/etc/seal/ssl/tls.crt"}},{"op":"add","path":"/spec/template/spec/containers/0/env/-","value":{"name":"SERVER_TLS_PRIVATE_KEY_FILE","value":"/etc/seal/ssl/tls.key"}}]'
 ```
 
-## Configuring the Database
+## 配置数据库
 
-Seal is based on the [PostgreSQL](https://www.postgresql.org/) relational database for data storage.
+Seal基于[PostgreSQL](https://www.postgresql.org/)关系型数据库实现数据存储。
 
-By default, Seal will run an instance of PostgresSQL within the running container, which is very convenient and easy to use, but may potentially lose data. Hence, users can provide an external PostgreSQL source while starting Seal to prevent data loss.
+默认情况下，Seal会在运行容器内启动一个 PostgresSQL 的实例，这非常便捷且易于使用，但可能面临使用数据的丢失。为此，用户可以在启动Seal时，提供外部的PostgreSQL源，以避免使用数据的丢失。
 
-> Note:
-> - The following commands override previous variables by repeatedly adding duplicate environment variables, which may receive a warning from Kubernetes.
+> 注意：
+> - 以下指令通过重复添加重名环境变量覆盖前序的变量，可能收到一个来自Kubernetes的警告提示。
 
-1. Use Kubectl Patch to modify the environment variables of IdentifyAccessManager to connect to the external data source.
+1. 使用 Kubectl Patch 修改IdentifyAccessManager的环境变量，以连接外部数据源。
 
 ```shell
 export DB_SOURCE=""; kubectl -n seal-system patch deployment identity-access-manager --type json \
 -p "[{\"op\":\"add\",\"path\":\"/spec/template/spec/initContainers/0/env/-\",\"value\":{\"name\":\"DB_SOURCE\",\"value\":\"${DB_SOURCE}\"}}]"
 ```
 
-2. Use Kubectl Patch to modify the environment variables of AppManager to connect to the external data source.
+2. 使用 Kubectl Patch 修改AppManager的环境变量，以连接外部数据源。
 
 ```shell
 export DB_SOURCE=""; kubectl -n seal-system patch deployment app-manager --type json \

@@ -4,31 +4,31 @@
     "description": "The label for version current"
   },
   "sidebar.docs.category.Installation": {
-    "message": "Installation",
+    "message": "部署",
     "description": "The label for category Installation in sidebar docs"
   },
   "sidebar.docs.category.Application Management": {
-    "message": "Application Management",
+    "message": "应用管理",
     "description": "The label for category Application Management in sidebar docs"
   },
   "sidebar.docs.category.Cost Management": {
-    "message": "Cost Management",
+    "message": "成本管理",
     "description": "The label for category Cost Management in sidebar docs"
   },
   "sidebar.docs.category.Operation Hub": {
-    "message": "Operation Hub",
+    "message": "运维中心",
     "description": "The label for category Operation Hub in sidebar docs"
   },
   "sidebar.docs.category.Templates": {
-    "message": "Templates",
+    "message": "模板",
     "description": "The label for category Templates in sidebar docs"
   },
   "sidebar.openapi.category.API Docs": {
-    "message": "API Docs",
+    "message": "API文档",
     "description": "The label for category API Docs in sidebar openapi"
   },
   "sidebar.openapi.category.API Docs.link.generated-index.title": {
-    "message": "API Docs",
+    "message": "API文档",
     "description": "The generated-index page title for category API Docs in sidebar openapi"
   },
   "sidebar.openapi.category.Connectors": {
@@ -544,15 +544,15 @@
     "description": "The label for category variable in sidebar cli"
   },
   "sidebar.cli.category.CLI Docs": {
-    "message": "CLI Docs",
+    "message": "CLI文档",
     "description": "The label for category CLI Docs in sidebar cli"
   },
   "sidebar.cli.category.CLI Docs.link.generated-index.title": {
-    "message": "CLI Docs",
+    "message": "CLI文档",
     "description": "The generated-index page title for category CLI Docs in sidebar cli"
   },
   "sidebar.docs.category.Settings": {
-    "message": "Settings",
+    "message": "设置",
     "description": "The label for category Settings in sidebar docs"
   }
 }
