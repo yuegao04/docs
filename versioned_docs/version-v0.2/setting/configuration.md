@@ -1,0 +1,46 @@
+---
+sidebar_position: 2
+---
+
+# Configuration Management
+
+The system supports the following settings:
+
+- `Service Management`: Refers to the management configuration of the Seal server, usually configurations of addresses, parameters, and tokens. To ensure system stability, users should aim to minimize modifications to these settings.
+- `Deployment Management`: Refers to the management configuration for Seal's service deployment.
+- `Task Settings`: Refers to the execution configuration of Seal's background tasks.
+
+## Viewing the System Configuration List
+
+1. Click on `System Settings` in the navigation bar.
+2. Select the `Configuration Management` tab to enter the configuration list.
+
+![system-configuration](/img/v0.3.0/settings/ss-config-svc-en.png)
+
+## Service Management
+
+- **Basic Settings**
+    - `Server Address`: The address for accessing Seal services, usually filled in when logging into Seal's UI for the first time.
+    - `Participate in Improvement Plan` Switch: Sends anonymous data to help Seal improve product quality and service. You can enable or disable the improvement plan according to your wishes.
+- **Enhanced Management**
+    - `OpenAI API Token`: The token required for calling the OpenAI API.
+
+## Deployment Management
+
+- **Basic Settings**
+    - `Runtime Image`: The image used by Seal for service deployment.
+- **Proxy Settings**
+    - `HTTP_PROXY`: Provides a proxy address, proxying non-TLS HTTP outbound traffic. It applies to the service deployment execution environment, defaults to the same configuration as the Seal server.
+    - `HTTPS_PROXY`: Provides a proxy address, proxying TLS HTTP outbound traffic. It applies to the service deployment execution environment, defaults to the same configuration as the Seal server.
+    - `ALL_PROXY`: Provides a proxy address, proxying all outbound traffic. It applies to the service deployment execution environment, defaults to the same configuration as the Seal server.
+    - `NO_PROXY`: Does not proxy outbound traffic for matching domains and IPs. Separated by commas, supports CIDR and wildcard domain names, such as `10.0.0.0/8,*.example.com`. It applies to the service deployment execution environment, defaults to the same configuration as the Seal server.
+
+## Task Settings
+
+- **Basic Task**
+    - `Check Connector Status`: Regularly checks the connectivity of the connectors, factory settings are set to execute once every 5 minutes.
+    - `Check Service Resource Status`: Regularly checks the service resources, factory settings are set to execute once every minute.
+    - `Check Service Dependency Status`: Regularly checks the service resources, factory settings are set to execute once every 30 seconds.
+- **FinOps Tasks**
+    - `Tag Service Resources`: Regularly tags service resources to assist in collecting usage costs, factory settings are to execute once every 2 minutes.
+    - `Collect Usage Costs`: Regularly gathers the usage data of the Kubernetes cluster where "Cost Analysis" is enabled, the factory settings are set to one execution per hour.
