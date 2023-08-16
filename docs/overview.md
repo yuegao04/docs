@@ -4,7 +4,7 @@ slug: /
 
 # Overview
 
-Walrus is an application management software that helps users achieve application configuration management, infrastructure orchestration, environment management and cost management (FinOps), providing momentum for platform engineering.
+Walrus is an application management software that helps users achieve application management, infrastructure orchestration, environment management and cost management (FinOps), providing momentum for platform engineering.
 
 Walrus's application management has the following features:
 
@@ -22,4 +22,10 @@ Based on the service template, it provides flexible application definition capab
 
 ### Rich Open Source Ecosystem and Extensibility
 
-Built on Terraform, and is able to reuse the rich capabilities in the Terraform open source ecosystem to support various resources, while having powerful extensibility, flexibly meeting the different needs of enterprises.
+It can integrate with a variety of tools such as Terraform, Helm, Kustomize, and more. By reusing the rich capabilities from the open-source ecosystems of Terraform and Kubernetes, it is highly extensible to meet the diverse needs of enterprises.
+
+## Architecture
+
+The architecture of Walrus is shown as below:
+
+![architecture](/img/architecture.png)
