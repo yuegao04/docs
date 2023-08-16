@@ -30,10 +30,10 @@ sidebar_position: 2
 
 ## AI-assisted Template Creation
 
-Seal can use OpenAI's GPT large language model capabilities to assist you in writing and submitting templates.
+Walrus can use OpenAI's GPT large language model capabilities to assist you in writing and submitting templates.
 
 > Note: Before using this feature, you first need to:
-> 1. Obtain OpenAI's API token and configure it in Seal's system settings.
+> 1. Obtain OpenAI's API token and configure it in Walrus's system settings.
 > 2. Create a version control connector.
 
 ### Generating Templates Based on Natural Language Descriptions

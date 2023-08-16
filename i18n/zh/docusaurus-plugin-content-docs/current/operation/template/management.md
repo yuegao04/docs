@@ -31,10 +31,10 @@ sidebar_position: 2
 
 ## AI辅助的模板编写
 
-Seal可以利用OpenAI的GPT大语言模型能力，辅助您编写和提交模板。
+Walrus可以利用OpenAI的GPT大语言模型能力，辅助您编写和提交模板。
 
 > 注意：在使用这一功能前，您首先需要：
-> 1. 取得OpenAI的API令牌并在Seal的系统设置中配置。
+> 1. 取得OpenAI的API令牌并在Walrus的系统设置中配置。
 > 2. 创建一个版本控制连接器。
 
 ### 根据自然语言描述生成模板

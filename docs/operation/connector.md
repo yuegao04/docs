@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Connectors
 
-Seal offers connectors on the following two levels:
+Walrus offers connectors on the following two levels:
 
 - Project Connectors: Applied to a specific project
 - Global Connectors: Can be applied to all projects

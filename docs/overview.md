@@ -4,9 +4,9 @@ slug: /
 
 # Overview
 
-Seal is an application management software that helps users achieve application configuration management, infrastructure orchestration, environment management and cost management (FinOps), providing momentum for platform engineering.
+Walrus is an application management software that helps users achieve application configuration management, infrastructure orchestration, environment management and cost management (FinOps), providing momentum for platform engineering.
 
-Seal's application management has the following features:
+Walrus's application management has the following features:
 
 ### Separation of Concerns
 

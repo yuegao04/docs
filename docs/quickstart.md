@@ -2,7 +2,7 @@
 
 > Note:
 > 
-> The current version of Seal is in alpha stage. Subsequent versions may introduce API changes that are not compatible.
+> The current version of Walrus is in alpha stage. Subsequent versions may introduce API changes that are not compatible.
 
 ## Deployment
 
@@ -11,26 +11,25 @@
 > - At least 50GB of free disk space.
 > - Docker installed, detailed guide refer to [the Docker official documentation](https://docs.docker.com/).
 > - Server ports 80 and 443 are open.
-> - Go to the [official website](https://seal.io/trial.html) to apply for a product trial image.
 
-Execute the following command to start Seal service:
+Execute the following command to start Walrus service:
 
 ```shell
-sudo docker run -d --privileged --restart=always -p 80:80 -p 443:443 --name seal <seal-container-image>
+sudo docker run -d --privileged --restart=always -p 80:80 -p 443:443 --name walrus sealio/walrus
 ```
 
 For more installation requirements, please refer to [installation](/deploy/standalone).
 
 ## Access UI
 
-1. Access Seal UI through `https://<server-address>`.
+1. Access Walrus UI through `https://<server-address>`.
 
-2. Login to Seal with the username `admin` and the initial administrator password, and set a new password and Seal's access address as prompted by the UI.
+2. Login to Walrus with the username `admin` and the initial administrator password, and set a new password and Walrus's access address as prompted by the UI.
 
 > The first time you log in, according to the UI prompt, run the following command on the server to get the initial administrator password.
 
 ```shell
-sudo docker logs seal 2>&1 | grep "Bootstrap Admin Password"
+sudo docker logs walrus 2>&1 | grep "Bootstrap Admin Password"
 ```
 
 ![qs-first-login](/img/v0.3.0/quickstart/qs-first-login-en.png)
@@ -38,8 +37,7 @@ sudo docker logs seal 2>&1 | grep "Bootstrap Admin Password"
 ## Adding a Kubernetes cluster as the deployment target
 
 > Prerequisites:
-> - A Kubernetes cluster.
-> - Seal server can access the Kubernetes API server.
+> - A Kubernetes cluster that can be accessed by Walrus server.
 
 1. Click the `Application Management` menu in the navigation bar to go to the `default` project view by default.
 2. Click the `Connectors` tab.

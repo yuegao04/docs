@@ -31,10 +31,10 @@ Currently, the system encrypts the following data information.
 - The configuration content of "Global Connectors" or "Project Connectors".
 - The value content of "Configuration Settings".
 
-Users can encrypt this data information through environment variables when starting a Seal instance to achieve encryption within the library.
+Users can encrypt this data information through environment variables when starting a Walrus instance to achieve encryption within the library.
 
 > Note:
-> - This configuration only takes effect when the Seal instance is started for the first time, and reconfiguration will cause the system to fail to start.
+> - This configuration only takes effect when the Walrus instance is started for the first time, and reconfiguration will cause the system to fail to start.
 
 ```shell
 # step 1: Get 128/256 bits key with OpenSSL.
@@ -43,12 +43,12 @@ openssl rand -hex 16
 # openssl rand -hex 32
 
 
-# step 2: Start Seal with the following command.
+# step 2: Start Walrus with the following command.
 
 sudo docker run -d --privileged --restart=always \
   -p 80:80 -p 443:443 \
   -e SERVER_DATA_SOURCE_DATA_ENCRYPTION=aesgcm:${the output from step 1} \
-  <seal-container-image>
+  sealio/walrus:<VERSION>
 
 ```
 
@@ -58,9 +58,9 @@ Currently only supports [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_
 
 Currently, the system includes the following log levels: `debug`, `info`, `warning`, `error` and `fatal`.
 
-The configuration parameters `log-debug` and `log-verbosity` are used to control the printing of Seal logs. When `log-debug` is set to `true`, all levels of logs will be printed; when set to `false`, `info`, `warning`, `error` and `fatal` level logs will be printed. The configuration parameter `log-verbosity` is used to control the maximum verbosity level of the Seal log, and all logs below this level will be printed.
+The configuration parameters `log-debug` and `log-verbosity` are used to control the printing of Walrus logs. When `log-debug` is set to `true`, all levels of logs will be printed; when set to `false`, `info`, `warning`, `error` and `fatal` level logs will be printed. The configuration parameter `log-verbosity` is used to control the maximum verbosity level of the Walrus log, and all logs below this level will be printed.
 
-During server startup, the printing of Seal logs can be controlled by adding configuration parameters. After the server starts, logs can be obtained and the log configuration can be dynamically modified through the API.
+During server startup, the printing of Walrus logs can be controlled by adding configuration parameters. After the server starts, logs can be obtained and the log configuration can be dynamically modified through the API.
 ```shell
 # Get log configuration
 curl -k 'https://localhost/debug/flags'

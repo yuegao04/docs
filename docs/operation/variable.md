@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Variables
 
-There are several levels of variables in Seal:
+There are several levels of variables in Walrus:
 
 - Environment Variables: Applied to a specific environment
 - Project Variables: Applied to a specific project

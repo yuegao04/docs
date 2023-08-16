@@ -6,9 +6,9 @@ sidebar_position: 2
 
 The system supports the following settings:
 
-- `Service Management`: Refers to the management configuration of the Seal server, usually configurations of addresses, parameters, and tokens. To ensure system stability, users should aim to minimize modifications to these settings.
-- `Deployment Management`: Refers to the management configuration for Seal's service deployment.
-- `Task Settings`: Refers to the execution configuration of Seal's background tasks.
+- `Service Management`: Refers to the management configuration of the Walrus server, usually configurations of addresses, parameters, and tokens. To ensure system stability, users should aim to minimize modifications to these settings.
+- `Deployment Management`: Refers to the management configuration for Walrus's service deployment.
+- `Task Settings`: Refers to the execution configuration of Walrus's background tasks.
 
 ## Viewing the System Configuration List
 
@@ -20,20 +20,20 @@ The system supports the following settings:
 ## Service Management
 
 - **Basic Settings**
-    - `Server Address`: The address for accessing Seal services, usually filled in when logging into Seal's UI for the first time.
-    - `Participate in Improvement Plan` Switch: Sends anonymous data to help Seal improve product quality and service. You can enable or disable the improvement plan according to your wishes.
+    - `Server Address`: The address for accessing Walrus server, usually filled in when logging into Walrus's UI for the first time.
+    - `Participate in Improvement Plan` Switch: Sends anonymous data to help Walrus improve product quality and service. You can enable or disable the improvement plan according to your wishes.
 - **Enhanced Management**
     - `OpenAI API Token`: The token required for calling the OpenAI API.
 
 ## Deployment Management
 
 - **Basic Settings**
-    - `Runtime Image`: The image used by Seal for service deployment.
+    - `Runtime Image`: The image used by Walrus for service deployment.
 - **Proxy Settings**
-    - `HTTP_PROXY`: Provides a proxy address, proxying non-TLS HTTP outbound traffic. It applies to the service deployment execution environment, defaults to the same configuration as the Seal server.
-    - `HTTPS_PROXY`: Provides a proxy address, proxying TLS HTTP outbound traffic. It applies to the service deployment execution environment, defaults to the same configuration as the Seal server.
-    - `ALL_PROXY`: Provides a proxy address, proxying all outbound traffic. It applies to the service deployment execution environment, defaults to the same configuration as the Seal server.
-    - `NO_PROXY`: Does not proxy outbound traffic for matching domains and IPs. Separated by commas, supports CIDR and wildcard domain names, such as `10.0.0.0/8,*.example.com`. It applies to the service deployment execution environment, defaults to the same configuration as the Seal server.
+    - `HTTP_PROXY`: Provides a proxy address, proxying non-TLS HTTP outbound traffic. It applies to the service deployment execution environment, defaults to the same configuration as the Walrus server.
+    - `HTTPS_PROXY`: Provides a proxy address, proxying TLS HTTP outbound traffic. It applies to the service deployment execution environment, defaults to the same configuration as the Walrus server.
+    - `ALL_PROXY`: Provides a proxy address, proxying all outbound traffic. It applies to the service deployment execution environment, defaults to the same configuration as the Walrus server.
+    - `NO_PROXY`: Does not proxy outbound traffic for matching domains and IPs. Separated by commas, supports CIDR and wildcard domain names, such as `10.0.0.0/8,*.example.com`. It applies to the service deployment execution environment, defaults to the same configuration as the Walrus server.
 
 ## Task Settings
 

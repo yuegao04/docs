@@ -45,7 +45,7 @@ For example, if the web service depends on the MySQL service, the web service ca
 
 ## Service Orchestration
 
-Service orchestration is a way to deploy multiple services together. Through orchestration, service dependencies can be implemented. In the orchestration, service dependencies and service deployment order can be defined. Depending on service dependency definitions, Seal will automatically deploy services in the order of dependencies. For example, when cloning or deleting multiple services in bulk, Seal will automatically create or delete services according to the order of orchestration.
+Service orchestration is a way to deploy multiple services together. Through orchestration, service dependencies can be implemented. In the orchestration, service dependencies and service deployment order can be defined. Depending on service dependency definitions, Walrus will automatically deploy services in the order of dependencies. For example, when cloning or deleting multiple services in bulk, Walrus will automatically create or delete services according to the order of orchestration.
 
 ## Rollback Service
 
@@ -78,7 +78,7 @@ Service orchestration is a way to deploy multiple services together. Through orc
 1. Enter the services tab of the environment view.
 2. Find the service you need to delete.
 3. Make sure no other service depends on this service, select the service you need to delete, click the `Delete` button.
-4. In the delete pop-up window, you can choose whether to clean up the resources of the service. If you uncheck `Clean up all resources`, the resources deployed by the service will be retained, but will no longer be managed by Seal.
+4. In the delete pop-up window, you can choose whether to clean up the resources of the service. If you uncheck `Clean up all resources`, the resources deployed by the service will be retained, but will no longer be managed by Walrus.
 5. Click the `OK` button to complete the deletion.
 
 ![app-svc-del](/img/v0.3.0/application/service/app-svc-del-en.png)

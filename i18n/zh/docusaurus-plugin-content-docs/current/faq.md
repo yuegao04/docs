@@ -31,10 +31,10 @@
 - "全局连接器"或"项目连接器"的配置内容。
 - "配置设置"的值内容。
 
-用户可以在启动Seal实例时，通过环境变量来加密这些数据信息，以实现库内加密。
+用户可以在启动Walrus实例时，通过环境变量来加密这些数据信息，以实现库内加密。
 
 > 注意：
-> - 该配置只在初次启动Seal实例时生效，二次配置会导致系统启动失败。
+> - 该配置只在初次启动Walrus实例时生效，二次配置会导致系统启动失败。
 
 ```shell
 # step 1: Get 128/256 bits key with OpenSSL.
@@ -43,12 +43,12 @@ openssl rand -hex 16
 # openssl rand -hex 32
 
 
-# step 2: Start Seal with the follwoing command.
+# step 2: Start Walrus with the follwoing command.
 
 sudo docker run -d --privileged --restart=always \
   -p 80:80 -p 443:443 \
   -e SERVER_DATA_SOURCE_DATA_ENCRYPTION=aesgcm:${the output from step 1} \
-  <seal-container-image>
+  sealio/walrus:<VERSION>
 
 ```
 
@@ -58,9 +58,9 @@ sudo docker run -d --privileged --restart=always \
 
 目前，系统包含以下几个级别的日志：`debug`, `info`, `warning`, `error` 和 `fatal`。
 
-配置参数 `log-debug` 和 `log-verbosity` 用于控制Seal日志打印。参数 `log-debug` 配置为`true`将打印出所有级别的日志；配置为`false`，则打印出`info`, `warning`, `error` 和 `fatal`级别的日志。配置参数 `log-verbosity` 用于控制Seal日志 verbosity 的最高级别，将打印出所有低于该级别的日志。
+配置参数 `log-debug` 和 `log-verbosity` 用于控制Walrus日志打印。参数 `log-debug` 配置为`true`将打印出所有级别的日志；配置为`false`，则打印出`info`, `warning`, `error` 和 `fatal`级别的日志。配置参数 `log-verbosity` 用于控制Walrus日志 verbosity 的最高级别，将打印出所有低于该级别的日志。
 
-在服务器启动时，通过添加配置参数可控制Seal日志打印。在服务器启动后，通过API可获取日志和动态修改日志配置。
+在服务器启动时，通过添加配置参数可控制Walrus日志打印。在服务器启动后，通过API可获取日志和动态修改日志配置。
 ```shell
 # 获取日志配置
 curl -k 'https://localhost/debug/flags'

@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Seal Documentation',
-  tagline: 'Seal Documentation',
+  title: 'Walrus Documentation',
+  tagline: 'Walrus Documentation',
   url: 'https://seal-io.github.io',
   baseUrl: '/docs/',
   onBrokenLinks: 'throw',

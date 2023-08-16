@@ -1,6 +1,6 @@
-# Seal Docs
+# Walrus Docs
 
-User documentations for Seal.
+User documentations for [Walrus](https://github.com/seal-io/walrus).
 
 ### Installation
 

@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Dependency Graph
 
-You can view the topology of deployed services and resources through the dependency graph. Seal provides dependency graphs at two levels: environment and service.
+You can view the topology of deployed services and resources through the dependency graph. Walrus provides dependency graphs at two levels: environment and service.
 
 ## Environment Dependency Graph
 

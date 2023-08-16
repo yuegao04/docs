@@ -11,63 +11,49 @@ Applicable for production scenarios.
 > - A Linux server with at least 4 CPU cores, 8Gi memory.
 > - At least 50GB of free disk space.
 > - Ports 80 and 443 are opened on the server.
-> - Visit the [official website](https://seal.io/trial.html) to apply for a trial product image.
 
 You can fill in the following YAML with relevant information and use the Kubectl Apply command to complete the High Availability Deployment.
 
 ```shell
-export TRYSEAL_PASSWORD=""; cat <<EOF | kubectl apply -f -
+cat <<EOF | kubectl apply -f -
 
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: seal-system
+  name: walrus-system
   labels:
-    "app.kubernetes.io/part-of": "seal"
+    "app.kubernetes.io/part-of": "walrus"
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  namespace: seal-system
-  name: seal
+  namespace: walrus-system
+  name: walrus
   labels:
-    "app.kubernetes.io/part-of": "seal"
+    "app.kubernetes.io/part-of": "walrus"
     "app.kubernetes.io/component": "entrance"
 spec:
   defaultBackend:
     service:
-      name: app-manager
+      name: walrus
       port:
         number: 80
 ---
 apiVersion: v1
 kind: Secret
 metadata:
-  namespace: seal-system
-  name: seal-dockerhub-credential
+  namespace: walrus-system
+  name: walrus
   labels:
-    "app.kubernetes.io/part-of": "seal"
-    "app.kubernetes.io/component": "configuration"
-type: kubernetes.io/dockerconfigjson
-stringData:
-  .dockerconfigjson: |
-    {"auths":{"https://index.docker.io/v1/":{"username":"tryseal","password":"${TRYSEAL_PASSWORD}"}}}
----
-apiVersion: v1
-kind: Secret
-metadata:
-  namespace: seal-system
-  name: seal
-  labels:
-    "app.kubernetes.io/part-of": "seal"
+    "app.kubernetes.io/part-of": "walrus"
     "app.kubernetes.io/component": "configuration"
 stringData:
   enable_tls: "false"
   db_driver: "postgres"
   db_user: "root"
   db_password: "Root123"
-  db_name: "seal"
+  db_name: "walrus"
 ---
 
 
@@ -77,7 +63,7 @@ stringData:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  namespace: seal-system
+  namespace: walrus-system
   name: database-script
 data:
   "init.sh": |
@@ -105,11 +91,11 @@ data:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: seal-system
+  namespace: walrus-system
   name: database
 spec:
   selector:
-    "app.kubernetes.io/part-of": "seal"
+    "app.kubernetes.io/part-of": "walrus"
     "app.kubernetes.io/component": "database"
   ports:
     - name: conn
@@ -119,10 +105,10 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  namespace: seal-system
+  namespace: walrus-system
   name: database
   labels:
-    "app.kubernetes.io/part-of": "seal"
+    "app.kubernetes.io/part-of": "walrus"
     "app.kubernetes.io/component": "database"
 spec:
   storageClassName: standard
@@ -135,10 +121,10 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: seal-system
+  namespace: walrus-system
   name: database
   labels:
-    "app.kubernetes.io/part-of": "seal"
+    "app.kubernetes.io/part-of": "walrus"
     "app.kubernetes.io/component": "database"
     "app.kubernetes.io/name": "postgres"
 spec:
@@ -147,13 +133,13 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      "app.kubernetes.io/part-of": "seal"
+      "app.kubernetes.io/part-of": "walrus"
       "app.kubernetes.io/component": "database"
       "app.kubernetes.io/name": "postgres"
   template:
     metadata:
       labels:
-        "app.kubernetes.io/part-of": "seal"
+        "app.kubernetes.io/part-of": "walrus"
         "app.kubernetes.io/component": "database"
         "app.kubernetes.io/name": "postgres"
     spec:
@@ -193,17 +179,17 @@ spec:
             - name: POSTGRES_USER
               valueFrom:
                 secretKeyRef:
-                  name: seal
+                  name: walrus
                   key: db_user
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: seal
+                  name: walrus
                   key: db_password
             - name: POSTGRES_DB
               valueFrom:
                 secretKeyRef:
-                  name: seal
+                  name: walrus
                   key: db_name
             - name: PGDATA
               value: /var/lib/postgresql/data/pgdata
@@ -249,7 +235,7 @@ spec:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  namespace: seal-system
+  namespace: walrus-system
   name: identity-access-manager-script
 data:
   "init.sh": |
@@ -286,11 +272,11 @@ data:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: seal-system
+  namespace: walrus-system
   name: identity-access-manager
 spec:
   selector:
-    "app.kubernetes.io/part-of": "seal"
+    "app.kubernetes.io/part-of": "walrus"
     "app.kubernetes.io/component": "identity-access-manager"
   ports:
     - name: http
@@ -300,23 +286,23 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: seal-system
+  namespace: walrus-system
   name: identity-access-manager
   labels:
-    "app.kubernetes.io/part-of": "seal"
+    "app.kubernetes.io/part-of": "walrus"
     "app.kubernetes.io/component": "identity-access-manager"
     "app.kubernetes.io/name": "casdoor"
 spec:
   replicas: 1
   selector:
     matchLabels:
-      "app.kubernetes.io/part-of": "seal"
+      "app.kubernetes.io/part-of": "walrus"
       "app.kubernetes.io/component": "identity-access-manager"
       "app.kubernetes.io/name": "casdoor"
   template:
     metadata:
       labels:
-        "app.kubernetes.io/part-of": "seal"
+        "app.kubernetes.io/part-of": "walrus"
         "app.kubernetes.io/component": "identity-access-manager"
         "app.kubernetes.io/name": "casdoor"
     spec:
@@ -333,22 +319,22 @@ spec:
             - name: DB_DRIVER
               valueFrom:
                 secretKeyRef:
-                  name: seal
+                  name: walrus
                   key: db_driver
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
-                  name: seal
+                  name: walrus
                   key: db_user
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: seal
+                  name: walrus
                   key: db_password
             - name: DB_NAME
               valueFrom:
                 secretKeyRef:
-                  name: seal
+                  name: walrus
                   key: db_name
             - name: DB_SOURCE
               value: \$(DB_DRIVER)://\$(DB_USER):\$(DB_PASSWORD)@database:5432/\$(DB_NAME)?sslmode=disable
@@ -410,26 +396,26 @@ spec:
 ---
 
 
-# App Manager
+# Walrus server
 #
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  namespace: seal-system
-  name: app-manager
+  namespace: walrus-system
+  name: walrus
   labels:
-    "app.kubernetes.io/part-of": "seal"
-    "app.kubernetes.io/component": "app-manager"
+    "app.kubernetes.io/part-of": "walrus"
+    "app.kubernetes.io/component": "walrus"
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  namespace: seal-system
-  name: app-manager
+  namespace: walrus-system
+  name: walrus
   labels:
-    "app.kubernetes.io/part-of": "seal"
-    "app.kubernetes.io/component": "app-manager"
+    "app.kubernetes.io/part-of": "walrus"
+    "app.kubernetes.io/component": "walrus"
 rules:
   - apiGroups:
       - "batch"
@@ -443,33 +429,40 @@ rules:
       - "secrets"
       - "pods"
       - "pods/log"
+      - "events"
+    verbs:
+      - "*"
+  - apiGroups:
+      - "coordination.k8s.io"
+    resources:
+      - "leases"
     verbs:
       - "*"
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  namespace: seal-system
-  name: app-manager
+  namespace: walrus-system
+  name: walrus
   labels:
-    "app.kubernetes.io/part-of": "seal"
-    "app.kubernetes.io/component": "app-manager"
+    "app.kubernetes.io/part-of": "walrus"
+    "app.kubernetes.io/component": "walrus"
 subjects:
   - kind: ServiceAccount
-    name: app-manager
+    name: walrus
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: app-manager
+  name: walrus
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  namespace: seal-system
-  name: app-manager
+  namespace: walrus-system
+  name: walrus
   labels:
-    "app.kubernetes.io/part-of": "seal"
-    "app.kubernetes.io/component": "app-manager"
+    "app.kubernetes.io/part-of": "walrus"
+    "app.kubernetes.io/component": "walrus"
 spec:
   storageClassName: standard
   accessModes:
@@ -481,12 +474,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: seal-system
-  name: app-manager
+  namespace: walrus-system
+  name: walrus
 spec:
   selector:
-    "app.kubernetes.io/part-of": "seal"
-    "app.kubernetes.io/component": "app-manager"
+    "app.kubernetes.io/part-of": "walrus"
+    "app.kubernetes.io/component": "walrus"
   sessionAffinity: ClientIP
   ports:
     - name: http
@@ -496,25 +489,25 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: seal-system
-  name: app-manager
+  namespace: walrus-system
+  name: walrus
   labels:
-    "app.kubernetes.io/part-of": "seal"
-    "app.kubernetes.io/component": "app-manager"
-    "app.kubernetes.io/name": "seal-server"
+    "app.kubernetes.io/part-of": "walrus"
+    "app.kubernetes.io/component": "walrus"
+    "app.kubernetes.io/name": "walrus-server"
 spec:
   replicas: 1
   selector:
     matchLabels:
-      "app.kubernetes.io/part-of": "seal"
-      "app.kubernetes.io/component": "app-manager"
-      "app.kubernetes.io/name": "seal-server"
+      "app.kubernetes.io/part-of": "walrus"
+      "app.kubernetes.io/component": "walrus"
+      "app.kubernetes.io/name": "walrus-server"
   template:
     metadata:
       labels:
-        "app.kubernetes.io/part-of": "seal"
-        "app.kubernetes.io/component": "app-manager"
-        "app.kubernetes.io/name": "seal-server"
+        "app.kubernetes.io/part-of": "walrus"
+        "app.kubernetes.io/component": "walrus"
+        "app.kubernetes.io/name": "walrus-server"
     spec:
       affinity:
         podAntiAffinity:
@@ -527,22 +520,20 @@ spec:
                     - key: "app.kubernetes.io/component"
                       operator: In
                       values:
-                        - "app-manager"
+                        - "walrus"
                     - key: "app.kubernetes.io/part-of"
                       operator: In
                       values:
-                        - "seal"
+                        - "walrus"
                     - key: "app.kubernetes.io/name"
                       operator: In
                       values:
-                        - "seal-server"
+                        - "walrus-server"
       restartPolicy: Always
-      serviceAccountName: app-manager
-      imagePullSecrets:
-        - name: seal-dockerhub-credential
+      serviceAccountName: walrus
       containers:
-        - name: seal-server
-          image: sealio/seal-server:main
+        - name: walrus-server
+          image: sealio/walrus:v0.3.0
           imagePullPolicy: Always
           resources:
             limits:
@@ -555,27 +546,27 @@ spec:
             - name: DB_DRIVER
               valueFrom:
                 secretKeyRef:
-                  name: seal
+                  name: walrus
                   key: db_driver
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
-                  name: seal
+                  name: walrus
                   key: db_user
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: seal
+                  name: walrus
                   key: db_password
             - name: DB_NAME
               valueFrom:
                 secretKeyRef:
-                  name: seal
+                  name: walrus
                   key: db_name
             - name: SERVER_ENABLE_TLS
               valueFrom:
                 secretKeyRef:
-                  name: seal
+                  name: walrus
                   key: enable_tls
             - name: SERVER_DATA_SOURCE_ADDRESS
               value: \$(DB_DRIVER)://\$(DB_USER):\$(DB_PASSWORD)@database:5432/\$(DB_NAME)?sslmode=disable
@@ -608,17 +599,17 @@ spec:
               path: /livez
           volumeMounts:
             - name: custom-tls
-              mountPath: /etc/seal/ssl
+              mountPath: /etc/walrus/ssl
             - name: data
-              mountPath: /var/run/seal
+              mountPath: /var/run/walrus
       volumes:
         - name: custom-tls
           secret:
-            secretName: seal-custom-tls
+            secretName: walrus-custom-tls
             optional: true
         - name: data
           persistentVolumeClaim:
-            claimName: app-manager
+            claimName: walrus
 
 EOF
 ```
@@ -630,12 +621,12 @@ EOF
 [TLS termination](https://en.wikipedia.org/wiki/TLS_termination_proxy) is usually performed by a reverse proxy service, that is, the Ingress Service of the cluster provides the TLS service.
 
 > Note:
-> - The reverse proxy service can use HTTP requests to Seal, and you should set Seal's session cookie `seal_session` to `Secure: true` to prevent man-in-the-middle attacks.
+> - The reverse proxy service can use HTTP requests to Walrus, and you should set Walrus's session cookie `walrus_session` to `Secure: true` to prevent man-in-the-middle attacks.
 
 
 ### Using a self-signed system certificate (non-publicly trusted)
 
-As the HTTPs service certificate (chain) is issued by a non-publicly trusted CA (created by Seal), users need to confirm the usage risk before accessing the UI.
+As the HTTPs service certificate (chain) is issued by a non-publicly trusted CA (created by Walrus), users need to confirm the usage risk before accessing the UI.
 
 1. Use Kubectl Apply to add a NodePort type Service.
 
@@ -646,15 +637,15 @@ cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: seal-system
-  name: seal
+  namespace: walrus-system
+  name: walrus
   labels:
-    "app.kubernetes.io/part-of": "seal"
+    "app.kubernetes.io/part-of": "walrus"
     "app.kubernetes.io/component": "entrance"
 spec:
   selector:
-    "app.kubernetes.io/part-of": "seal"
-    "app.kubernetes.io/component": "app-manager"
+    "app.kubernetes.io/part-of": "walrus"
+    "app.kubernetes.io/component": "walrus"
   sessionAffinity: ClientIP
   type: NodePort
   ports:
@@ -671,19 +662,19 @@ EOF
 2. Use Kubectl Patch to modify the TLS option in Secret.
 
 ```shell
-kubectl -n seal-system patch secret seal --type='json' -p='[{"op":"replace","path":"/data/enable_tls","value":"dHJ1ZQ=="}]'
+kubectl -n walrus-system patch secret walrus --type='json' -p='[{"op":"replace","path":"/data/enable_tls","value":"dHJ1ZQ=="}]'
 ```
 
 3. Use Kubectl Delete to delete Ingress.
 
 ```shell
-kubectl -n seal-system delete ingress seal
+kubectl -n walrus-system delete ingress walrus
 ```
 
-4. Use Kubectl Rollout to restart AppManager.
+4. Use Kubectl Rollout to restart Walrus.
 
 ```shell
-kubectl -n seal-system rollout restart deployment/app-manager
+kubectl -n walrus-system rollout restart deployment/walrus
 ```
 
 ### Use [ACME](https://letsencrypt.org/docs/challenge-types) to generate a publicly trusted certificate
@@ -691,11 +682,11 @@ kubectl -n seal-system rollout restart deployment/app-manager
 > Note:
 > - If the cluster can perform ACME challenges at the Ingress Controller level via CertManager, please refer to "Using TLS Termination".
 
-You can use Let's Encrypt service to perform the challenges. After successful challenges, Let's Encrypt issues a 90-day HTTPs service certificate (chain). The renewal of this certificate (chain) is performed by Seal automatically.
+You can use Let's Encrypt service to perform the challenges. After successful challenges, Let's Encrypt issues a 90-day HTTPs service certificate (chain). The renewal of this certificate (chain) is performed by Walrus automatically.
 
 > Prerequisites:
 > - The cluster should support the LoadBalancer type of Service.
-> - Provide a domain name, for example, `seal.mydomain.com`.
+> - Provide a domain name, for example, `walrus.mydomain.com`.
 
 1. Use Kubectl Apply to add a LoadBalancer type of Service.
 
@@ -706,15 +697,15 @@ cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: seal-system
-  name: seal
+  namespace: walrus-system
+  name: walrus
   labels:
-    "app.kubernetes.io/part-of": "seal"
+    "app.kubernetes.io/part-of": "walrus"
     "app.kubernetes.io/component": "entrance"
 spec:
   selector:
-    "app.kubernetes.io/part-of": "seal"
-    "app.kubernetes.io/component": "app-manager"
+    "app.kubernetes.io/part-of": "walrus"
+    "app.kubernetes.io/component": "walrus"
   sessionAffinity: ClientIP
   type: LoadBalancer
   ports:
@@ -731,8 +722,8 @@ EOF
 2. Use the Kubectl Get command to wait for the LoadBalancer type of service to get an Ingress IP.
 
 ```shell
-until [[ -n $(kubectl -n seal-system get service seal --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}") ]]; do :; done && \
-  kubectl get service seal -o=jsonpath='{.status.loadBalancer.ingress[0].ip}'
+until [[ -n $(kubectl -n walrus-system get service walrus --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}") ]]; do :; done && \
+  kubectl get service walrus -o=jsonpath='{.status.loadBalancer.ingress[0].ip}'
 
 ```
 
@@ -741,19 +732,19 @@ until [[ -n $(kubectl -n seal-system get service seal --template="{{range .statu
 4. Use Kubectl Patch to modify the TLS option in Secret.
 
 ```shell
-kubectl -n seal-system patch secret seal --type='json' -p='[{"op":"replace","path":"/data/enable_tls","value":"dHJ1ZQ=="}]'
+kubectl -n walrus-system patch secret walrus --type='json' -p='[{"op":"replace","path":"/data/enable_tls","value":"dHJ1ZQ=="}]'
 ```
 
 5. Use Kubectl Delete to delete Ingress.
 
 ```shell
-kubectl -n seal-system delete ingress seal
+kubectl -n walrus-system delete ingress walrus
 ```
 
-6. Use Kubectl Patch to modify the environment variables of AppManager to respond to the ACME challenge.
+6. Use Kubectl Patch to modify the environment variables of Walrus to respond to the ACME challenge.
 
 ```shell
-export DNS_NAME=""; kubectl -n seal-system patch deployment app-manager --type json -p "[{\"op\":\"add\",\"path\":\"/spec/template/spec/containers/0/env/-\",\"value\":{\"name\":\"SERVER_TLS_AUTO_CERT_DOMAINS\",\"value\":\"${DNS_NAME}\"}}]"
+export DNS_NAME=""; kubectl -n walrus-system patch deployment walrus --type json -p "[{\"op\":\"add\",\"path\":\"/spec/template/spec/containers/0/env/-\",\"value\":{\"name\":\"SERVER_TLS_AUTO_CERT_DOMAINS\",\"value\":\"${DNS_NAME}\"}}]"
 ```
 
 ### Using a custom certificate
@@ -774,10 +765,10 @@ export PRIVATE_KEY_FILE_CONTENT=""; export CERT_FILE_CONTENT=""; cat <<EOF | kub
 apiVersion: v1
 kind: Secret
 metadata:
-  namespace: seal-system
-  name: seal-custom-tls
+  namespace: walrus-system
+  name: walrus-custom-tls
   labels:
-    "app.kubernetes.io/part-of": "seal"
+    "app.kubernetes.io/part-of": "walrus"
     "app.kubernetes.io/component": "configuration"
 type: kubernetes.io/tls
 stringData:
@@ -790,27 +781,27 @@ EOF
 2. Use Kubectl Patch to modify the TLS option in Secret.
 
 ```shell
-kubectl -n seal-system patch secret seal --type='json' -p='[{"op":"replace","path":"/data/enable_tls","value":"dHJ1ZQ=="}]'
+kubectl -n walrus-system patch secret walrus --type='json' -p='[{"op":"replace","path":"/data/enable_tls","value":"dHJ1ZQ=="}]'
 ```
 
 3. Use Kubectl Delete to delete Ingress.
 
 ```shell
-kubectl -n seal-system delete ingress seal
+kubectl -n walrus-system delete ingress walrus
 ```
 
-4. Use Kubectl Patch to modify the environment variables of AppManager to enable the custom certificate.
+4. Use Kubectl Patch to modify the environment variables of Walrus to enable the custom certificate.
 
 ```shell
-kubectl -n seal-system patch deployment app-manager --type json \
--p '[{"op":"add","path":"/spec/template/spec/containers/0/env/-","value":{"name":"SERVER_TLS_CERT_FILE","value":"/etc/seal/ssl/tls.crt"}},{"op":"add","path":"/spec/template/spec/containers/0/env/-","value":{"name":"SERVER_TLS_PRIVATE_KEY_FILE","value":"/etc/seal/ssl/tls.key"}}]'
+kubectl -n walrus-system patch deployment walrus --type json \
+-p '[{"op":"add","path":"/spec/template/spec/containers/0/env/-","value":{"name":"SERVER_TLS_CERT_FILE","value":"/etc/walrus/ssl/tls.crt"}},{"op":"add","path":"/spec/template/spec/containers/0/env/-","value":{"name":"SERVER_TLS_PRIVATE_KEY_FILE","value":"/etc/walrus/ssl/tls.key"}}]'
 ```
 
 ## Configuring the Database
 
-Seal is based on the [PostgreSQL](https://www.postgresql.org/) relational database for data storage.
+Walrus is based on the [PostgreSQL](https://www.postgresql.org/) relational database for data storage.
 
-By default, Seal will run an instance of PostgresSQL within the running container, which is very convenient and easy to use, but may potentially lose data. Hence, users can provide an external PostgreSQL source while starting Seal to prevent data loss.
+By default, Walrus will run an instance of PostgresSQL within the running container, which is very convenient and easy to use, but may potentially lose data. Hence, users can provide an external PostgreSQL source while starting Walrus to prevent data loss.
 
 > Note:
 > - The following commands override previous variables by repeatedly adding duplicate environment variables, which may receive a warning from Kubernetes.
@@ -818,13 +809,13 @@ By default, Seal will run an instance of PostgresSQL within the running containe
 1. Use Kubectl Patch to modify the environment variables of IdentifyAccessManager to connect to the external data source.
 
 ```shell
-export DB_SOURCE=""; kubectl -n seal-system patch deployment identity-access-manager --type json \
+export DB_SOURCE=""; kubectl -n walrus-system patch deployment identity-access-manager --type json \
 -p "[{\"op\":\"add\",\"path\":\"/spec/template/spec/initContainers/0/env/-\",\"value\":{\"name\":\"DB_SOURCE\",\"value\":\"${DB_SOURCE}\"}}]"
 ```
 
-2. Use Kubectl Patch to modify the environment variables of AppManager to connect to the external data source.
+2. Use Kubectl Patch to modify the environment variables of Walrus to connect to the external data source.
 
 ```shell
-export DB_SOURCE=""; kubectl -n seal-system patch deployment app-manager --type json \
+export DB_SOURCE=""; kubectl -n walrus-system patch deployment walrus --type json \
 -p "[{\"op\":\"add\",\"path\":\"/spec/template/spec/containers/0/env/-\",\"value\":{\"name\":\"SERVER_DATA_SOURCE_ADDRESS\",\"value\":\"${DB_SOURCE}\"}}]"
 ```

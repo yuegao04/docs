@@ -8,11 +8,11 @@ A template is a pre-defined service framework or architecture which includes a s
 
 ## Type
 
-Seal currently supports Terraform module as the template type which is stored in git code repositories.
+Walrus currently supports Terraform module as the template type which is stored in git code repositories.
 
 ## Template version
 
-Seal supports managing multiple versions of templates within the same git code tree. Semantic versioning should be used for template versioning and placed in the following directory structure:
+Walrus supports managing multiple versions of templates within the same git code tree. Semantic versioning should be used for template versioning and placed in the following directory structure:
 ```shell
 <path-to-template>
 ├── 0.0.1
@@ -29,7 +29,7 @@ Seal supports managing multiple versions of templates within the same git code t
 
 ## Variable style extension
 
-Seal has extended the Terraform variable definition to support additional attributes describing the variable style, which is useful in generating user-friendly forms on the user interface. The extended styles are defined by HCL annotations.
+Walrus has extended the Terraform variable definition to support additional attributes describing the variable style, which is useful in generating user-friendly forms on the user interface. The extended styles are defined by HCL annotations.
 
 | Attribute Name | Type | Description | Example |
 |----------------|------|-------------|---------|
@@ -56,21 +56,21 @@ variable "limit_cpu" {
 
 ## Metadata Variables
 
-Seal provides the following metadata variables. When you declare matching variable names in your template, Seal injects the values of the metadata variables during deployment.
+Walrus provides the following metadata variables. When you declare matching variable names in your template, Walrus injects the values of the metadata variables during deployment.
 
-| Variable Name | Type | Description |
-|----------------|-----|-------------|
-| seal_metadata_project_name | String | Service project name |
-| seal_metadata_project_id | String | Service project ID |
-| seal_metadata_environment_name | String | Service environment name |
-| seal_metadata_environment_id | String | Service environment ID |
-| seal_metadata_service_name | String | Service name |
-| seal_metadata_service_id | String | Service ID |
-| seal_metadata_namespace_name | String | Name of the Seal-managed environment namespace, available in Kubernetes environments |
+| Variable Name                  | Type | Description                                                                            |
+|--------------------------------|-----|----------------------------------------------------------------------------------------|
+| walrus_metadata_project_name   | String | Service project name                                                                   |
+| walrus_metadata_project_id       | String | Service project ID                                                                     |
+| walrus_metadata_environment_name | String | Service environment name                                                               |
+| walrus_metadata_environment_id   | String | Service environment ID                                                                 |
+| walrus_metadata_service_name     | String | Service name                                                                           |
+| walrus_metadata_service_id       | String | Service ID                                                                             |
+| walrus_metadata_namespace_name   | String | Name of the Walrus-managed environment namespace, available in Kubernetes environments |
 
 ## Outputs
 
-Seal will capture the outputs defined in the Terraform files. After deployment, outputs will be displayed on the service output page. Seal supports capturing custom Access URLs. Configure the output name to start with`endpoint` (as shown below), and these outputs will be captured by Seal and displayed as `Access URLs`.
+Walrus will capture the outputs defined in the Terraform files. After deployment, outputs will be displayed on the service output page. Walrus supports capturing custom Access URLs. Configure the output name to start with`endpoint` (as shown below), and these outputs will be captured by Walrus and displayed as `Access URLs`.
 
 ```hcl
 output "endpoint_web" {
