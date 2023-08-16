@@ -16,6 +16,7 @@ const sidebars = {
   docs: [
     'overview',
     'quickstart',
+    'concepts',
     {
       type: 'category',
       label: 'Installation',
