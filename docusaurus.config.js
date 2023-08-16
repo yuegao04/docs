@@ -105,7 +105,7 @@ const config = {
       },
       footer: {
         style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} 数澈软件`,
+        copyright: `Copyright © ${new Date().getFullYear()} SEAL`,
       },
       prism: {
         theme: lightCodeTheme,
