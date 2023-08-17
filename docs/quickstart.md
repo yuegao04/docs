@@ -2,23 +2,23 @@
 
 > Note:
 > 
-> The current version of Walrus is in alpha stage. Subsequent versions may introduce API changes that are not compatible.
+> Walrus is alpha-quality software. It is under rapid development. Subsequent versions may introduce API changes that are not compatible.
 
 ## Deployment
 
 > Prerequisites:
-> - A Linux server with no less than 4 CPUs, 8Gi memory.
+> - A Linux server with no less than 4 CPU cores, 8GiB memory.
 > - At least 50GB of free disk space.
-> - Docker installed, detailed guide refer to [the Docker official documentation](https://docs.docker.com/).
+> - Docker installed, if not please refer to [the Docker official documentation](https://docs.docker.com/).
 > - Server ports 80 and 443 are open.
 
-Execute the following command to start Walrus service:
+Execute the following command to start the Walrus service:
 
 ```shell
 sudo docker run -d --privileged --restart=always -p 80:80 -p 443:443 --name walrus sealio/walrus
 ```
 
-For more installation requirements, please refer to [installation](/deploy/standalone).
+For more detailed installation requirements, please refer to [installation](/deploy/standalone).
 
 ## Access UI
 
@@ -26,7 +26,7 @@ For more installation requirements, please refer to [installation](/deploy/stand
 
 2. Login to Walrus with the username `admin` and the initial administrator password, and set a new password and Walrus's access address as prompted by the UI.
 
-> The first time you log in, according to the UI prompt, run the following command on the server to get the initial administrator password.
+> Run the following command on the server to get the initial administrator password.
 
 ```shell
 sudo docker logs walrus 2>&1 | grep "Bootstrap Admin Password"
@@ -34,10 +34,10 @@ sudo docker logs walrus 2>&1 | grep "Bootstrap Admin Password"
 
 ![qs-first-login](/img/v0.3.0/quickstart/qs-first-login-en.png)
 
-## Adding a Kubernetes cluster as the deployment target
+## Add a Kubernetes Cluster as Deployment Target
 
 > Prerequisites:
-> - A Kubernetes cluster that can be accessed by Walrus server.
+> - A Kubernetes cluster that can be reached by the Walrus server.
 
 1. Click the `Application Management` menu in the navigation bar to go to the `default` project view by default.
 2. Click the `Connectors` tab.
@@ -86,4 +86,4 @@ sudo docker logs walrus 2>&1 | grep "Bootstrap Admin Password"
 
 ![qs-res-exec](/img/v0.3.0/quickstart/qs-res-exec-en.png)
 
-Congratulations, you have completed the quick start guide.
+Congratulations, you have deployed your first application using Walrus!
