@@ -4,15 +4,15 @@ sidebar_position: 2
 
 # High Availability Installation
 
-Applicable for production scenarios.
+If you intend to run Walrus in production, you need to follow the high-avaialbility installation.
 
 > Prerequisites:
-> - A Kubernetes cluster is required as the runtime cluster.
-> - A Linux server with at least 4 CPU cores, 8Gi memory.
-> - At least 50GB of free disk space.
-> - Ports 80 and 443 are opened on the server.
+> - An highly-available Kubernetes cluster is required as the runtime cluster.
+> - Each Kubernetes node should have at least 4 CPU cores and 8GiB memory.
+> - At least 50GB of free disk space on each Kubernetes node.
+> - Ports 80 and 443 are opened on the nodes.
 
-You can fill in the following YAML with relevant information and use the Kubectl Apply command to complete the High Availability Deployment.
+You can fill in the following YAML with relevant information and use the `kubectl apply` command to complete the high availability deployment.
 
 ```shell
 cat <<EOF | kubectl apply -f -
@@ -624,11 +624,11 @@ EOF
 > - The reverse proxy service can use HTTP requests to Walrus, and you should set Walrus's session cookie `walrus_session` to `Secure: true` to prevent man-in-the-middle attacks.
 
 
-### Using a self-signed system certificate (non-publicly trusted)
+### Using a Self-Signed Certificate
 
-As the HTTPs service certificate (chain) is issued by a non-publicly trusted CA (created by Walrus), users need to confirm the usage risk before accessing the UI.
+Walrus can issue a self-signed HTTPS certificate for test purposes.
 
-1. Use Kubectl Apply to add a NodePort type Service.
+1. Use `kubectl apply` to add a NodePort type Service.
 
 ```shell
 cat <<EOF | kubectl apply -f -
@@ -659,36 +659,36 @@ spec:
 EOF
 ```
 
-2. Use Kubectl Patch to modify the TLS option in Secret.
+2. Use `kubectl patch` to modify the TLS option in Secret.
 
 ```shell
 kubectl -n walrus-system patch secret walrus --type='json' -p='[{"op":"replace","path":"/data/enable_tls","value":"dHJ1ZQ=="}]'
 ```
 
-3. Use Kubectl Delete to delete Ingress.
+3. Use `kubectl delete` to delete Ingress.
 
 ```shell
 kubectl -n walrus-system delete ingress walrus
 ```
 
-4. Use Kubectl Rollout to restart Walrus.
+4. Use `kubectl rollout` to restart Walrus.
 
 ```shell
 kubectl -n walrus-system rollout restart deployment/walrus
 ```
 
-### Use [ACME](https://letsencrypt.org/docs/challenge-types) to generate a publicly trusted certificate
+### Use [ACME](https://letsencrypt.org/docs/challenge-types) to Generate Trusted Certificate
 
 > Note:
 > - If the cluster can perform ACME challenges at the Ingress Controller level via CertManager, please refer to "Using TLS Termination".
 
-You can use Let's Encrypt service to perform the challenges. After successful challenges, Let's Encrypt issues a 90-day HTTPs service certificate (chain). The renewal of this certificate (chain) is performed by Walrus automatically.
+You can use Let's Encrypt to issue a 90-day HTTPS certificate. The renewal of this certificate is performed by Walrus automatically.
 
 > Prerequisites:
 > - The cluster should support the LoadBalancer type of Service.
 > - Provide a domain name, for example, `walrus.mydomain.com`.
 
-1. Use Kubectl Apply to add a LoadBalancer type of Service.
+1. Use `kubectl apply` to add a LoadBalancer type of Service.
 
 ```shell
 cat <<EOF | kubectl apply -f -
@@ -719,7 +719,7 @@ spec:
 EOF
 ```
 
-2. Use the Kubectl Get command to wait for the LoadBalancer type of service to get an Ingress IP.
+2. Use the `kubectl get` command to wait for the LoadBalancer type of service to get an Ingress IP.
 
 ```shell
 until [[ -n $(kubectl -n walrus-system get service walrus --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}") ]]; do :; done && \
@@ -729,34 +729,34 @@ until [[ -n $(kubectl -n walrus-system get service walrus --template="{{range .s
 
 3. On the DNS configuration panel, add the above A Record pointing to the output IP address.
 
-4. Use Kubectl Patch to modify the TLS option in Secret.
+4. Use `kubectl patch` to modify the TLS option in Secret.
 
 ```shell
 kubectl -n walrus-system patch secret walrus --type='json' -p='[{"op":"replace","path":"/data/enable_tls","value":"dHJ1ZQ=="}]'
 ```
 
-5. Use Kubectl Delete to delete Ingress.
+5. Use `kubectl delete` to delete Ingress.
 
 ```shell
 kubectl -n walrus-system delete ingress walrus
 ```
 
-6. Use Kubectl Patch to modify the environment variables of Walrus to respond to the ACME challenge.
+6. Use `kubectl patch` to modify the environment variables of Walrus to respond to the ACME challenge.
 
 ```shell
 export DNS_NAME=""; kubectl -n walrus-system patch deployment walrus --type json -p "[{\"op\":\"add\",\"path\":\"/spec/template/spec/containers/0/env/-\",\"value\":{\"name\":\"SERVER_TLS_AUTO_CERT_DOMAINS\",\"value\":\"${DNS_NAME}\"}}]"
 ```
 
-### Using a custom certificate
+### Using a Custom Certificate
 
-A custom certificate is an HTTPs service certificate (chain) issued by a publicly trusted or non-publicly trusted CA certificate.
+A custom certificate is an HTTPS  certificate issued by a certificate authority.
 
 > Prerequisites:
 > - Get the content of the HTTPS service private key PEM file, note it as PRIVATE_KEY_FILE_CONTENT.
 > - Get the content of the HTTPS service certificate (chain) PEM file, note it as CERT_FILE_CONTENT.
 > - If there is a (non-publicly trusted) CA certificate, get the corresponding PEM file content and concatenate it to CERT_FILE_CONTENT.
 
-1. Use the Kubectl Apply command to add a Secret with custom certificate content.
+1. Use the `kubectl apply` command to add a Secret with custom certificate content.
 
 ```shell
 export PRIVATE_KEY_FILE_CONTENT=""; export CERT_FILE_CONTENT=""; cat <<EOF | kubectl apply -f -
@@ -778,19 +778,19 @@ stringData:
 EOF
 ```
 
-2. Use Kubectl Patch to modify the TLS option in Secret.
+2. Use `kubectl patch` to modify the TLS option in Secret.
 
 ```shell
 kubectl -n walrus-system patch secret walrus --type='json' -p='[{"op":"replace","path":"/data/enable_tls","value":"dHJ1ZQ=="}]'
 ```
 
-3. Use Kubectl Delete to delete Ingress.
+3. Use `kubectl delete` to delete Ingress.
 
 ```shell
 kubectl -n walrus-system delete ingress walrus
 ```
 
-4. Use Kubectl Patch to modify the environment variables of Walrus to enable the custom certificate.
+4. Use `kubectl patch` to modify the environment variables of Walrus to enable the custom certificate.
 
 ```shell
 kubectl -n walrus-system patch deployment walrus --type json \
@@ -799,21 +799,21 @@ kubectl -n walrus-system patch deployment walrus --type json \
 
 ## Configuring the Database
 
-Walrus is based on the [PostgreSQL](https://www.postgresql.org/) relational database for data storage.
+Walrus relies on [PostgreSQL](https://www.postgresql.org/) relational database for data storage.
 
-By default, Walrus will run an instance of PostgresSQL within the running container, which is very convenient and easy to use, but may potentially lose data. Hence, users can provide an external PostgreSQL source while starting Walrus to prevent data loss.
+By default, Walrus will run an instance of PostgresSQL within the running container, which is can lead to potential data loss. In an HA install, users must provide an external PostgreSQL instance.
 
 > Note:
 > - The following commands override previous variables by repeatedly adding duplicate environment variables, which may receive a warning from Kubernetes.
 
-1. Use Kubectl Patch to modify the environment variables of IdentifyAccessManager to connect to the external data source.
+1. Use `kubectl patch` to modify the environment variables of IdentifyAccessManager to connect to the external data source.
 
 ```shell
 export DB_SOURCE=""; kubectl -n walrus-system patch deployment identity-access-manager --type json \
 -p "[{\"op\":\"add\",\"path\":\"/spec/template/spec/initContainers/0/env/-\",\"value\":{\"name\":\"DB_SOURCE\",\"value\":\"${DB_SOURCE}\"}}]"
 ```
 
-2. Use Kubectl Patch to modify the environment variables of Walrus to connect to the external data source.
+2. Use `kubectl patch` to modify the environment variables of Walrus to connect to the external data source.
 
 ```shell
 export DB_SOURCE=""; kubectl -n walrus-system patch deployment walrus --type json \
