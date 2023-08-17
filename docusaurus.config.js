@@ -42,6 +42,7 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
+          editUrl: 'https://github.com/seal-io/docs/edit/main/',
           lastVersion: 'current',
           versions: {
             current:{
