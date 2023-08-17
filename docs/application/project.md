@@ -6,8 +6,8 @@ sidebar_position: 1
 
 > Note:
 >
-> - Walrus creates a "default" project on bootstrap, and assigns "ownership" to the admin user.
-> - The project names within the system are unique.
+> - On startup Walrus creates a "default" project, which is owned by the admin user.
+> - All project names within the system must be unique.
 
 ## View Project List
 Click `Application Management` on the navigation bar, then click the `Project` dropdown menu at the top, and click `Manage` to enter the project list.
@@ -57,15 +57,15 @@ In the "Project List" page or the search box of the `Project` dropdown menu, ent
 
 ## Environment Management
 
-In the project view, click the `Environment` tab to perform [environment management](/application/environment).
+In the project view, click the `Environment` tab to [manage environments](/application/environment).
 
 ## Variable Management
 
-In the project view, click the `Variable` tab to perform [variable management](/operation/variable).
+In the project view, click the `Variable` tab to [manage variables](/operation/variable).
 
 ## Connector Management
 
-In the project view, click the `Connector` tab to perform [connector management](/operation/connector).
+In the project view, click the `Connector` tab to [manage connectors](/operation/connector).
 
 ## Member Management
 
