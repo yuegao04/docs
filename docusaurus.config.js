@@ -73,8 +73,8 @@ const config = {
       navbar: {
         title: '',
         logo: {
-          alt: 'Seal Logo',
-          src: 'img/seal-logo.png',
+          alt: 'Walrus Logo',
+          src: 'img/logo.png',
         },
         items: [
           {
