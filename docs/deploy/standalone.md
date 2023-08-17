@@ -4,12 +4,12 @@ sidebar_position: 1
 
 # Standalone Installation
 
-Suitable for PoC or test scenarios.
+Standalone installation is suitable for PoC or test scenarios.
 
 > Prerequisites: 
-> - A Linux server with no less than 4 CPUs and 8Gi memory.
+> - A Linux server with no less than 4 CPU cores and 8GiB memory.
 > - At least 50GB of free disk space.
-> - Docker installed, refer to [Docker's official documentation](https://docs.docker.com/) for detailed guidelines.
+> - Docker installed, if not please refer to [Docker's official documentation](https://docs.docker.com/) for how to setup Docker on your machine.
 > - The server has ports 80 and 443 open.
 
 Run the following Docker command for standalone installation. For additional configuration, see following sessions.
@@ -22,13 +22,13 @@ sudo docker run -d --privileged --restart=always \
 
 ## Setting up TLS
 
-### Default mode, using system (non-public trust) self-signed certificate
+### Default Mode, using Self-Signed Certificate
 
-Since the HTTPs service certificate (chain) is issued by a non-public trust CA (Walrus startup created), users need to confirm the risks before accessing the UI in the browser.
+By default Walrus uses a self-signed HTTPS certificate, which results in a warning message in the browser.
 
-### Using [ACME](https://letsencrypt.org/docs/challenge-types) challenge to generate (public trust) certificate
+### Using [ACME](https://letsencrypt.org/docs/challenge-types) to Generate a Trusted Certificate
 
-Perform the challenge through the Let's Encrypt service, and let Let's Encrypt issue a 90-day HTTPs service certificate (chain) after the challenge is successful. The renewal of this certificate (chain) will be automatically completed by Walrus.
+Let's Encrypt issues a 90-day HTTPS certificate. The renewal of this certificate will be automatically completed by Walrus.
 
 > Prerequisites: 
 > - Configure a domain name so that it can be mapped to the Linux server where Walrus is deployed, such as `walrus.mydomain.com`.
@@ -52,7 +52,7 @@ sudo docker run -d --privileged --restart=always \
 
 ### Using a Custom Certificate
 
-A custom certificate refers to the HTTPs service certificate (chain) issued using a public trust or non-public trust CA certificate.
+A custom certificate refers to a HTTPS certificate issued by a certificate authority.
 
 > Prerequisites: 
 > - Prepare certificate files on the Linux server where Walrus is deployed, for example, place the private key PEM file for the HTTPs service under the <PRIVATE_KEY_FILE> path, and place the HTTPs service certificate (chain) PEM file under the <CERT_FILE> path.
@@ -68,7 +68,7 @@ sudo docker run -d --privileged --restart=always \
   sealio/walrus:<VERSION>
 ```
 
-### Using TLS termination
+### Using TLS Termination
 
 [TLS Termination](https://en.wikipedia.org/wiki/TLS_termination_proxy) is generally executed by a reverse proxy service.
 
@@ -82,11 +82,11 @@ sudo docker run -d --privileged --restart=always \
   sealio/walrus:<VERSION>
 ```
 
-## Configuring the database
+## Configuring the Database
 
-Walrus uses the [PostgreSQL](https://www.postgresql.org/) relational database for data storage.
+Walrus uses the [PostgreSQL](https://www.postgresql.org/) relational database.
 
-By default, Walrus will start a PostgresSQL instance inside the running container, which is very convenient and easy to use, but you may face the loss of use data. Therefore, users can provide an external PostgreSQL source when starting Walrus to avoid the loss of use data.
+By default, Walrus will start a PostgresSQL instance inside the running container, which is very convenient and easy to use, but does not protect against data loss. Therefore, users can provide an external PostgreSQL DB when starting Walrus for reliability.
 
 ```shell
 # step 1: Start PostgreSQL with the following command.
