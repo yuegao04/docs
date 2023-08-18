@@ -9,10 +9,18 @@ sidebar_position: 2
 
 1. 点击导航栏中的`运维中心`菜单，进入`模板`标签页。
 2. 点击`新建模板`按钮。
-3. 输入模板的名称、描述、来源和图标。其中，
+3. 输入模板的名称、描述、来源。其中，
     - 来源：与Terraform git类型模块来源兼容的地址，参考[说明](https://developer.hashicorp.com/terraform/language/modules/sources#module-sources)。
-    - 图标：指向一个svg或png图标的地址。
+    示例：
+      - https://github.com/walrus-catalog/webservice?ref=v0.0.1
+      - https://github.com/walrus-catalog/webservice?ref=main
+
+>您可以通过 ref 参数指定版本，指定的版本必须是 git 仓库中存在的 tag 或者分支。
+> 如果不指定版本，默认会使用仓库的git tag并检查是否符合语义化规则，如果没有任何 tag 或者 tag 不符合语义化规则，会无法导入该模板。
+
 4. 点击`确定`按钮。
+
+模板默认会使用来源的默认分支中根路径中名为 icon 的图片文件作为模板的图标，目前支持的图标文件格式为：`.png`、`.jpg`、`.jpeg`、`.svg`。如果没有找到 icon 文件，会使用默认的图标。
 
 ## 编辑模板
 

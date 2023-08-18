@@ -8,9 +8,9 @@ sidebar_position: 2
 
 1. Click on "Operations Center" in the navigation bar and enter the "Template" tab.
 2. Click the "New Template" button.
-3. Enter the name, description, source, and icon of the template. Where,
+3. Enter the name, description, source of the template. Where,
     - Source: An address compatible with the Terraform git type module source, refer to the [instructions](https://developer.hashicorp.com/terraform/language/modules/sources#module-sources).
-    - Icon: Pointing to an SVG or PNG icon's address.
+
 4. Click the "OK" button.
 
 ## Editing a Template
