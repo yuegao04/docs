@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Environment
 
-The environment is the target of service deployment and is managed under the project.
+An environment is the target of service deployment. A project may contain multiple environments.
 
 ## View the Environment List
 
@@ -46,7 +46,7 @@ For more details on service management, please refer to [Services](/application/
 
 ## Dependency Graph
 
-Within an environment, different services can have dependencies. The dependencies between services can be viewed through the dependency graph, and all services and their resources in the environment can also be viewed. In the dependency graph, some resources can be operated through the top-right corner of the resource card. For example, viewing logs or executing terminal tasks on resources in the dependency graph can be done.
+Different services within an environment may depend on each other. The dependencies between services can be viewed through the dependency graph. The dependency graph shows all services and their resources. You can perform operations on resources by clicking the top-right corner of the resource icon. For example, you can view logs or execute terminals on container resources.
 
 For more detailed information on dependency graphs, please refer to [Dependency Graph](/application/graph).
 
