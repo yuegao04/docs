@@ -10,8 +10,17 @@ sidebar_position: 2
 2. Click the "New Template" button.
 3. Enter the name, description, source of the template. Where,
     - Source: An address compatible with the Terraform git type module source, refer to the [instructions](https://developer.hashicorp.com/terraform/language/modules/sources#module-sources).
+    Example source URLs:
+      - https://github.com/walrus-catalog/webservice?ref=v0.0.1
+      - https://github.com/walrus-catalog/webservice?ref=main
 
-4. Click the "OK" button.
+>You can specify a version with the ref parameter. The specified version must be an existing tag or branch in the Git repository.
+> If no version is specified, the [semver](https://semver.org/) git tags will be imported and checked as template versions. If there are no tags or the tag does not follow semantic versioning, the template cannot be imported.
+
+4. Click Confirm button.
+
+The template will use the image file named icon in the root path of the default branch as the icon. Currently supported formats are .png, .jpg, .jpeg, and .svg. If no icon file is found, the default icon will be used.
+
 
 ## Editing a Template
 
