@@ -1,8 +1,8 @@
-# Improvement plan
+# Improvement Plan
 
-## What is the Improvement plan?
+## What is the Improvement Plan?
 
-The improvement plan collects aggregate information about the installation of Walrus and which features are used. This information is used by seal.io to help make the product better and is not shared with third parties.
+The Improvement Plan collects aggregate information about the installation of Walrus and which features are used. This information is used by seal.io to help make the product better and is not shared with third parties.
 
 ## What information is collected?？
 
