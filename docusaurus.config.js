@@ -141,6 +141,7 @@ const config = {
               groupPathsBy: "tag",
               categoryLinkSource: "tag",
             },
+            template: "openapi.mustache", // Customize API MDX with mustache template
           }
         }
       }
