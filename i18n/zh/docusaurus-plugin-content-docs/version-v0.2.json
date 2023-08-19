@@ -1,0 +1,558 @@
+{
+  "version.label": {
+    "message": "v0.2",
+    "description": "The label for version v0.2"
+  },
+  "sidebar.docs.category.Installation": {
+    "message": "Installation",
+    "description": "The label for category Installation in sidebar docs"
+  },
+  "sidebar.docs.category.Application Management": {
+    "message": "Application Management",
+    "description": "The label for category Application Management in sidebar docs"
+  },
+  "sidebar.docs.category.Cost Management": {
+    "message": "Cost Management",
+    "description": "The label for category Cost Management in sidebar docs"
+  },
+  "sidebar.docs.category.Operation Hub": {
+    "message": "Operation Hub",
+    "description": "The label for category Operation Hub in sidebar docs"
+  },
+  "sidebar.docs.category.Templates": {
+    "message": "Templates",
+    "description": "The label for category Templates in sidebar docs"
+  },
+  "sidebar.docs.category.Settings": {
+    "message": "Settings",
+    "description": "The label for category Settings in sidebar docs"
+  },
+  "sidebar.openapi.category.API Docs": {
+    "message": "API Docs",
+    "description": "The label for category API Docs in sidebar openapi"
+  },
+  "sidebar.openapi.category.API Docs.link.generated-index.title": {
+    "message": "API Docs",
+    "description": "The generated-index page title for category API Docs in sidebar openapi"
+  },
+  "sidebar.openapi.category.Connectors": {
+    "message": "Connectors",
+    "description": "The label for category Connectors in sidebar openapi"
+  },
+  "sidebar.openapi.category.Costs": {
+    "message": "Costs",
+    "description": "The label for category Costs in sidebar openapi"
+  },
+  "sidebar.openapi.category.Dashboards": {
+    "message": "Dashboards",
+    "description": "The label for category Dashboards in sidebar openapi"
+  },
+  "sidebar.openapi.category.Environments": {
+    "message": "Environments",
+    "description": "The label for category Environments in sidebar openapi"
+  },
+  "sidebar.openapi.category.Perspectives": {
+    "message": "Perspectives",
+    "description": "The label for category Perspectives in sidebar openapi"
+  },
+  "sidebar.openapi.category.Projects": {
+    "message": "Projects",
+    "description": "The label for category Projects in sidebar openapi"
+  },
+  "sidebar.openapi.category.Roles": {
+    "message": "Roles",
+    "description": "The label for category Roles in sidebar openapi"
+  },
+  "sidebar.openapi.category.ServiceResources": {
+    "message": "ServiceResources",
+    "description": "The label for category ServiceResources in sidebar openapi"
+  },
+  "sidebar.openapi.category.ServiceRevisions": {
+    "message": "ServiceRevisions",
+    "description": "The label for category ServiceRevisions in sidebar openapi"
+  },
+  "sidebar.openapi.category.Services": {
+    "message": "Services",
+    "description": "The label for category Services in sidebar openapi"
+  },
+  "sidebar.openapi.category.Settings": {
+    "message": "Settings",
+    "description": "The label for category Settings in sidebar openapi"
+  },
+  "sidebar.openapi.category.SubjectRoles": {
+    "message": "SubjectRoles",
+    "description": "The label for category SubjectRoles in sidebar openapi"
+  },
+  "sidebar.openapi.category.Subjects": {
+    "message": "Subjects",
+    "description": "The label for category Subjects in sidebar openapi"
+  },
+  "sidebar.openapi.category.TemplateCompletions": {
+    "message": "TemplateCompletions",
+    "description": "The label for category TemplateCompletions in sidebar openapi"
+  },
+  "sidebar.openapi.category.TemplateVersions": {
+    "message": "TemplateVersions",
+    "description": "The label for category TemplateVersions in sidebar openapi"
+  },
+  "sidebar.openapi.category.Templates": {
+    "message": "Templates",
+    "description": "The label for category Templates in sidebar openapi"
+  },
+  "sidebar.openapi.category.Tokens": {
+    "message": "Tokens",
+    "description": "The label for category Tokens in sidebar openapi"
+  },
+  "sidebar.openapi.category.Variables": {
+    "message": "Variables",
+    "description": "The label for category Variables in sidebar openapi"
+  },
+  "sidebar.openapi.doc.Delete connectors": {
+    "message": "Delete connectors",
+    "description": "The label for the doc item Delete connectors in sidebar openapi, linking to the doc openapi/connector-collection-delete"
+  },
+  "sidebar.openapi.doc.Get connectors": {
+    "message": "Get connectors",
+    "description": "The label for the doc item Get connectors in sidebar openapi, linking to the doc openapi/connector-collection-get"
+  },
+  "sidebar.openapi.doc.Create a connector": {
+    "message": "Create a connector",
+    "description": "The label for the doc item Create a connector in sidebar openapi, linking to the doc openapi/connector-create"
+  },
+  "sidebar.openapi.doc.Delete a connector": {
+    "message": "Delete a connector",
+    "description": "The label for the doc item Delete a connector in sidebar openapi, linking to the doc openapi/connector-delete"
+  },
+  "sidebar.openapi.doc.Get connector by ID": {
+    "message": "Get connector by ID",
+    "description": "The label for the doc item Get connector by ID in sidebar openapi, linking to the doc openapi/connector-get"
+  },
+  "sidebar.openapi.doc.Update a connector": {
+    "message": "Update a connector",
+    "description": "The label for the doc item Update a connector in sidebar openapi, linking to the doc openapi/connector-update"
+  },
+  "sidebar.openapi.doc.Apply cost tools": {
+    "message": "Apply cost tools",
+    "description": "The label for the doc item Apply cost tools in sidebar openapi, linking to the doc openapi/connector-route-apply-cost-tools"
+  },
+  "sidebar.openapi.doc.Get repositories": {
+    "message": "Get repositories",
+    "description": "The label for the doc item Get repositories in sidebar openapi, linking to the doc openapi/connector-route-repositories"
+  },
+  "sidebar.openapi.doc.Get repository branches": {
+    "message": "Get repository branches",
+    "description": "The label for the doc item Get repository branches in sidebar openapi, linking to the doc openapi/connector-route-repository-branches"
+  },
+  "sidebar.openapi.doc.Sync cost data": {
+    "message": "Sync cost data",
+    "description": "The label for the doc item Sync cost data in sidebar openapi, linking to the doc openapi/connector-route-sync-cost-data"
+  },
+  "sidebar.openapi.doc.Allocation cost": {
+    "message": "Allocation cost",
+    "description": "The label for the doc item Allocation cost in sidebar openapi, linking to the doc openapi/cost-collection-route-allocation-cost"
+  },
+  "sidebar.openapi.doc.Summary cost": {
+    "message": "Summary cost",
+    "description": "The label for the doc item Summary cost in sidebar openapi, linking to the doc openapi/cost-collection-route-summary-cost"
+  },
+  "sidebar.openapi.doc.Summary cluster cost": {
+    "message": "Summary cluster cost",
+    "description": "The label for the doc item Summary cluster cost in sidebar openapi, linking to the doc openapi/cost-route-summary-cluster-cost"
+  },
+  "sidebar.openapi.doc.Summary project cost": {
+    "message": "Summary project cost",
+    "description": "The label for the doc item Summary project cost in sidebar openapi, linking to the doc openapi/cost-route-summary-project-cost"
+  },
+  "sidebar.openapi.doc.Summary queried cost": {
+    "message": "Summary queried cost",
+    "description": "The label for the doc item Summary queried cost in sidebar openapi, linking to the doc openapi/cost-route-summary-queried-cost"
+  },
+  "sidebar.openapi.doc.Get basic information": {
+    "message": "Get basic information",
+    "description": "The label for the doc item Get basic information in sidebar openapi, linking to the doc openapi/dashboard-collection-route-basic-information"
+  },
+  "sidebar.openapi.doc.Get latest service revisions": {
+    "message": "Get latest service revisions",
+    "description": "The label for the doc item Get latest service revisions in sidebar openapi, linking to the doc openapi/dashboard-collection-get-latest-service-revisions"
+  },
+  "sidebar.openapi.doc.Service revision statistics": {
+    "message": "Service revision statistics",
+    "description": "The label for the doc item Service revision statistics in sidebar openapi, linking to the doc openapi/dashboard-collection-route-service-revision-statistics"
+  },
+  "sidebar.openapi.doc.Delete environments": {
+    "message": "Delete environments",
+    "description": "The label for the doc item Delete environments in sidebar openapi, linking to the doc openapi/environment-collection-delete"
+  },
+  "sidebar.openapi.doc.Get environments": {
+    "message": "Get environments",
+    "description": "The label for the doc item Get environments in sidebar openapi, linking to the doc openapi/environment-collection-get"
+  },
+  "sidebar.openapi.doc.Create an environment": {
+    "message": "Create an environment",
+    "description": "The label for the doc item Create an environment in sidebar openapi, linking to the doc openapi/environment-create"
+  },
+  "sidebar.openapi.doc.Delete an environment": {
+    "message": "Delete an environment",
+    "description": "The label for the doc item Delete an environment in sidebar openapi, linking to the doc openapi/environment-delete"
+  },
+  "sidebar.openapi.doc.Get environment by ID": {
+    "message": "Get environment by ID",
+    "description": "The label for the doc item Get environment by ID in sidebar openapi, linking to the doc openapi/environment-get"
+  },
+  "sidebar.openapi.doc.Update an environment": {
+    "message": "Update an environment",
+    "description": "The label for the doc item Update an environment in sidebar openapi, linking to the doc openapi/environment-update"
+  },
+  "sidebar.openapi.doc.Delete perspectives": {
+    "message": "Delete perspectives",
+    "description": "The label for the doc item Delete perspectives in sidebar openapi, linking to the doc openapi/perspective-collection-delete"
+  },
+  "sidebar.openapi.doc.Get perspectives": {
+    "message": "Get perspectives",
+    "description": "The label for the doc item Get perspectives in sidebar openapi, linking to the doc openapi/perspective-collection-get"
+  },
+  "sidebar.openapi.doc.Create a perspective": {
+    "message": "Create a perspective",
+    "description": "The label for the doc item Create a perspective in sidebar openapi, linking to the doc openapi/perspective-create"
+  },
+  "sidebar.openapi.doc.Get values": {
+    "message": "Get values",
+    "description": "The label for the doc item Get values in sidebar openapi, linking to the doc openapi/perspective-collection-route-values"
+  },
+  "sidebar.openapi.doc.Get fields": {
+    "message": "Get fields",
+    "description": "The label for the doc item Get fields in sidebar openapi, linking to the doc openapi/perspective-collection-route-fields"
+  },
+  "sidebar.openapi.doc.Delete a perspective": {
+    "message": "Delete a perspective",
+    "description": "The label for the doc item Delete a perspective in sidebar openapi, linking to the doc openapi/perspective-delete"
+  },
+  "sidebar.openapi.doc.Get perspective by ID": {
+    "message": "Get perspective by ID",
+    "description": "The label for the doc item Get perspective by ID in sidebar openapi, linking to the doc openapi/perspective-get"
+  },
+  "sidebar.openapi.doc.Update a perspective": {
+    "message": "Update a perspective",
+    "description": "The label for the doc item Update a perspective in sidebar openapi, linking to the doc openapi/perspective-update"
+  },
+  "sidebar.openapi.doc.Delete projects": {
+    "message": "Delete projects",
+    "description": "The label for the doc item Delete projects in sidebar openapi, linking to the doc openapi/project-collection-delete"
+  },
+  "sidebar.openapi.doc.Get projects": {
+    "message": "Get projects",
+    "description": "The label for the doc item Get projects in sidebar openapi, linking to the doc openapi/project-collection-get"
+  },
+  "sidebar.openapi.doc.Create a project": {
+    "message": "Create a project",
+    "description": "The label for the doc item Create a project in sidebar openapi, linking to the doc openapi/project-create"
+  },
+  "sidebar.openapi.doc.Delete a project": {
+    "message": "Delete a project",
+    "description": "The label for the doc item Delete a project in sidebar openapi, linking to the doc openapi/project-delete"
+  },
+  "sidebar.openapi.doc.Get project by ID": {
+    "message": "Get project by ID",
+    "description": "The label for the doc item Get project by ID in sidebar openapi, linking to the doc openapi/project-get"
+  },
+  "sidebar.openapi.doc.Update a project": {
+    "message": "Update a project",
+    "description": "The label for the doc item Update a project in sidebar openapi, linking to the doc openapi/project-update"
+  },
+  "sidebar.openapi.doc.Get roles": {
+    "message": "Get roles",
+    "description": "The label for the doc item Get roles in sidebar openapi, linking to the doc openapi/role-collection-get"
+  },
+  "sidebar.openapi.doc.Get service resources": {
+    "message": "Get service resources",
+    "description": "The label for the doc item Get service resources in sidebar openapi, linking to the doc openapi/service-resource-collection-get"
+  },
+  "sidebar.openapi.doc.Get graphs": {
+    "message": "Get graphs",
+    "description": "The label for the doc item Get graphs in sidebar openapi, linking to the doc openapi/service-collection-get-graph"
+  },
+  "sidebar.openapi.doc.Stream exec": {
+    "message": "Stream exec",
+    "description": "The label for the doc item Stream exec in sidebar openapi, linking to the doc openapi/service-resource-stream-exec"
+  },
+  "sidebar.openapi.doc.Get keys": {
+    "message": "Get keys",
+    "description": "The label for the doc item Get keys in sidebar openapi, linking to the doc openapi/service-resource-get-keys"
+  },
+  "sidebar.openapi.doc.Stream logs": {
+    "message": "Stream logs",
+    "description": "The label for the doc item Stream logs in sidebar openapi, linking to the doc openapi/service-revision-stream-log"
+  },
+  "sidebar.openapi.doc.Delete service revisions": {
+    "message": "Delete service revisions",
+    "description": "The label for the doc item Delete service revisions in sidebar openapi, linking to the doc openapi/service-revision-collection-delete"
+  },
+  "sidebar.openapi.doc.Get service revisions": {
+    "message": "Get service revisions",
+    "description": "The label for the doc item Get service revisions in sidebar openapi, linking to the doc openapi/service-revision-collection-get"
+  },
+  "sidebar.openapi.doc.Get service revision by ID": {
+    "message": "Get service revision by ID",
+    "description": "The label for the doc item Get service revision by ID in sidebar openapi, linking to the doc openapi/service-revision-get"
+  },
+  "sidebar.openapi.doc.Get diff latests": {
+    "message": "Get diff latests",
+    "description": "The label for the doc item Get diff latests in sidebar openapi, linking to the doc openapi/service-revision-get-diff-latest"
+  },
+  "sidebar.openapi.doc.Get diff previous": {
+    "message": "Get diff previous",
+    "description": "The label for the doc item Get diff previous in sidebar openapi, linking to the doc openapi/service-revision-get-diff-previous"
+  },
+  "sidebar.openapi.doc.Get terraform states": {
+    "message": "Get terraform states",
+    "description": "The label for the doc item Get terraform states in sidebar openapi, linking to the doc openapi/service-revision-get-terraform-states"
+  },
+  "sidebar.openapi.doc.Update terraform states": {
+    "message": "Update terraform states",
+    "description": "The label for the doc item Update terraform states in sidebar openapi, linking to the doc openapi/service-revision-update-terraform-states"
+  },
+  "sidebar.openapi.doc.Delete services": {
+    "message": "Delete services",
+    "description": "The label for the doc item Delete services in sidebar openapi, linking to the doc openapi/service-collection-delete"
+  },
+  "sidebar.openapi.doc.Get services": {
+    "message": "Get services",
+    "description": "The label for the doc item Get services in sidebar openapi, linking to the doc openapi/service-collection-get"
+  },
+  "sidebar.openapi.doc.Create a service": {
+    "message": "Create a service",
+    "description": "The label for the doc item Create a service in sidebar openapi, linking to the doc openapi/service-create"
+  },
+  "sidebar.openapi.doc.Create services": {
+    "message": "Create services",
+    "description": "The label for the doc item Create services in sidebar openapi, linking to the doc openapi/service-collection-create"
+  },
+  "sidebar.openapi.doc.Delete a service": {
+    "message": "Delete a service",
+    "description": "The label for the doc item Delete a service in sidebar openapi, linking to the doc openapi/service-delete"
+  },
+  "sidebar.openapi.doc.Get service by ID": {
+    "message": "Get service by ID",
+    "description": "The label for the doc item Get service by ID in sidebar openapi, linking to the doc openapi/service-get"
+  },
+  "sidebar.openapi.doc.Stream access endpoints": {
+    "message": "Stream access endpoints",
+    "description": "The label for the doc item Stream access endpoints in sidebar openapi, linking to the doc openapi/service-stream-access-endpoint"
+  },
+  "sidebar.openapi.doc.Get access endpoints": {
+    "message": "Get access endpoints",
+    "description": "The label for the doc item Get access endpoints in sidebar openapi, linking to the doc openapi/service-route-access-endpoints"
+  },
+  "sidebar.openapi.doc.Stream outputs": {
+    "message": "Stream outputs",
+    "description": "The label for the doc item Stream outputs in sidebar openapi, linking to the doc openapi/service-stream-output"
+  },
+  "sidebar.openapi.doc.Get outputs": {
+    "message": "Get outputs",
+    "description": "The label for the doc item Get outputs in sidebar openapi, linking to the doc openapi/service-route-outputs"
+  },
+  "sidebar.openapi.doc.Rollback": {
+    "message": "Rollback",
+    "description": "The label for the doc item Rollback in sidebar openapi, linking to the doc openapi/service-route-rollback"
+  },
+  "sidebar.openapi.doc.Upgrade": {
+    "message": "Upgrade",
+    "description": "The label for the doc item Upgrade in sidebar openapi, linking to the doc openapi/service-route-upgrade"
+  },
+  "sidebar.openapi.doc.Get settings": {
+    "message": "Get settings",
+    "description": "The label for the doc item Get settings in sidebar openapi, linking to the doc openapi/setting-collection-get"
+  },
+  "sidebar.openapi.doc.Update settings": {
+    "message": "Update settings",
+    "description": "The label for the doc item Update settings in sidebar openapi, linking to the doc openapi/setting-collection-update"
+  },
+  "sidebar.openapi.doc.Get setting by ID": {
+    "message": "Get setting by ID",
+    "description": "The label for the doc item Get setting by ID in sidebar openapi, linking to the doc openapi/setting-get"
+  },
+  "sidebar.openapi.doc.Update a setting": {
+    "message": "Update a setting",
+    "description": "The label for the doc item Update a setting in sidebar openapi, linking to the doc openapi/setting-update"
+  },
+  "sidebar.openapi.doc.Delete subject roles": {
+    "message": "Delete subject roles",
+    "description": "The label for the doc item Delete subject roles in sidebar openapi, linking to the doc openapi/subject-role-collection-delete"
+  },
+  "sidebar.openapi.doc.Get subject roles": {
+    "message": "Get subject roles",
+    "description": "The label for the doc item Get subject roles in sidebar openapi, linking to the doc openapi/subject-role-collection-get"
+  },
+  "sidebar.openapi.doc.Create a subject role": {
+    "message": "Create a subject role",
+    "description": "The label for the doc item Create a subject role in sidebar openapi, linking to the doc openapi/subject-role-create"
+  },
+  "sidebar.openapi.doc.Delete a subject role": {
+    "message": "Delete a subject role",
+    "description": "The label for the doc item Delete a subject role in sidebar openapi, linking to the doc openapi/subject-role-delete"
+  },
+  "sidebar.openapi.doc.Get subjects": {
+    "message": "Get subjects",
+    "description": "The label for the doc item Get subjects in sidebar openapi, linking to the doc openapi/subject-collection-get"
+  },
+  "sidebar.openapi.doc.Create a subject": {
+    "message": "Create a subject",
+    "description": "The label for the doc item Create a subject in sidebar openapi, linking to the doc openapi/subject-create"
+  },
+  "sidebar.openapi.doc.Delete a subject": {
+    "message": "Delete a subject",
+    "description": "The label for the doc item Delete a subject in sidebar openapi, linking to the doc openapi/subject-delete"
+  },
+  "sidebar.openapi.doc.Update a subject": {
+    "message": "Update a subject",
+    "description": "The label for the doc item Update a subject in sidebar openapi, linking to the doc openapi/subject-update"
+  },
+  "sidebar.openapi.doc.Correct": {
+    "message": "Correct",
+    "description": "The label for the doc item Correct in sidebar openapi, linking to the doc openapi/template-completion-collection-route-correct"
+  },
+  "sidebar.openapi.doc.Create pull request": {
+    "message": "Create pull request",
+    "description": "The label for the doc item Create pull request in sidebar openapi, linking to the doc openapi/template-completion-collection-route-create-pull-request"
+  },
+  "sidebar.openapi.doc.Get examples": {
+    "message": "Get examples",
+    "description": "The label for the doc item Get examples in sidebar openapi, linking to the doc openapi/template-completion-collection-route-examples"
+  },
+  "sidebar.openapi.doc.Explain": {
+    "message": "Explain",
+    "description": "The label for the doc item Explain in sidebar openapi, linking to the doc openapi/template-completion-collection-route-explain"
+  },
+  "sidebar.openapi.doc.Generate": {
+    "message": "Generate",
+    "description": "The label for the doc item Generate in sidebar openapi, linking to the doc openapi/template-completion-collection-route-generate"
+  },
+  "sidebar.openapi.doc.Get template versions": {
+    "message": "Get template versions",
+    "description": "The label for the doc item Get template versions in sidebar openapi, linking to the doc openapi/template-version-collection-get"
+  },
+  "sidebar.openapi.doc.Get template version by ID": {
+    "message": "Get template version by ID",
+    "description": "The label for the doc item Get template version by ID in sidebar openapi, linking to the doc openapi/template-version-get"
+  },
+  "sidebar.openapi.doc.Delete templates": {
+    "message": "Delete templates",
+    "description": "The label for the doc item Delete templates in sidebar openapi, linking to the doc openapi/template-collection-delete"
+  },
+  "sidebar.openapi.doc.Get templates": {
+    "message": "Get templates",
+    "description": "The label for the doc item Get templates in sidebar openapi, linking to the doc openapi/template-collection-get"
+  },
+  "sidebar.openapi.doc.Create a template": {
+    "message": "Create a template",
+    "description": "The label for the doc item Create a template in sidebar openapi, linking to the doc openapi/template-create"
+  },
+  "sidebar.openapi.doc.Delete a template": {
+    "message": "Delete a template",
+    "description": "The label for the doc item Delete a template in sidebar openapi, linking to the doc openapi/template-delete"
+  },
+  "sidebar.openapi.doc.Get template by ID": {
+    "message": "Get template by ID",
+    "description": "The label for the doc item Get template by ID in sidebar openapi, linking to the doc openapi/template-get"
+  },
+  "sidebar.openapi.doc.Update a template": {
+    "message": "Update a template",
+    "description": "The label for the doc item Update a template in sidebar openapi, linking to the doc openapi/template-update"
+  },
+  "sidebar.openapi.doc.Refresh": {
+    "message": "Refresh",
+    "description": "The label for the doc item Refresh in sidebar openapi, linking to the doc openapi/template-route-refresh"
+  },
+  "sidebar.openapi.doc.Get tokens": {
+    "message": "Get tokens",
+    "description": "The label for the doc item Get tokens in sidebar openapi, linking to the doc openapi/token-collection-get"
+  },
+  "sidebar.openapi.doc.Create a token": {
+    "message": "Create a token",
+    "description": "The label for the doc item Create a token in sidebar openapi, linking to the doc openapi/token-create"
+  },
+  "sidebar.openapi.doc.Delete a token": {
+    "message": "Delete a token",
+    "description": "The label for the doc item Delete a token in sidebar openapi, linking to the doc openapi/token-delete"
+  },
+  "sidebar.openapi.doc.Delete variables": {
+    "message": "Delete variables",
+    "description": "The label for the doc item Delete variables in sidebar openapi, linking to the doc openapi/variable-collection-delete"
+  },
+  "sidebar.openapi.doc.Get variables": {
+    "message": "Get variables",
+    "description": "The label for the doc item Get variables in sidebar openapi, linking to the doc openapi/variable-collection-get"
+  },
+  "sidebar.openapi.doc.Create a variable": {
+    "message": "Create a variable",
+    "description": "The label for the doc item Create a variable in sidebar openapi, linking to the doc openapi/variable-create"
+  },
+  "sidebar.openapi.doc.Delete a variable": {
+    "message": "Delete a variable",
+    "description": "The label for the doc item Delete a variable in sidebar openapi, linking to the doc openapi/variable-delete"
+  },
+  "sidebar.openapi.doc.Update a variable": {
+    "message": "Update a variable",
+    "description": "The label for the doc item Update a variable in sidebar openapi, linking to the doc openapi/variable-update"
+  },
+  "sidebar.cli.category.CLI Docs": {
+    "message": "CLI Docs",
+    "description": "The label for category CLI Docs in sidebar cli"
+  },
+  "sidebar.cli.category.CLI Docs.link.generated-index.title": {
+    "message": "CLI Docs",
+    "description": "The generated-index page title for category CLI Docs in sidebar cli"
+  },
+  "sidebar.cli.category.config": {
+    "message": "config",
+    "description": "The label for category config in sidebar cli"
+  },
+  "sidebar.cli.category.connector": {
+    "message": "connector",
+    "description": "The label for category connector in sidebar cli"
+  },
+  "sidebar.cli.category.environment": {
+    "message": "environment",
+    "description": "The label for category environment in sidebar cli"
+  },
+  "sidebar.cli.category.perspective": {
+    "message": "perspective",
+    "description": "The label for category perspective in sidebar cli"
+  },
+  "sidebar.cli.category.project": {
+    "message": "project",
+    "description": "The label for category project in sidebar cli"
+  },
+  "sidebar.cli.category.role": {
+    "message": "role",
+    "description": "The label for category role in sidebar cli"
+  },
+  "sidebar.cli.category.service": {
+    "message": "service",
+    "description": "The label for category service in sidebar cli"
+  },
+  "sidebar.cli.category.serviceresource": {
+    "message": "serviceresource",
+    "description": "The label for category serviceresource in sidebar cli"
+  },
+  "sidebar.cli.category.servicerevision": {
+    "message": "servicerevision",
+    "description": "The label for category servicerevision in sidebar cli"
+  },
+  "sidebar.cli.category.setting": {
+    "message": "setting",
+    "description": "The label for category setting in sidebar cli"
+  },
+  "sidebar.cli.category.template": {
+    "message": "template",
+    "description": "The label for category template in sidebar cli"
+  },
+  "sidebar.cli.category.templateversion": {
+    "message": "templateversion",
+    "description": "The label for category templateversion in sidebar cli"
+  },
+  "sidebar.cli.category.variable": {
+    "message": "variable",
+    "description": "The label for category variable in sidebar cli"
+  }
+}

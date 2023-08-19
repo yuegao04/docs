@@ -19,10 +19,6 @@
     "message": "运维中心",
     "description": "The label for category Operation Hub in sidebar docs"
   },
-  "siderbar.docs.catagory.Tutorials": {
-    "message": "教程",
-    "description": "The label for category Tutorials in sidebar docs"
-  },
   "sidebar.docs.category.Templates": {
     "message": "模板",
     "description": "The label for category Templates in sidebar docs"
@@ -562,5 +558,461 @@
   "sidebar.docs.category.Users": {
     "message": "用户",
     "description": "The label for category Users in sidebar docs"
+  },
+  "sidebar.docs.category.Tutorials": {
+    "message": "教程",
+    "description": "The label for category Tutorials in sidebar docs"
+  },
+  "sidebar.openapi.category.None Resources": {
+    "message": "None Resources",
+    "description": "The label for category None Resources in sidebar openapi"
+  },
+  "sidebar.openapi.category.Catalogs": {
+    "message": "Catalogs",
+    "description": "The label for category Catalogs in sidebar openapi"
+  },
+  "sidebar.openapi.category.ProjectSubjects": {
+    "message": "ProjectSubjects",
+    "description": "The label for category ProjectSubjects in sidebar openapi"
+  },
+  "sidebar.openapi.doc.Get info.": {
+    "message": "Get info.",
+    "description": "The label for the doc item Get info. in sidebar openapi, linking to the doc openapi/eb-211-e-798-af-0-d-6-b-4"
+  },
+  "sidebar.openapi.doc.Update info.": {
+    "message": "Update info.",
+    "description": "The label for the doc item Update info. in sidebar openapi, linking to the doc openapi/12029-ad-9-ba-2-fcb-47"
+  },
+  "sidebar.openapi.doc.Login.": {
+    "message": "Login.",
+    "description": "The label for the doc item Login. in sidebar openapi, linking to the doc openapi/5-db-28-be-18-c-30-af-75"
+  },
+  "sidebar.openapi.doc.Logout.": {
+    "message": "Logout.",
+    "description": "The label for the doc item Logout. in sidebar openapi, linking to the doc openapi/c-388-f-2-b-1-a-7756001"
+  },
+  "sidebar.openapi.doc.Get tokens.": {
+    "message": "Get tokens.",
+    "description": "The label for the doc item Get tokens. in sidebar openapi, linking to the doc openapi/a-93-a-9-d-85-cedabeaa"
+  },
+  "sidebar.openapi.doc.Create token.": {
+    "message": "Create token.",
+    "description": "The label for the doc item Create token. in sidebar openapi, linking to the doc openapi/9-adbe-58622-efca-7-a"
+  },
+  "sidebar.openapi.doc.Delete token.": {
+    "message": "Delete token.",
+    "description": "The label for the doc item Delete token. in sidebar openapi, linking to the doc openapi/bc-6-dc-1-c-3997-a-60-e-9"
+  },
+  "sidebar.openapi.doc.Delete catalogs.": {
+    "message": "Delete catalogs.",
+    "description": "The label for the doc item Delete catalogs. in sidebar openapi, linking to the doc openapi/ac-2-d-087403330-e-03"
+  },
+  "sidebar.openapi.doc.Get catalogs.": {
+    "message": "Get catalogs.",
+    "description": "The label for the doc item Get catalogs. in sidebar openapi, linking to the doc openapi/99-c-1374960586-f-0-c"
+  },
+  "sidebar.openapi.doc.Create a catalog.": {
+    "message": "Create a catalog.",
+    "description": "The label for the doc item Create a catalog. in sidebar openapi, linking to the doc openapi/7065-e-08271-bc-5-f-9-c"
+  },
+  "sidebar.openapi.doc.Delete a catalog.": {
+    "message": "Delete a catalog.",
+    "description": "The label for the doc item Delete a catalog. in sidebar openapi, linking to the doc openapi/08226-eb-2-e-4-e-26-fb-9"
+  },
+  "sidebar.openapi.doc.Get a catalog.": {
+    "message": "Get a catalog.",
+    "description": "The label for the doc item Get a catalog. in sidebar openapi, linking to the doc openapi/e-3-ade-747-a-25-c-01-b-4"
+  },
+  "sidebar.openapi.doc.Update a catalog.": {
+    "message": "Update a catalog.",
+    "description": "The label for the doc item Update a catalog. in sidebar openapi, linking to the doc openapi/d-14-a-7-fa-73291-dffd"
+  },
+  "sidebar.openapi.doc.Refresh for a catalog.": {
+    "message": "Refresh for a catalog.",
+    "description": "The label for the doc item Refresh for a catalog. in sidebar openapi, linking to the doc openapi/be-9-d-98-ef-140-dafc-0"
+  },
+  "sidebar.openapi.doc.Get templates for a catalog.": {
+    "message": "Get templates for a catalog.",
+    "description": "The label for the doc item Get templates for a catalog. in sidebar openapi, linking to the doc openapi/d-0328-e-75-e-2-e-42-c-3-c"
+  },
+  "sidebar.openapi.doc.Delete connectors.": {
+    "message": "Delete connectors.",
+    "description": "The label for the doc item Delete connectors. in sidebar openapi, linking to the doc openapi/9-af-62-d-83-bbfaa-87-a"
+  },
+  "sidebar.openapi.doc.Get connectors.": {
+    "message": "Get connectors.",
+    "description": "The label for the doc item Get connectors. in sidebar openapi, linking to the doc openapi/c-07-ea-6-c-4-bae-33-ccd"
+  },
+  "sidebar.openapi.doc.Create a connector.": {
+    "message": "Create a connector.",
+    "description": "The label for the doc item Create a connector. in sidebar openapi, linking to the doc openapi/40-b-72-b-7-a-893-f-63-fd"
+  },
+  "sidebar.openapi.doc.Delete a connector.": {
+    "message": "Delete a connector.",
+    "description": "The label for the doc item Delete a connector. in sidebar openapi, linking to the doc openapi/1988-c-9-ef-19-ee-06-f-2"
+  },
+  "sidebar.openapi.doc.Get a connector.": {
+    "message": "Get a connector.",
+    "description": "The label for the doc item Get a connector. in sidebar openapi, linking to the doc openapi/b-8-e-8845-a-5898-cf-57"
+  },
+  "sidebar.openapi.doc.Update a connector.": {
+    "message": "Update a connector.",
+    "description": "The label for the doc item Update a connector. in sidebar openapi, linking to the doc openapi/d-9115-d-394344-bfb-6"
+  },
+  "sidebar.openapi.doc.Apply cost tools for a connector.": {
+    "message": "Apply cost tools for a connector.",
+    "description": "The label for the doc item Apply cost tools for a connector. in sidebar openapi, linking to the doc openapi/a-18226-b-3-b-18182-ac"
+  },
+  "sidebar.openapi.doc.Get repositories for a connector.": {
+    "message": "Get repositories for a connector.",
+    "description": "The label for the doc item Get repositories for a connector. in sidebar openapi, linking to the doc openapi/69-b-7488-a-60754-f-28"
+  },
+  "sidebar.openapi.doc.Get repository branches for a connector.": {
+    "message": "Get repository branches for a connector.",
+    "description": "The label for the doc item Get repository branches for a connector. in sidebar openapi, linking to the doc openapi/1-cb-90-a-65595-fc-5-eb"
+  },
+  "sidebar.openapi.doc.Sync cost data for a connector.": {
+    "message": "Sync cost data for a connector.",
+    "description": "The label for the doc item Sync cost data for a connector. in sidebar openapi, linking to the doc openapi/e-5-a-2-d-2303-aac-7662"
+  },
+  "sidebar.openapi.doc.Get cost reports for costs.": {
+    "message": "Get cost reports for costs.",
+    "description": "The label for the doc item Get cost reports for costs. in sidebar openapi, linking to the doc openapi/5-ecf-8-ed-8-ff-05-f-50-e"
+  },
+  "sidebar.openapi.doc.Get summary cluster costs for costs.": {
+    "message": "Get summary cluster costs for costs.",
+    "description": "The label for the doc item Get summary cluster costs for costs. in sidebar openapi, linking to the doc openapi/bdf-194-bc-7-e-765803"
+  },
+  "sidebar.openapi.doc.Get summary costs for costs.": {
+    "message": "Get summary costs for costs.",
+    "description": "The label for the doc item Get summary costs for costs. in sidebar openapi, linking to the doc openapi/5180-c-689-f-5887720"
+  },
+  "sidebar.openapi.doc.Get summary project costs for costs.": {
+    "message": "Get summary project costs for costs.",
+    "description": "The label for the doc item Get summary project costs for costs. in sidebar openapi, linking to the doc openapi/e-622410597614-c-28"
+  },
+  "sidebar.openapi.doc.Get summary queried costs for costs.": {
+    "message": "Get summary queried costs for costs.",
+    "description": "The label for the doc item Get summary queried costs for costs. in sidebar openapi, linking to the doc openapi/433-fc-775809-b-53-ac"
+  },
+  "sidebar.openapi.doc.Get basic information for dashboards.": {
+    "message": "Get basic information for dashboards.",
+    "description": "The label for the doc item Get basic information for dashboards. in sidebar openapi, linking to the doc openapi/b-3-e-7-a-7402-b-75-c-115"
+  },
+  "sidebar.openapi.doc.Get latest service revisions for dashboards.": {
+    "message": "Get latest service revisions for dashboards.",
+    "description": "The label for the doc item Get latest service revisions for dashboards. in sidebar openapi, linking to the doc openapi/bfdccece-41-c-457-fa"
+  },
+  "sidebar.openapi.doc.Get service revision statistics for dashboards.": {
+    "message": "Get service revision statistics for dashboards.",
+    "description": "The label for the doc item Get service revision statistics for dashboards. in sidebar openapi, linking to the doc openapi/2-ab-447-ad-32-efe-3-b-1"
+  },
+  "sidebar.openapi.doc.Delete perspectives.": {
+    "message": "Delete perspectives.",
+    "description": "The label for the doc item Delete perspectives. in sidebar openapi, linking to the doc openapi/1-e-02-ec-85-ea-9905-b-0"
+  },
+  "sidebar.openapi.doc.Get perspectives.": {
+    "message": "Get perspectives.",
+    "description": "The label for the doc item Get perspectives. in sidebar openapi, linking to the doc openapi/b-63767-dc-8-e-283113"
+  },
+  "sidebar.openapi.doc.Create a perspective.": {
+    "message": "Create a perspective.",
+    "description": "The label for the doc item Create a perspective. in sidebar openapi, linking to the doc openapi/fe-3-f-6-ab-201-f-9-a-383"
+  },
+  "sidebar.openapi.doc.Get field values for perspectives.": {
+    "message": "Get field values for perspectives.",
+    "description": "The label for the doc item Get field values for perspectives. in sidebar openapi, linking to the doc openapi/9441-be-5-b-27-e-7-d-88-f"
+  },
+  "sidebar.openapi.doc.Get fields for perspectives.": {
+    "message": "Get fields for perspectives.",
+    "description": "The label for the doc item Get fields for perspectives. in sidebar openapi, linking to the doc openapi/3341-ff-8846858967"
+  },
+  "sidebar.openapi.doc.Delete a perspective.": {
+    "message": "Delete a perspective.",
+    "description": "The label for the doc item Delete a perspective. in sidebar openapi, linking to the doc openapi/a-7298-c-2-aa-232-ea-05"
+  },
+  "sidebar.openapi.doc.Get a perspective.": {
+    "message": "Get a perspective.",
+    "description": "The label for the doc item Get a perspective. in sidebar openapi, linking to the doc openapi/32-f-01-ce-9-dd-0-abe-68"
+  },
+  "sidebar.openapi.doc.Update a perspective.": {
+    "message": "Update a perspective.",
+    "description": "The label for the doc item Update a perspective. in sidebar openapi, linking to the doc openapi/3-ac-6803-c-73829259"
+  },
+  "sidebar.openapi.doc.Delete projects.": {
+    "message": "Delete projects.",
+    "description": "The label for the doc item Delete projects. in sidebar openapi, linking to the doc openapi/8392-e-5-c-456-fd-87-bd"
+  },
+  "sidebar.openapi.doc.Get projects.": {
+    "message": "Get projects.",
+    "description": "The label for the doc item Get projects. in sidebar openapi, linking to the doc openapi/1-c-4-bcab-4949-e-05-ea"
+  },
+  "sidebar.openapi.doc.Create a project.": {
+    "message": "Create a project.",
+    "description": "The label for the doc item Create a project. in sidebar openapi, linking to the doc openapi/a-917-e-5-c-7-cac-3567-a"
+  },
+  "sidebar.openapi.doc.Delete a project.": {
+    "message": "Delete a project.",
+    "description": "The label for the doc item Delete a project. in sidebar openapi, linking to the doc openapi/c-2-df-3843-cc-2-bada-9"
+  },
+  "sidebar.openapi.doc.Get a project.": {
+    "message": "Get a project.",
+    "description": "The label for the doc item Get a project. in sidebar openapi, linking to the doc openapi/87-b-1-ad-4-b-40-d-4-aedc"
+  },
+  "sidebar.openapi.doc.Update a project.": {
+    "message": "Update a project.",
+    "description": "The label for the doc item Update a project. in sidebar openapi, linking to the doc openapi/fa-1085-ea-50-f-143-dd"
+  },
+  "sidebar.openapi.doc.Delete environments.": {
+    "message": "Delete environments.",
+    "description": "The label for the doc item Delete environments. in sidebar openapi, linking to the doc openapi/e-054-b-4-ee-8-fbac-654"
+  },
+  "sidebar.openapi.doc.Get environments.": {
+    "message": "Get environments.",
+    "description": "The label for the doc item Get environments. in sidebar openapi, linking to the doc openapi/b-2-c-5-d-3-cfdd-32-da-17"
+  },
+  "sidebar.openapi.doc.Create an environment.": {
+    "message": "Create an environment.",
+    "description": "The label for the doc item Create an environment. in sidebar openapi, linking to the doc openapi/873-e-75-c-1088-f-2-e-67"
+  },
+  "sidebar.openapi.doc.Delete an environment.": {
+    "message": "Delete an environment.",
+    "description": "The label for the doc item Delete an environment. in sidebar openapi, linking to the doc openapi/89454-d-0-dfc-354406"
+  },
+  "sidebar.openapi.doc.Get an environment.": {
+    "message": "Get an environment.",
+    "description": "The label for the doc item Get an environment. in sidebar openapi, linking to the doc openapi/d-8-ae-800-e-18214-ad-3"
+  },
+  "sidebar.openapi.doc.Update an environment.": {
+    "message": "Update an environment.",
+    "description": "The label for the doc item Update an environment. in sidebar openapi, linking to the doc openapi/52-f-7450-eb-9104-ada"
+  },
+  "sidebar.openapi.doc.Get graph for an environment.": {
+    "message": "Get graph for an environment.",
+    "description": "The label for the doc item Get graph for an environment. in sidebar openapi, linking to the doc openapi/054993-a-565-d-1-f-848"
+  },
+  "sidebar.openapi.doc.Delete services.": {
+    "message": "Delete services.",
+    "description": "The label for the doc item Delete services. in sidebar openapi, linking to the doc openapi/bc-566-d-2-ed-873-e-5-a-7"
+  },
+  "sidebar.openapi.doc.Get services.": {
+    "message": "Get services.",
+    "description": "The label for the doc item Get services. in sidebar openapi, linking to the doc openapi/fddb-3-f-75-b-6-da-82-fc"
+  },
+  "sidebar.openapi.doc.Create a service.": {
+    "message": "Create a service.",
+    "description": "The label for the doc item Create a service. in sidebar openapi, linking to the doc openapi/7-fa-34502-fd-6-fed-4-c"
+  },
+  "sidebar.openapi.doc.Create services.": {
+    "message": "Create services.",
+    "description": "The label for the doc item Create services. in sidebar openapi, linking to the doc openapi/24-b-97-f-54284-fd-759"
+  },
+  "sidebar.openapi.doc.Delete a service.": {
+    "message": "Delete a service.",
+    "description": "The label for the doc item Delete a service. in sidebar openapi, linking to the doc openapi/8-beef-019-b-792-d-3-dd"
+  },
+  "sidebar.openapi.doc.Get a service.": {
+    "message": "Get a service.",
+    "description": "The label for the doc item Get a service. in sidebar openapi, linking to the doc openapi/dd-61230-f-8-c-73-f-5-b-8"
+  },
+  "sidebar.openapi.doc.Get access endpoints for a service.": {
+    "message": "Get access endpoints for a service.",
+    "description": "The label for the doc item Get access endpoints for a service. in sidebar openapi, linking to the doc openapi/272161-c-4-fdefbe-5-c"
+  },
+  "sidebar.openapi.doc.Get graph for a service.": {
+    "message": "Get graph for a service.",
+    "description": "The label for the doc item Get graph for a service. in sidebar openapi, linking to the doc openapi/db-246-e-030-ccb-63-d-7"
+  },
+  "sidebar.openapi.doc.Get outputs for a service.": {
+    "message": "Get outputs for a service.",
+    "description": "The label for the doc item Get outputs for a service. in sidebar openapi, linking to the doc openapi/babe-0-e-35-dee-13-f-45"
+  },
+  "sidebar.openapi.doc.Rollback for a service.": {
+    "message": "Rollback for a service.",
+    "description": "The label for the doc item Rollback for a service. in sidebar openapi, linking to the doc openapi/d-07-b-67-f-1-eead-7-bfd"
+  },
+  "sidebar.openapi.doc.Upgrade for a service.": {
+    "message": "Upgrade for a service.",
+    "description": "The label for the doc item Upgrade for a service. in sidebar openapi, linking to the doc openapi/72-a-2-f-0-a-0783-f-4662"
+  },
+  "sidebar.openapi.doc.Get service resources.": {
+    "message": "Get service resources.",
+    "description": "The label for the doc item Get service resources. in sidebar openapi, linking to the doc openapi/8-f-82-f-76-a-1-c-335062"
+  },
+  "sidebar.openapi.doc.Exec for a service resource.": {
+    "message": "Exec for a service resource.",
+    "description": "The label for the doc item Exec for a service resource. in sidebar openapi, linking to the doc openapi/3027-d-5-d-2-bec-8-dbca"
+  },
+  "sidebar.openapi.doc.Get keys for a service resource.": {
+    "message": "Get keys for a service resource.",
+    "description": "The label for the doc item Get keys for a service resource. in sidebar openapi, linking to the doc openapi/842-fef-2596-d-03-e-17"
+  },
+  "sidebar.openapi.doc.Log for a service resource.": {
+    "message": "Log for a service resource.",
+    "description": "The label for the doc item Log for a service resource. in sidebar openapi, linking to the doc openapi/16-f-04935071-fec-47"
+  },
+  "sidebar.openapi.doc.Delete service revisions.": {
+    "message": "Delete service revisions.",
+    "description": "The label for the doc item Delete service revisions. in sidebar openapi, linking to the doc openapi/920-b-1-fb-90-a-98-fdb-4"
+  },
+  "sidebar.openapi.doc.Get service revisions.": {
+    "message": "Get service revisions.",
+    "description": "The label for the doc item Get service revisions. in sidebar openapi, linking to the doc openapi/ae-8-f-3606-a-5694661"
+  },
+  "sidebar.openapi.doc.Get a service revision.": {
+    "message": "Get a service revision.",
+    "description": "The label for the doc item Get a service revision. in sidebar openapi, linking to the doc openapi/602-d-49-aedddba-0-f-2"
+  },
+  "sidebar.openapi.doc.Get diff latest for a service revision.": {
+    "message": "Get diff latest for a service revision.",
+    "description": "The label for the doc item Get diff latest for a service revision. in sidebar openapi, linking to the doc openapi/97-cc-54-c-3844-f-6-ec-0"
+  },
+  "sidebar.openapi.doc.Get diff previous for a service revision.": {
+    "message": "Get diff previous for a service revision.",
+    "description": "The label for the doc item Get diff previous for a service revision. in sidebar openapi, linking to the doc openapi/06-d-0460-bf-4-a-95836"
+  },
+  "sidebar.openapi.doc.Log for a service revision.": {
+    "message": "Log for a service revision.",
+    "description": "The label for the doc item Log for a service revision. in sidebar openapi, linking to the doc openapi/f-735-bd-6569-b-1-d-6-a-7"
+  },
+  "sidebar.openapi.doc.Get terraform states for a service revision.": {
+    "message": "Get terraform states for a service revision.",
+    "description": "The label for the doc item Get terraform states for a service revision. in sidebar openapi, linking to the doc openapi/14-a-9-fdbca-01-d-9-cce"
+  },
+  "sidebar.openapi.doc.Update terraform states for a service revision.": {
+    "message": "Update terraform states for a service revision.",
+    "description": "The label for the doc item Update terraform states for a service revision. in sidebar openapi, linking to the doc openapi/feae-79-a-9-f-819-b-1-ef"
+  },
+  "sidebar.openapi.doc.Delete variables.": {
+    "message": "Delete variables.",
+    "description": "The label for the doc item Delete variables. in sidebar openapi, linking to the doc openapi/065-d-58-f-38-bb-4-bd-40"
+  },
+  "sidebar.openapi.doc.Get variables.": {
+    "message": "Get variables.",
+    "description": "The label for the doc item Get variables. in sidebar openapi, linking to the doc openapi/140-ace-457396-b-241"
+  },
+  "sidebar.openapi.doc.Create a variable.": {
+    "message": "Create a variable.",
+    "description": "The label for the doc item Create a variable. in sidebar openapi, linking to the doc openapi/0968-ecfc-6-cbb-5-b-51"
+  },
+  "sidebar.openapi.doc.Delete a variable.": {
+    "message": "Delete a variable.",
+    "description": "The label for the doc item Delete a variable. in sidebar openapi, linking to the doc openapi/2-d-6986-b-3780-b-91-e-5"
+  },
+  "sidebar.openapi.doc.Update a variable.": {
+    "message": "Update a variable.",
+    "description": "The label for the doc item Update a variable. in sidebar openapi, linking to the doc openapi/eb-822643687-cb-1-b-9"
+  },
+  "sidebar.openapi.doc.Delete project subjects.": {
+    "message": "Delete project subjects.",
+    "description": "The label for the doc item Delete project subjects. in sidebar openapi, linking to the doc openapi/c-661-f-9-c-483-efbacf"
+  },
+  "sidebar.openapi.doc.Get project subjects.": {
+    "message": "Get project subjects.",
+    "description": "The label for the doc item Get project subjects. in sidebar openapi, linking to the doc openapi/4-d-954-c-5-e-625-b-27-f-0"
+  },
+  "sidebar.openapi.doc.Create project subjects.": {
+    "message": "Create project subjects.",
+    "description": "The label for the doc item Create project subjects. in sidebar openapi, linking to the doc openapi/4819-a-426256-c-6-a-5-d"
+  },
+  "sidebar.openapi.doc.Delete a project subject.": {
+    "message": "Delete a project subject.",
+    "description": "The label for the doc item Delete a project subject. in sidebar openapi, linking to the doc openapi/a-43182-fd-0-b-137178"
+  },
+  "sidebar.openapi.doc.Get roles.": {
+    "message": "Get roles.",
+    "description": "The label for the doc item Get roles. in sidebar openapi, linking to the doc openapi/1-b-39-dbef-25279-b-51"
+  },
+  "sidebar.openapi.doc.Get settings.": {
+    "message": "Get settings.",
+    "description": "The label for the doc item Get settings. in sidebar openapi, linking to the doc openapi/f-248-f-833-ee-040-df-5"
+  },
+  "sidebar.openapi.doc.Update settings.": {
+    "message": "Update settings.",
+    "description": "The label for the doc item Update settings. in sidebar openapi, linking to the doc openapi/aa-03429-ae-4-f-8915-e"
+  },
+  "sidebar.openapi.doc.Get a setting.": {
+    "message": "Get a setting.",
+    "description": "The label for the doc item Get a setting. in sidebar openapi, linking to the doc openapi/64-bb-30935-d-9-ff-108"
+  },
+  "sidebar.openapi.doc.Update a setting.": {
+    "message": "Update a setting.",
+    "description": "The label for the doc item Update a setting. in sidebar openapi, linking to the doc openapi/fc-4641-d-0-c-96-b-4691"
+  },
+  "sidebar.openapi.doc.Get subjects.": {
+    "message": "Get subjects.",
+    "description": "The label for the doc item Get subjects. in sidebar openapi, linking to the doc openapi/0-d-6-b-950496-ef-9019"
+  },
+  "sidebar.openapi.doc.Create a subject.": {
+    "message": "Create a subject.",
+    "description": "The label for the doc item Create a subject. in sidebar openapi, linking to the doc openapi/944-c-5-aa-2-a-789-ada-9"
+  },
+  "sidebar.openapi.doc.Delete a subject.": {
+    "message": "Delete a subject.",
+    "description": "The label for the doc item Delete a subject. in sidebar openapi, linking to the doc openapi/ca-2-ea-43703-dbda-3-d"
+  },
+  "sidebar.openapi.doc.Update a subject.": {
+    "message": "Update a subject.",
+    "description": "The label for the doc item Update a subject. in sidebar openapi, linking to the doc openapi/2-e-1187-f-5490-a-1-ee-1"
+  },
+  "sidebar.openapi.doc.Correct for template completions.": {
+    "message": "Correct for template completions.",
+    "description": "The label for the doc item Correct for template completions. in sidebar openapi, linking to the doc openapi/63-a-8312-be-2-fc-484-b"
+  },
+  "sidebar.openapi.doc.Create pull request for template completions.": {
+    "message": "Create pull request for template completions.",
+    "description": "The label for the doc item Create pull request for template completions. in sidebar openapi, linking to the doc openapi/765031-fe-684-e-4788"
+  },
+  "sidebar.openapi.doc.Get examples for template completions.": {
+    "message": "Get examples for template completions.",
+    "description": "The label for the doc item Get examples for template completions. in sidebar openapi, linking to the doc openapi/eddd-8-c-82707-bfacc"
+  },
+  "sidebar.openapi.doc.Explain for template completions.": {
+    "message": "Explain for template completions.",
+    "description": "The label for the doc item Explain for template completions. in sidebar openapi, linking to the doc openapi/550-c-9-de-3-c-09-de-156"
+  },
+  "sidebar.openapi.doc.Generate for template completions.": {
+    "message": "Generate for template completions.",
+    "description": "The label for the doc item Generate for template completions. in sidebar openapi, linking to the doc openapi/66-e-23293985-e-4688"
+  },
+  "sidebar.openapi.doc.Delete templates.": {
+    "message": "Delete templates.",
+    "description": "The label for the doc item Delete templates. in sidebar openapi, linking to the doc openapi/d-0001165-d-4552-caa"
+  },
+  "sidebar.openapi.doc.Get templates.": {
+    "message": "Get templates.",
+    "description": "The label for the doc item Get templates. in sidebar openapi, linking to the doc openapi/4187-efb-66-f-374-df-3"
+  },
+  "sidebar.openapi.doc.Create a template.": {
+    "message": "Create a template.",
+    "description": "The label for the doc item Create a template. in sidebar openapi, linking to the doc openapi/b-95612-a-52-e-5-a-9-da-3"
+  },
+  "sidebar.openapi.doc.Delete a template.": {
+    "message": "Delete a template.",
+    "description": "The label for the doc item Delete a template. in sidebar openapi, linking to the doc openapi/16-c-5-e-56-d-94173-e-3-d"
+  },
+  "sidebar.openapi.doc.Get a template.": {
+    "message": "Get a template.",
+    "description": "The label for the doc item Get a template. in sidebar openapi, linking to the doc openapi/0-fbf-6-aca-8-ddebdcc"
+  },
+  "sidebar.openapi.doc.Update a template.": {
+    "message": "Update a template.",
+    "description": "The label for the doc item Update a template. in sidebar openapi, linking to the doc openapi/8-f-243-d-9478-b-5-c-6-e-1"
+  },
+  "sidebar.openapi.doc.Refresh for a template.": {
+    "message": "Refresh for a template.",
+    "description": "The label for the doc item Refresh for a template. in sidebar openapi, linking to the doc openapi/db-663687-b-13-ae-338"
+  },
+  "sidebar.openapi.doc.Get versions for a template.": {
+    "message": "Get versions for a template.",
+    "description": "The label for the doc item Get versions for a template. in sidebar openapi, linking to the doc openapi/3-cc-8-bc-191-f-6-ec-7-d-0"
+  },
+  "sidebar.cli.category.catalog": {
+    "message": "catalog",
+    "description": "The label for category catalog in sidebar cli"
+  },
+  "sidebar.cli.category.projectsubject": {
+    "message": "projectsubject",
+    "description": "The label for category projectsubject in sidebar cli"
   }
 }
