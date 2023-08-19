@@ -109,7 +109,7 @@ const sidebars = {
       ]
     },
     'faq',
-    'telemetry'
+    'improvementplan'
   ],
   openapi: [
     {
