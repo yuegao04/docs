@@ -19,6 +19,10 @@
     "message": "运维中心",
     "description": "The label for category Operation Hub in sidebar docs"
   },
+  "siderbar.docs.catagory.Tutorials": {
+    "message": "教程",
+    "description": "The label for category Tutorials in sidebar docs"
+  },
   "sidebar.docs.category.Templates": {
     "message": "模板",
     "description": "The label for category Templates in sidebar docs"

@@ -12,19 +12,13 @@ Walrus currently supports Terraform module as the template type which is stored 
 
 ## Template version
 
-Walrus supports managing multiple versions of templates within the same git code tree. Semantic versioning should be used for template versioning and placed in the following directory structure:
+Walrus supports managing multiple versions of templates in the same git codebase. Template versions need to use semantic versioning, imported through code repository Tags, currently supporting version number format vX.Y.Z, where X, Y, Z are numbers, e.g. v0.0.1. Template versions need to be placed in the following directory structure:
 ```shell
 <path-to-template>
-├── 0.0.1
-│   ├── README.md
-│   ├── main.tf
-│   ├── outputs.tf
-│   └── variables.tf
-└── 0.0.2
-    ├── README.md
-    ├── main.tf
-    ├── outputs.tf
-    └── variables.tf
+│── README.md
+│── main.tf
+│── outputs.tf
+│── variables.tf
 ```
 
 ## Variable style extension
