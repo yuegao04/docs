@@ -17,4 +17,5 @@ walrus config sync short-name [flags]
 
 ## SEE ALSO
 
-- [walrus config](walrus_config) - Manage CLI configuration
+* [walrus config](walrus_config)	 - Manage CLI configuration
+
