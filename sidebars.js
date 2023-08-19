@@ -108,8 +108,8 @@ const sidebars = {
         }
       ]
     },
-    'faq',
-    'improvementplan'
+    'improvement-plan',
+    'faq'
   ],
   openapi: [
     {

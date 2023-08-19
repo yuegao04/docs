@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Configuration Management
+# System Settings
 
 The system supports the following settings:
 

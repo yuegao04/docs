@@ -15,7 +15,7 @@ When variables with the same name exist at different levels, the value of the va
 ## View Variable List
 
 ### Global Variables
-1. Click on the `Operation Center` menu in the left navigation bar.
+1. Click on the `Operation Hub` menu in the left navigation bar.
 2. Click on the `Global Variables` tab to manage global variables.
 
 ![var-global-list](/img/v0.3.0/opration/variable/op-var-global-list-en.png)

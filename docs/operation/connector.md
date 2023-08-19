@@ -12,7 +12,7 @@ Walrus offers connectors on the following two levels:
 
 ### Global Connectors List
 
-1. Click on `Operation Center` in the left-hand sidebar.
+1. Click on `Operation Hub` in the left-hand sidebar.
 2. Click on the `Connectors` tab to view the connectors list.
 
 ![connector-list](/img/v0.3.0/opration/connector/op-conn-list-en.png)
@@ -26,7 +26,7 @@ Walrus offers connectors on the following two levels:
 
 ## Viewing Connector Details
 
-1. Click on `Operation Center` -> `Connectors` in the left-hand sidebar to go to the connectors list.
+1. Click on `Operation Hub` -> `Connectors` in the left-hand sidebar to go to the connectors list.
 2. Find the connector you need to view and click on its name to enter the connector's detail page.
 
 ## Creating a Connector
@@ -75,7 +75,7 @@ provider "alicloud" {
 ![connector-create-custom](/img/v0.3.0/opration/connector/op-conn-create-custom-en.png)
 ## Deleting a Connector
 
-1. Click on `Operation Center` -> `Connectors` in the left-hand sidebar to go to the connectors list.
+1. Click on `Operation Hub` -> `Connectors` in the left-hand sidebar to go to the connectors list.
 2. Find the connector you need to delete.
 3. Ensure that no environment depends on this connector before selecting the connector you want to delete, then click the `Delete` button.
 5. Click the `Confirm` button to complete the deletion.

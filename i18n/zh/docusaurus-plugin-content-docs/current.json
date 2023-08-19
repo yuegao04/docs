@@ -560,7 +560,7 @@
     "description": "The label for category Settings in sidebar docs"
   },
   "sidebar.docs.category.Users": {
-    "message": "用户管理",
+    "message": "用户",
     "description": "The label for category Users in sidebar docs"
   }
 }

@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Deploying llama-2 on AWS
+# Deploy llama-2 on AWS
 
 This tutorial demonstrates how to deploy llama-2 using Walrus on AWS with CPU, and utilize it through a user-friendly web UI.
 
