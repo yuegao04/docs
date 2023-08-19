@@ -17,4 +17,5 @@ walrus config current-context short-name [flags]
 
 ## SEE ALSO
 
-- [walrus config](walrus_config) - Manage CLI configuration
+* [walrus config](walrus_config)	 - Manage CLI configuration
+

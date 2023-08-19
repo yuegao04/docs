@@ -13,7 +13,7 @@ walrus connector delete <connector> [flags]
 ## Options
 
 ```
-      --project string
+      --project string   
 ```
 
 ## Options inherited from parent commands
@@ -27,4 +27,5 @@ walrus connector delete <connector> [flags]
 
 ## SEE ALSO
 
-- [walrus connector](walrus_connector) - Manage connectors
+* [walrus connector](walrus_connector)	 - Manage connectors
+
