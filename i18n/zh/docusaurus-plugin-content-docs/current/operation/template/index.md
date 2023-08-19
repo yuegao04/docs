@@ -12,20 +12,17 @@ Walrus当前支持的模板类型为Terraform module，存储于git代码仓库�
 
 ## 模板版本
 
-Walrus支持在同一git代码树中管理多个版本的模板。模板版本需要使用语义化的版本号，通过以下目录结构放置：
+Walrus支持在同一git代码中管理多个版本的模板。模板版本需要使用语义化的版本号，通过代码仓库的 Tag 来导入模板版本，当前支持的版本号格式为 `vX.Y.Z`，其中X、Y、Z为数字，如`v0.0.1`。模板版本需要放置在以下目录结构中：
+
 ```shell
 <path-to-template>
-├── 0.0.1
-│   ├── README.md
-│   ├── main.tf
-│   ├── outputs.tf
-│   └── variables.tf
-└── 0.0.2
-    ├── README.md
-    ├── main.tf
-    ├── outputs.tf
-    └── variables.tf
+├── README.md
+├── main.tf
+├── outputs.tf
+├── variables.tf
+
 ```
+
 
 ## 变量样式扩展
 
