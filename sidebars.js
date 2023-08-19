@@ -96,6 +96,7 @@ const sidebars = {
       ]
     },
     'faq',
+    'telemetry'
   ],
   openapi: [
     {

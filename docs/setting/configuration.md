@@ -21,7 +21,7 @@ The system supports the following settings:
 
 - **Basic Settings**
     - `Server Address`: The address for accessing Walrus server, usually filled in when logging into Walrus's UI for the first time.
-    - `Participate in Improvement Plan` Switch: Sends anonymous data to help Walrus improve product quality and service. You can enable or disable the improvement plan according to your wishes.
+    - `Participate in the Improvement Plan` Switch: Sends anonymous data to help Walrus improve product quality and service. You can participate in or opt out of the Improvement Plan according to your wishes.
 - **Enhanced Management**
     - `OpenAI API Token`: The token required for calling the OpenAI API.
 
