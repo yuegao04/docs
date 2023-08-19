@@ -12,7 +12,7 @@ The catalog is a collection of templates. You can view, import, edit, and delete
 2. In the Template tab, you can view the templates in the template list.
 3. You can search for templates in the template library using the Search box.
 
-![list](/img/v0.3.0/catalog/list.png)
+![list](/img/v0.3.0/catalog/list-en.png)
 
 ## Create a Catalog
 

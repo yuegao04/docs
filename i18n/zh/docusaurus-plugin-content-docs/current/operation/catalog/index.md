@@ -24,9 +24,10 @@ sidebar_position: 1
 ![create](/img/v0.3.0/catalog/create.png)
 
 > Walrus 支持包含 Terraform 模块仓库的 Github 组织，您可以在模板库中导入该组织下的所有模板。
-![create-result](/img/v0.3.0/catalog/create-result.png)
+> ![create-result](/img/v0.3.0/catalog/create-result.png)
 
 ## 删除模板库
+
 您可以删除模板库，删除模板库会删除该模板库下的所有模板。
 
 1. 点击导航栏中的`运维中心`菜单，进入`模板`标签页。

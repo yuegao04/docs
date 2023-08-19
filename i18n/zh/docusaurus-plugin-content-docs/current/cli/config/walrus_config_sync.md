@@ -17,5 +17,10 @@ walrus config sync short-name [flags]
 
 ## SEE ALSO
 
+<<<<<<< HEAD:i18n/zh/docusaurus-plugin-content-docs/current/cli/config/walrus_config_sync.md
 * [walrus config](walrus_config)	 - Manage CLI configuration
 
+=======
+- [seal](../seal) - Walrus APIs
+- [seal serviceresource list](seal_serviceresource_list) - Get service resources
+>>>>>>> 29275f6 (chore: update  images):i18n/zh/docusaurus-plugin-content-docs/current/cli/serviceresource/seal_serviceresource.md
