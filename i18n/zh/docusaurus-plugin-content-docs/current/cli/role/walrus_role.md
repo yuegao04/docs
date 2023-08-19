@@ -13,6 +13,5 @@ Manage roles
 
 ## SEE ALSO
 
-* [walrus](../walrus)	 - walrus is the command line interface for Walrus
-* [walrus role list](walrus_role_list)	 - Get roles.
-
+- [walrus](../walrus) - walrus is the command line interface for Walrus
+- [walrus role list](walrus_role_list) - Get roles.
