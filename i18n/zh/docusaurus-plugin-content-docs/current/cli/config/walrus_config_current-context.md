@@ -17,6 +17,7 @@ walrus config current-context short-name [flags]
 
 ## SEE ALSO
 
+<<<<<<< HEAD
 <<<<<<< HEAD:i18n/zh/docusaurus-plugin-content-docs/current/cli/config/walrus_config_current-context.md
 * [walrus config](walrus_config)	 - Manage CLI configuration
 
@@ -26,3 +27,7 @@ walrus config current-context short-name [flags]
 - [seal setting list](seal_setting_list) - Get settings
 - [seal setting update](seal_setting_update) - Update a setting
 >>>>>>> 29275f6 (chore: update  images):i18n/zh/docusaurus-plugin-content-docs/current/cli/setting/seal_setting.md
+=======
+* [walrus config](walrus_config)	 - Manage CLI configuration
+
+>>>>>>> bfad5fd (chore: sync cli dir)
