@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[826],{36982:t=>{t.exports=JSON.parse('{"title":"Tutorials","slug":"/category/tutorials","permalink":"/docs/category/tutorials","navigation":{"previous":{"title":"System Settings","permalink":"/docs/setting/"},"next":{"title":"Create a Catalog on GitHub","permalink":"/docs/tutorials/catalog-on-github"}}}')}}]);
