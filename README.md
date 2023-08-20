@@ -33,9 +33,3 @@ yarn run docusaurus docs:version 0.1
 ### Release
 
 The documentation is published using GitHub Pages at `https://seal-io.github.io/docs/`, and linked at `https://seal.io`.
-
-Release commands:
-```shell
-GIT_PASS=<github personal access token>
-GIT_USER=<github username> yarn deploy
-```
