@@ -22,7 +22,7 @@ For more detailed installation requirements, please refer to [installation](/dep
 
 ## Access UI
 
-1. Access Walrus UI through `https://<server-address>`.
+1. Access Walrus UI via `https://<server-address>`.
 
 2. Login to Walrus with the username `admin` and the initial administrator password, and set a new password and Walrus's access address as prompted by the UI.
 
